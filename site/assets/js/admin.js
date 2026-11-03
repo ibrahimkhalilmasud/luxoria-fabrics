@@ -2,6 +2,8 @@
 // Security is enforced by Supabase Row Level Security, not by this page: without an
 // aal2 session from a user listed in public.admins the database returns nothing.
 
+import { applyEdit, EDIT_COLUMNS, STATUSES as FABRIC_STATUSES, toEditRow } from "./edits.js";
+
 const CFG = window.LUXORIA_CONFIG || {};
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -12,13 +14,17 @@ const POLL_MS = 60 * 1000;
 const MAX_LOGIN_TRIES = 5;
 const LOCKOUT_MS = 60 * 1000;
 const MAX_PRICE = 1e9;
-const DEFAULT_CURRENCY = /^[A-Z]{3}$/.test(CFG.currency || "") ? CFG.currency : "EUR";
+const MAX_QTY = 100000;
+const CURRENCY = "MYR"; // all prices are Malaysian ringgit, shown as RM
+const STATUS_LABELS = { available: "Available", reserved: "Reserved", sold: "Sold", hidden: "Hidden from website" };
 const STATUSES = ["new", "contacted", "quoted", "won", "closed"];
 const QUOTE_COLS = "id,ref,created_at,channel,request_type,client_name,client_whatsapp,client_email,message,items,status,admin_note";
 const GATES = ["gateLogin", "gateMfa", "gateMsg", "paneQuotes", "panePrices"];
 
 const state = {
+  base: new Map(),
   catalog: new Map(),
+  colours: [],
   quotes: [],
   prices: new Map(),
   edits: new Map(),
@@ -211,14 +217,24 @@ function switchTab(tab) {
 
 async function loadCatalog() {
   try {
-    const res = await fetch("../data/products.json", { cache: "no-cache" });
-    const data = await res.json();
-    state.catalog = new Map(data.products.map((p) => [p.id, p]));
+    if (!state.base.size) {
+      const res = await fetch("../data/products.json", { cache: "no-cache" });
+      const data = await res.json();
+      state.base = new Map(data.products.map((p) => [p.id, p]));
+      state.colours = Object.keys(data.colourFamilies || {});
+    }
+    const { data: rows, error } = await sb.from("product_edits").select(EDIT_COLUMNS);
+    if (error) throw error;
+    const edits = new Map(rows.map((r) => [r.product_id, r]));
+    state.catalog = new Map([...state.base].map(([id, p]) => [id, applyEdit(p, edits.get(id))]));
   } catch {
     toast("Could not load the fabric catalogue.");
   }
-  const cols = [...new Set([...state.catalog.values()].map((p) => p.collection))].sort();
-  $("#pCollection").innerHTML = `<option value="">All collections</option>${cols.map((c) => `<option>${esc(c)}</option>`).join("")}`;
+  const sel = $("#pCollection");
+  if (!sel.options.length) {
+    const cols = [...new Set([...state.catalog.values()].map((p) => p.collection))].sort();
+    sel.innerHTML = `<option value="">All collections</option>${cols.map((c) => `<option>${esc(c)}</option>`).join("")}`;
+  }
 }
 
 let pollTimer = 0;
@@ -297,14 +313,14 @@ function selectQuote(id) {
 function itemView(item) {
   const p = state.catalog.get(item.id) || item;
   const price = state.prices.get(item.id);
-  const title = [p.article, p.designNo].filter(Boolean).join(" · ") || item.id;
+  const title = [p.name || p.article, p.designNo].filter(Boolean).join(" · ") || item.id;
   const thumb = p.thumb ? `<img src="../${esc(p.thumb)}" alt="" loading="lazy" width="80" height="160">` : "";
   return `<li class="q-item">
     <a href="../index.html#fabric/${encodeURIComponent(item.id)}" target="_blank" rel="noopener noreferrer">${thumb}</a>
     <div><strong>${esc(title)}</strong>
       <span>${esc([p.category, p.composition, p.colourFamily].filter(Boolean).join(" · "))}</span>
       <span>${p.quantity != null ? `${esc(p.quantity)} m in stock` : ""}</span>
-      <span class="q-item__price">${price ? `${esc(price.currency)} ${esc(Number(price.price).toFixed(2))} / m` : "No price set"}</span>
+      <span class="q-item__price">${price ? `${esc(fmtPrice(price))} / m` : "No price set"}</span>
     </div></li>`;
 }
 
@@ -370,12 +386,20 @@ async function deleteQuote(q) {
   toast("Quote deleted.");
 }
 
-// ---------------------------------------------------------------- prices
+// ---------------------------------------------------------------- fabrics (details, metres, prices)
+// Details are public catalogue corrections (table product_edits); prices stay private (table prices).
 function bindPrices() {
   ["#pCollection", "#pSearch", "#pMissing"].forEach((s) => $(s).addEventListener("input", renderPrices));
-  $("#pRows").addEventListener("input", onPriceInput);
+  $("#pRows").addEventListener("input", onRowInput);
+  $("#pRows").addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-edit]");
+    if (btn) openEditor(btn.dataset.edit);
+  });
   $("#pBulkApply").addEventListener("click", applyBulk);
-  $("#pSave").addEventListener("click", savePrices);
+  $("#pSave").addEventListener("click", saveRows);
+  $("#editForm").addEventListener("submit", saveEditor);
+  $("#editCancel").addEventListener("click", () => $("#editDialog").close());
+  $("#editRestore").addEventListener("click", restoreOriginal);
 }
 
 async function loadPrices() {
@@ -384,6 +408,9 @@ async function loadPrices() {
   state.prices = new Map(data.map((r) => [r.product_id, { price: r.price, currency: r.currency }]));
 }
 
+const fmtPrice = (p) => (p.currency === CURRENCY ? `RM ${Number(p.price).toFixed(2)}` : `${p.currency} ${Number(p.price).toFixed(2)}`);
+const fmtQty = (q) => (q === null || q === undefined || q === "" ? "" : String(Number(q)));
+
 function visibleProducts() {
   const col = $("#pCollection").value;
   const q = $("#pSearch").value.trim().toLowerCase();
@@ -391,59 +418,68 @@ function visibleProducts() {
   return [...state.catalog.values()].filter((p) => {
     if (col && p.collection !== col) return false;
     if (missing && state.prices.has(p.id)) return false;
-    return !q || [p.article, p.designNo, p.composition, p.colourFamily, p.id].join(" ").toLowerCase().includes(q);
+    return !q || [p.article, p.name, p.designNo, p.composition, p.colourFamily, p.status, p.id].join(" ").toLowerCase().includes(q);
   });
 }
 
-function currentPrice(id) {
-  const edit = state.edits.get(id);
+/** What the row shows now: pending (unsaved) value, else saved value. */
+function current(id) {
+  const edit = state.edits.get(id) || {};
   const saved = state.prices.get(id);
+  const p = state.catalog.get(id);
   return {
-    price: edit ? edit.price : saved ? String(saved.price) : "",
-    currency: edit ? edit.currency : saved ? saved.currency : DEFAULT_CURRENCY,
+    price: edit.price ?? (saved ? String(saved.price) : ""),
+    quantity: edit.quantity ?? fmtQty(p?.quantity),
   };
 }
 
 function renderPrices() {
   const rows = visibleProducts();
-  $("#pInfo").textContent = `${rows.length} fabrics shown · ${state.prices.size} of ${state.catalog.size} priced · prices are private and never shown on the public site.`;
+  const edited = [...state.catalog.values()].filter((p) => p.edited).length;
+  $("#pInfo").textContent = `${rows.length} fabrics shown · ${state.prices.size} of ${state.catalog.size} priced · ${edited} with edited details. `
+    + "Prices are in Malaysian ringgit (RM) and are never shown on the public site. Details you edit appear on the website straight away.";
   $("#pRows").innerHTML = rows.map((p) => {
-    const cur = currentPrice(p.id);
+    const cur = current(p.id);
+    const tags = [p.status !== "available" ? STATUS_LABELS[p.status] : "", p.featured ? "Signature" : "", p.edited ? "Edited" : ""].filter(Boolean);
     return `<tr data-id="${esc(p.id)}"${state.edits.has(p.id) ? ' class="is-dirty"' : ""}>
       <td><img src="../${esc(p.thumb)}" alt="" loading="lazy" width="36" height="72"></td>
-      <td><strong>${esc(p.article)}</strong><span>${esc(p.designNo)}</span></td>
+      <td><strong>${esc(p.name || p.article)}</strong><span>${esc([p.name ? p.article : "", p.designNo].filter(Boolean).join(" · "))}</span>
+        ${tags.length ? `<em class="p-tags">${tags.map(esc).join(" · ")}</em>` : ""}</td>
       <td>${esc([p.category, p.composition, p.colourFamily].filter(Boolean).join(" · "))}</td>
-      <td>${p.quantity != null ? esc(p.quantity) : "—"}</td>
-      <td><input type="number" min="0" step="0.01" inputmode="decimal" data-field="price" value="${esc(cur.price)}" aria-label="Price per metre for ${esc(p.article)}"></td>
-      <td><input type="text" maxlength="3" data-field="currency" value="${esc(cur.currency)}" aria-label="Currency"></td>
+      <td><input type="number" min="0" max="100000" step="0.1" inputmode="decimal" data-field="quantity" value="${esc(cur.quantity)}" placeholder="—" aria-label="Metres in stock for ${esc(p.article)}"></td>
+      <td><span class="p-rm"><input type="number" min="0" step="0.01" inputmode="decimal" data-field="price" value="${esc(cur.price)}" aria-label="Price per metre in ringgit for ${esc(p.article)}"></span></td>
+      <td><button class="btn btn--line p-edit" type="button" data-edit="${esc(p.id)}">Edit</button></td>
     </tr>`;
   }).join("");
   updateSaveButton();
 }
 
-function onPriceInput(e) {
+function onRowInput(e) {
   const row = e.target.closest("tr[data-id]");
   if (!row) return;
   const id = row.dataset.id;
   const price = $('[data-field="price"]', row).value.trim();
-  const currency = $('[data-field="currency"]', row).value.trim().toUpperCase();
+  const quantity = $('[data-field="quantity"]', row).value.trim();
   const saved = state.prices.get(id);
-  const unchanged = saved ? String(saved.price) === price && saved.currency === currency : price === "";
-  if (unchanged) state.edits.delete(id); else state.edits.set(id, { price, currency });
-  row.classList.toggle("is-dirty", !unchanged);
+  const change = {};
+  if (saved ? String(saved.price) !== price : price !== "") change.price = price;
+  if (fmtQty(state.catalog.get(id)?.quantity) !== quantity) change.quantity = quantity;
+  if (Object.keys(change).length) state.edits.set(id, change); else state.edits.delete(id);
+  row.classList.toggle("is-dirty", state.edits.has(id));
   updateSaveButton();
 }
 
 function applyBulk() {
   const value = $("#pBulk").value.trim();
-  if (!isValidPrice(value)) return toast("Enter a valid price first.");
+  if (!isValidPrice(value)) return toast("Enter a valid price first, e.g. 45 or 45.50.");
   const rows = visibleProducts();
-  if (!confirm(`Set ${value} per metre on all ${rows.length} fabrics shown? You can review before saving.`)) return;
-  rows.forEach((p) => state.edits.set(p.id, { price: value, currency: currentPrice(p.id).currency }));
+  if (!confirm(`Set RM ${value} per metre on all ${rows.length} fabrics shown? You can review before saving.`)) return;
+  rows.forEach((p) => state.edits.set(p.id, { ...state.edits.get(p.id), price: value }));
   renderPrices();
 }
 
 const isValidPrice = (v) => /^\d+(\.\d{1,2})?$/.test(v) && Number(v) <= MAX_PRICE;
+const isValidQty = (v) => v === "" || (/^\d+(\.\d{1,2})?$/.test(v) && Number(v) <= MAX_QTY);
 
 function updateSaveButton() {
   const n = state.edits.size;
@@ -452,30 +488,123 @@ function updateSaveButton() {
   btn.textContent = n ? `Save ${n} change${n > 1 ? "s" : ""}` : "Save changes";
 }
 
-async function savePrices() {
+/** Saves the inline price and metre changes. */
+async function saveRows() {
   const upserts = [];
   const removals = [];
-  for (const [id, { price, currency }] of state.edits) {
-    if (price === "") { removals.push(id); continue; }
-    if (!isValidPrice(price) || !/^[A-Z]{3}$/.test(currency)) {
-      return toast(`Check the price for ${state.catalog.get(id)?.article || id}: use numbers like 45 or 45.50 and a 3-letter currency.`);
+  const details = [];
+  for (const [id, change] of state.edits) {
+    const name = state.catalog.get(id)?.article || id;
+    if ("price" in change) {
+      if (change.price === "") removals.push(id);
+      else if (!isValidPrice(change.price)) return toast(`Check the price for ${name}: use numbers like 45 or 45.50.`);
+      else upserts.push({ product_id: id, price: Number(change.price), currency: CURRENCY });
     }
-    upserts.push({ product_id: id, price: Number(price), currency });
+    if ("quantity" in change) {
+      if (!isValidQty(change.quantity)) return toast(`Check the metres for ${name}: use numbers like 12 or 12.5.`);
+      const p = state.catalog.get(id);
+      details.push(toEditRow(id, { ...p, quantity: change.quantity === "" ? null : Number(change.quantity) }));
+    }
   }
   const btn = $("#pSave");
   setBusy(btn, true);
   const results = await Promise.all([
     upserts.length ? sb.from("prices").upsert(upserts, { onConflict: "product_id" }) : { error: null },
     removals.length ? sb.from("prices").delete().in("product_id", removals) : { error: null },
+    details.length ? sb.from("product_edits").upsert(details, { onConflict: "product_id" }) : { error: null },
   ]);
   setBusy(btn, false);
-  if (results.some((r) => r.error)) return toast("Some prices could not be saved. Please try again.");
-  const n = upserts.length + removals.length;
+  if (results.some((r) => r.error)) return toast("Some changes could not be saved. Please try again.");
+  const n = state.edits.size;
   state.edits.clear();
-  await loadPrices();
+  await Promise.all([loadPrices(), loadCatalog()]);
   renderPrices();
   if (state.selected) renderQuotes();
-  toast(`Saved ${n} price${n > 1 ? "s" : ""}.`);
+  toast(`Saved ${n} change${n > 1 ? "s" : ""}.`);
+}
+
+// ---------------------------------------------------------------- one-fabric editor
+const FORM_TEXT = { eArticle: "article", eName: "name", eDesign: "designNo", eComposition: "composition", eNotes: "notes" };
+
+function openEditor(id) {
+  const p = state.catalog.get(id);
+  if (!p) return;
+  const f = $("#editForm");
+  f.dataset.id = id;
+  $("#editTitle").textContent = p.name || p.article;
+  $("#editThumb").src = `../${p.thumb}`;
+  Object.entries(FORM_TEXT).forEach(([el, field]) => { $(`#${el}`).value = p[field] || ""; });
+  const cats = [...new Set([...state.base.values()].map((x) => x.category).filter(Boolean))];
+  $("#eCategory").innerHTML = cats.map((c) => `<option${c === p.category ? " selected" : ""}>${esc(c)}</option>`).join("");
+  $("#eColour").innerHTML = state.colours.map((c) => `<option${c === p.colourFamily ? " selected" : ""}>${esc(c)}</option>`).join("");
+  $("#eStatus").innerHTML = FABRIC_STATUSES.map((s) => `<option value="${s}"${s === p.status ? " selected" : ""}>${STATUS_LABELS[s]}</option>`).join("");
+  $("#eQuantity").value = fmtQty(p.quantity);
+  $("#eWidth").value = fmtQty(p.width);
+  $("#eFeatured").checked = !!p.featured;
+  const saved = state.prices.get(id);
+  $("#ePrice").value = saved ? String(saved.price) : "";
+  $("#editRestore").hidden = !p.edited;
+  setStatus($("#editStatus"), "");
+  $("#editDialog").showModal();
+}
+
+function readEditor() {
+  const p = {};
+  Object.entries(FORM_TEXT).forEach(([el, field]) => { p[field] = $(`#${el}`).value.replace(/\s+/g, " ").trim(); });
+  p.notes = $("#eNotes").value.trim();
+  p.category = $("#eCategory").value;
+  p.colourFamily = $("#eColour").value;
+  p.status = $("#eStatus").value;
+  p.featured = $("#eFeatured").checked;
+  const qty = $("#eQuantity").value.trim();
+  const width = $("#eWidth").value.trim();
+  const price = $("#ePrice").value.trim();
+  const problems = [];
+  if (!p.article || p.article.length > 60) problems.push("Article / serial number is required (up to 60 characters).");
+  if (p.name.length > 80) problems.push("Name: up to 80 characters.");
+  if (p.designNo.length > 40) problems.push("Design number: up to 40 characters.");
+  if (p.composition.length > 80) problems.push("Composition / quality: up to 80 characters.");
+  if (p.notes.length > 300) problems.push("Note: up to 300 characters.");
+  if (!isValidQty(qty)) problems.push("Metres: a number like 12 or 12.5, or empty for “on request”.");
+  if (width && !(/^\d+(\.\d)?$/.test(width) && Number(width) > 0 && Number(width) <= 1000)) problems.push("Width: centimetres, e.g. 140.");
+  if (price && !isValidPrice(price)) problems.push("Price: a number like 45 or 45.50, or empty for no price.");
+  if (!FABRIC_STATUSES.includes(p.status) || !state.colours.includes(p.colourFamily)) problems.push("Choose a status and a colour.");
+  p.quantity = qty === "" ? null : Number(qty);
+  p.width = width === "" ? null : Number(width);
+  return { p, price, problems };
+}
+
+async function saveEditor(e) {
+  e.preventDefault();
+  const id = $("#editForm").dataset.id;
+  const { p, price, problems } = readEditor();
+  if (problems.length) return setStatus($("#editStatus"), problems.join(" "));
+  const btn = $("#editSave");
+  setBusy(btn, true);
+  const results = await Promise.all([
+    sb.from("product_edits").upsert(toEditRow(id, p), { onConflict: "product_id" }),
+    price ? sb.from("prices").upsert({ product_id: id, price: Number(price), currency: CURRENCY }, { onConflict: "product_id" })
+      : state.prices.has(id) ? sb.from("prices").delete().eq("product_id", id) : { error: null },
+  ]);
+  setBusy(btn, false);
+  if (results.some((r) => r.error)) return setStatus($("#editStatus"), "Could not save. Please check your connection and try again.");
+  state.edits.delete(id);
+  await Promise.all([loadPrices(), loadCatalog()]);
+  renderPrices();
+  if (state.selected) renderQuotes();
+  $("#editDialog").close();
+  toast(`${p.name || p.article} saved — the website now shows the new details.`);
+}
+
+async function restoreOriginal() {
+  const id = $("#editForm").dataset.id;
+  if (!confirm("Undo all detail edits for this fabric and go back to the original catalogue details? The price is kept.")) return;
+  const { error } = await sb.from("product_edits").delete().eq("product_id", id);
+  if (error) return setStatus($("#editStatus"), "Could not restore. Please try again.");
+  await loadCatalog();
+  renderPrices();
+  $("#editDialog").close();
+  toast("Original details restored.");
 }
 
 // ---------------------------------------------------------------- toast

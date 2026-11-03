@@ -1,4 +1,5 @@
 /* Shared building blocks for every public page: config, catalogue, cart, helpers. */
+import { applyEdit, fetchEdits } from "./edits.js";
 
 export const CFG = Object.freeze({ brand: "Luxoria", pageSize: 36, ...(window.LUXORIA_CONFIG || {}) });
 
@@ -27,21 +28,33 @@ export const storage = {
 /* ---------- Catalogue ---------- */
 let catalogPromise = null;
 
+/* Serial order: family (silk, embroidery, lace), collection, then article number. */
+const bySerial = (a, b) => (categoryRank(a.category) - categoryRank(b.category))
+  || String(a.category).localeCompare(String(b.category))
+  || String(a.collection).localeCompare(String(b.collection))
+  || String(a.article).localeCompare(String(b.article), undefined, { numeric: true, sensitivity: "base" });
+
 export function loadCatalog() {
-  catalogPromise ??= fetch("data/products.json", { cache: "no-cache" })
-    .then((res) => {
+  catalogPromise ??= Promise.all([
+    fetch("data/products.json", { cache: "no-cache" }).then((res) => {
       if (!res.ok) throw new Error(`Catalogue HTTP ${res.status}`);
       return res.json();
-    })
-    .then((data) => {
-      const products = (data.products || []).map((p, i) => ({
+    }),
+    fetchEdits(CFG),
+  ]).then(([data, edits]) => {
+    // Admin corrections win over the published file; "hidden" pieces leave the public site.
+    const products = (data.products || [])
+      .map((p) => applyEdit(p, edits.get(p.id)))
+      .filter((p) => p.status !== "hidden")
+      .sort(bySerial)
+      .map((p, i) => ({
         ...p,
         _order: i,
         _search: [p.article, p.name, p.collection, p.category, p.designNo, p.colourFamily, p.composition, p.notes]
           .filter(Boolean).join(" ").toLowerCase(),
       }));
-      return { products, byId: new Map(products.map((p) => [p.id, p])), families: data.colourFamilies || {} };
-    });
+    return { products, byId: new Map(products.map((p) => [p.id, p])), families: data.colourFamilies || {} };
+  });
   return catalogPromise;
 }
 

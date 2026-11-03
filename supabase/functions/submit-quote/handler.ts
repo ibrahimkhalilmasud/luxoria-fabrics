@@ -29,12 +29,20 @@ export interface QuoteInput {
 interface ProductInfo {
   id: string;
   article?: string;
+  name?: string;
   designNo?: string;
   quantity?: number | null;
   collection?: string;
   category?: string;
   colourFamily?: string;
+  status?: string;
 }
+
+/** Admin corrections (table product_edits), column -> product field. */
+const EDIT_FIELDS: Record<string, keyof ProductInfo> = {
+  article: "article", name: "name", design_no: "designNo", quantity: "quantity",
+  category: "category", colour_family: "colourFamily", status: "status",
+};
 
 type PriceMap = Map<string, { price: number; currency: string }>;
 
@@ -148,10 +156,10 @@ export function escapeHtml(s: string): string {
 
 function itemLine(p: ProductInfo, price?: { price: number; currency: string }): string {
   return [
-    p.article ?? p.id,
+    p.name ? `${p.name} (${p.article ?? p.id})` : p.article ?? p.id,
     p.designNo,
     p.quantity != null ? `${p.quantity} m` : null,
-    price ? `${price.currency} ${Number(price.price).toFixed(2)}/m` : null,
+    price ? `${price.currency === "MYR" ? "RM" : price.currency} ${Number(price.price).toFixed(2)}/m` : null,
   ].filter(Boolean).join(" · ");
 }
 
@@ -179,15 +187,15 @@ export function resetCatalogCache(): void {
   catalogCache = null;
 }
 
-async function loadCatalog(env: Env, f: typeof fetch, now: number): Promise<Map<string, ProductInfo> | null> {
+async function loadBaseCatalog(env: Env, f: typeof fetch, now: number): Promise<Map<string, ProductInfo> | null> {
   if (catalogCache && now - catalogCache.at < CATALOG_TTL_MS) return catalogCache.map;
   try {
     const res = await f(`${env.siteUrl.replace(/\/$/, "")}/data/products.json`, { signal: AbortSignal.timeout(6000) });
     if (!res.ok) return catalogCache?.map ?? null;
     const data = await res.json() as { products?: ProductInfo[] };
     const map = new Map((data.products ?? []).map((p) => [p.id, {
-      id: p.id, article: p.article, designNo: p.designNo, quantity: p.quantity,
-      collection: p.collection, category: p.category, colourFamily: p.colourFamily,
+      id: p.id, article: p.article, name: p.name, designNo: p.designNo, quantity: p.quantity,
+      collection: p.collection, category: p.category, colourFamily: p.colourFamily, status: p.status,
     }]));
     catalogCache = { at: now, map };
     return map;
@@ -195,6 +203,40 @@ async function loadCatalog(env: Env, f: typeof fetch, now: number): Promise<Map<
     console.error("catalog fetch failed", err);
     return catalogCache?.map ?? null;
   }
+}
+
+/** Edit rows for the given products; empty when unavailable, so quotes still go through. */
+async function loadEdits(env: Env, f: typeof fetch, ids: string[]): Promise<Map<string, Record<string, unknown>>> {
+  try {
+    const cols = ["product_id", ...Object.keys(EDIT_FIELDS)].join(",");
+    const res = await f(`${env.supabaseUrl}/rest/v1/product_edits?select=${cols}&product_id=in.(${ids.join(",")})`, {
+      headers: restHeaders(env), signal: AbortSignal.timeout(4000),
+    });
+    if (!res.ok) return new Map();
+    const rows = await res.json() as Record<string, unknown>[];
+    return new Map(rows.map((r) => [String(r.product_id), r]));
+  } catch (err) {
+    console.error("edits fetch failed", err);
+    return new Map();
+  }
+}
+
+/** The requested products as the website shows them now (edits applied, hidden ones removed). */
+async function loadItems(env: Env, f: typeof fetch, now: number, ids: string[]): Promise<ProductInfo[]> {
+  const catalog = await loadBaseCatalog(env, f, now);
+  if (!catalog) return ids.map((id) => ({ id }));
+  const known = ids.filter((id) => catalog.has(id));
+  const edits = known.length ? await loadEdits(env, f, known) : new Map();
+  return known
+    .map((id) => {
+      const row = edits.get(id);
+      if (!row) return catalog.get(id)!;
+      const p: ProductInfo = { ...catalog.get(id)! };
+      for (const [col, field] of Object.entries(EDIT_FIELDS)) (p as unknown as Record<string, unknown>)[field] = row[col] ?? undefined;
+      p.quantity = row.quantity == null ? null : Number(row.quantity);
+      return p;
+    })
+    .filter((p) => p.status !== "hidden");
 }
 
 async function recentCount(env: Env, f: typeof fetch, ipHash: string, sinceIso: string): Promise<number> {
@@ -285,10 +327,7 @@ export function createHandler(env: Env, f: typeof fetch = fetch, now: () => numb
         return json(429, { error: "Too many requests. Please try again in a few minutes." }, cors);
       }
 
-      const catalog = await loadCatalog(env, f, t);
-      const items: ProductInfo[] = catalog
-        ? input.items.filter((id) => catalog.has(id)).map((id) => catalog.get(id)!)
-        : input.items.map((id) => ({ id }));
+      const items = await loadItems(env, f, t, input.items);
       if (!items.length) return json(400, { error: "These fabrics are no longer available." }, cors);
 
       const ref = makeRef();

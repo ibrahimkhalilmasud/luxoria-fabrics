@@ -114,6 +114,17 @@ Collections accumulate. Edit `data/catalog.csv` in Excel for names, width, compo
 status (available / reserved / sold), `colour_family` or `featured` (yes), then run the command again.
 Set prices in the admin area, not in the sheet.
 
+## Editing fabrics from the admin area
+
+Admin → **Fabrics** lists every piece. Type metres and the price (Malaysian ringgit, RM per metre)
+straight into the row and press **Save changes**, or press **Edit** to change the article / serial
+number, name, design number, category, metres, width, composition, colour filter, status
+(available, reserved, sold, or hidden from the website), signature flag and the public note.
+Edits are stored in the Supabase `product_edits` table and show on the website at once — the
+photos and `products.json` stay as they are, and **Restore original** removes an edit. Anyone can
+read these corrections (they are public catalogue details); only a signed-in admin with the
+authenticator code can change them. Prices stay private in the `prices` table.
+
 ## Preview locally
 
 ```bash

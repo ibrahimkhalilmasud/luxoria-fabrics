@@ -84,7 +84,10 @@
 .p-table td span { font-size: 0.7rem; color: var(--whisper); }
 .p-table td img { width: 30px; height: 60px; object-fit: contain; display: block; }
 .p-table input { width: 110px; height: 38px; padding: 0 0.6rem; background: var(--noir); border: 1px solid var(--line); outline: 0; font-size: 0.95rem; border-radius: 0; }
-.p-table input[data-field="currency"] { width: 62px; text-transform: uppercase; }
+.p-table td em.p-tags { display: block; margin-top: 0.15rem; font-style: normal; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.p-rm { display: inline-flex; align-items: center; gap: 0.35rem; }
+.p-rm::before { content: "RM"; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--whisper); }
+.p-table .p-edit { height: 38px; padding: 0 0.9rem; }
 .p-table input:focus { border-color: var(--gold); }
 .p-table tr.is-dirty td { background: rgba(201, 169, 110, 0.07); }
 .p-table tr.is-dirty input { border-color: var(--gold-deep); }
@@ -102,10 +105,22 @@
   .adm-bar__gap { display: none; }
   .adm-bulk { flex: 1; }
   .adm-bar .btn { flex: 1 1 45%; padding: 0 0.6rem; }
-  .p-table th:nth-child(4), .p-table td:nth-child(4) { display: none; }
-  .p-table input { width: 84px; }
+  .p-table th:nth-child(1), .p-table td:nth-child(1) { display: none; }
+  .p-table input { width: 72px; }
+  .adm-edit__grid { grid-template-columns: 1fr; }
 }
 
 .adm-steps { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.8rem; color: var(--mist); font-size: 0.88rem; }
 .adm-steps strong { color: var(--ivory); font-weight: 400; }
 .adm-steps code { font-size: 0.8rem; color: var(--gold-bright); }
+
+/* One-fabric editor */
+.adm-dialog { width: min(720px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 0; color: var(--ivory); background: var(--ink); border: 1px solid var(--line-strong); }
+.adm-dialog::backdrop { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(4px); }
+.adm-edit { display: grid; gap: 1.2rem; padding: clamp(1.2rem, 3vw, 2rem); }
+.adm-edit__head { display: flex; gap: 1rem; align-items: center; }
+.adm-edit__head img { width: 40px; height: 80px; object-fit: contain; }
+.adm-edit__head h2 { margin: 0.2rem 0 0; font: 400 1.6rem/1.1 var(--serif); }
+.adm-edit__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.2rem; }
+.adm-edit__wide { grid-column: 1 / -1; }
+.adm-edit__foot { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }

@@ -22,7 +22,7 @@
     <span class="adm-top__tag">Admin</span>
     <nav class="adm-tabs" id="admTabs" role="tablist" hidden>
       <button role="tab" data-tab="quotes" aria-selected="true">Quotes <span class="badge" id="newCount" hidden>0</span></button>
-      <button role="tab" data-tab="prices" aria-selected="false">Prices</button>
+      <button role="tab" data-tab="prices" aria-selected="false">Fabrics</button>
     </nav>
     <button class="link adm-top__out" id="signOut" hidden>Sign out</button>
   </header>
@@ -93,25 +93,55 @@
     </div>
   </main>
 
-  <!-- Price editor -->
+  <!-- Fabric editor: details, metres, prices (RM) -->
   <main class="adm-main" id="panePrices" hidden>
     <div class="adm-bar">
       <select id="pCollection" aria-label="Collection"></select>
-      <input class="adm-search" type="search" id="pSearch" placeholder="Search article, design, quality…" aria-label="Search fabrics">
+      <input class="adm-search" type="search" id="pSearch" placeholder="Search name, article, design, quality…" aria-label="Search fabrics">
       <label class="adm-check"><input type="checkbox" id="pMissing"> Only without price</label>
       <span class="adm-bar__gap"></span>
-      <input class="adm-bulk" type="number" id="pBulk" min="0" step="0.01" placeholder="Price" aria-label="Price for all shown">
+      <input class="adm-bulk" type="number" id="pBulk" min="0" step="0.01" placeholder="RM" aria-label="Price in ringgit for all shown">
       <button class="btn btn--line" id="pBulkApply">Set for all shown</button>
       <button class="btn btn--gold" id="pSave" disabled>Save changes</button>
     </div>
     <p class="adm-hint" id="pInfo"></p>
     <div class="p-table-wrap">
       <table class="p-table">
-        <thead><tr><th></th><th>Fabric</th><th>Details</th><th>Metres</th><th>Price</th><th>Currency</th></tr></thead>
+        <thead><tr><th></th><th>Fabric</th><th>Details</th><th>Metres</th><th>Price (RM / m)</th><th aria-label="Edit"></th></tr></thead>
         <tbody id="pRows"></tbody>
       </table>
     </div>
   </main>
+
+  <dialog class="adm-dialog" id="editDialog" aria-labelledby="editTitle">
+    <form id="editForm" class="adm-edit" novalidate>
+      <header class="adm-edit__head">
+        <img id="editThumb" src="data:," alt="" width="40" height="80">
+        <div><p class="eyebrow">Edit fabric</p><h2 id="editTitle"></h2></div>
+      </header>
+      <div class="adm-edit__grid">
+        <label class="field"><span>Article / serial number</span><input id="eArticle" maxlength="60" required></label>
+        <label class="field"><span>Name <small>(optional)</small></span><input id="eName" maxlength="80"></label>
+        <label class="field"><span>Design number</span><input id="eDesign" maxlength="40"></label>
+        <label class="field"><span>Category</span><select id="eCategory"></select></label>
+        <label class="field"><span>Metres in stock <small>(empty = on request)</small></span><input id="eQuantity" type="number" min="0" max="100000" step="0.1" inputmode="decimal"></label>
+        <label class="field"><span>Width (cm)</span><input id="eWidth" type="number" min="0" max="1000" step="0.1" inputmode="decimal"></label>
+        <label class="field"><span>Composition / quality</span><input id="eComposition" maxlength="80"></label>
+        <label class="field"><span>Colour filter</span><select id="eColour"></select></label>
+        <label class="field"><span>Status</span><select id="eStatus"></select></label>
+        <label class="field"><span>Price per metre (RM) <small>(private)</small></span><input id="ePrice" type="number" min="0" step="0.01" inputmode="decimal"></label>
+        <label class="field adm-edit__wide"><span>Note shown on the fabric page <small>(optional)</small></span><textarea id="eNotes" rows="2" maxlength="300"></textarea></label>
+        <label class="adm-check adm-edit__wide"><input type="checkbox" id="eFeatured"> Signature piece (shown first)</label>
+      </div>
+      <p class="form-status" id="editStatus" role="alert" hidden></p>
+      <footer class="adm-edit__foot">
+        <button class="btn btn--line" type="button" id="editRestore" hidden>Restore original</button>
+        <span class="adm-bar__gap"></span>
+        <button class="btn btn--line" type="button" id="editCancel">Cancel</button>
+        <button class="btn btn--gold" type="submit" id="editSave">Save</button>
+      </footer>
+    </form>
+  </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 

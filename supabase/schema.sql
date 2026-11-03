@@ -106,3 +106,55 @@ create policy "admins manage prices" on public.prices
 -- 1. Supabase > Authentication > Users > "Add user" (email + strong password, auto-confirm).
 -- 2. Then run, with your email:
 --    insert into public.admins (user_id) select id from auth.users where email = 'you@example.com';
+
+-- ---------------------------------------------------------------- fabric edits (admin catalogue editor)
+-- Corrections the admin makes to the public catalogue (name, metres, design no., ...).
+-- The public site reads them (they are public details, never prices) and lays them over
+-- data/products.json; only admins signed in with two-factor authentication can write.
+create table if not exists public.product_edits (
+  product_id    text primary key check (product_id ~ '^[a-z0-9-]{1,60}$'),
+  article       text not null check (char_length(article) between 1 and 60),
+  name          text not null default '' check (char_length(name) <= 80),
+  category      text not null check (char_length(category) between 1 and 40),
+  design_no     text not null default '' check (char_length(design_no) <= 40),
+  quantity      numeric(9, 2) check (quantity is null or (quantity >= 0 and quantity <= 100000)),
+  width         numeric(6, 1) check (width is null or (width > 0 and width <= 1000)),
+  composition   text not null default '' check (char_length(composition) <= 80),
+  colour_family text not null check (colour_family in ('Black', 'Grey', 'Ivory', 'Beige', 'Brown', 'Gold', 'Orange',
+                  'Red', 'Pink', 'Purple', 'Blue', 'Teal', 'Green', 'Multicolour')),
+  status        text not null default 'available' check (status in ('available', 'reserved', 'sold', 'hidden')),
+  featured      boolean not null default false,
+  notes         text not null default '' check (char_length(notes) <= 300),
+  updated_at    timestamptz not null default now(),
+  updated_by    uuid default auth.uid()
+);
+
+drop trigger if exists product_edits_touch on public.product_edits;
+create trigger product_edits_touch before insert or update on public.product_edits
+  for each row execute function public.touch_price();
+
+alter table public.product_edits enable row level security;
+revoke all on public.product_edits from anon, authenticated;
+grant select (product_id, article, name, category, design_no, quantity, width, composition,
+              colour_family, status, featured, notes) on public.product_edits to anon, authenticated;
+grant insert, update, delete on public.product_edits to authenticated;
+
+drop policy if exists "anyone reads fabric edits" on public.product_edits;
+create policy "anyone reads fabric edits" on public.product_edits
+  for select to anon, authenticated using (true);
+
+drop policy if exists "admins write fabric edits" on public.product_edits;
+create policy "admins write fabric edits" on public.product_edits
+  for insert to authenticated with check ((select public.is_admin()));
+
+drop policy if exists "admins update fabric edits" on public.product_edits;
+create policy "admins update fabric edits" on public.product_edits
+  for update to authenticated using ((select public.is_admin())) with check ((select public.is_admin()));
+
+drop policy if exists "admins delete fabric edits" on public.product_edits;
+create policy "admins delete fabric edits" on public.product_edits
+  for delete to authenticated using ((select public.is_admin()));
+
+-- Prices are kept in Malaysian ringgit.
+alter table public.prices alter column currency set default 'MYR';
+update public.prices set currency = 'MYR' where currency <> 'MYR';

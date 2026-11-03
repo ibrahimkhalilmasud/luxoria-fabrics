@@ -51,13 +51,14 @@ const catalog = {
 
 interface Call { url: string; init?: RequestInit }
 
-function mockFetch(opts: { recent?: number; insertStatus?: number } = {}) {
+function mockFetch(opts: { recent?: number; insertStatus?: number; edits?: unknown[] } = {}) {
   const calls: Call[] = [];
   const f = (async (input: string | URL | Request, init?: RequestInit) => {
     const url = String(input);
     calls.push({ url, init });
     if (url.endsWith("/data/products.json")) return Response.json(catalog);
     if (url.includes("/rest/v1/quotes?select=id")) return Response.json(Array(opts.recent ?? 0).fill({ id: "x" }));
+    if (url.includes("/rest/v1/product_edits")) return Response.json(opts.edits ?? []);
     if (url.includes("/rest/v1/prices")) return Response.json([{ product_id: "cemb-1", price: 42.5, currency: "EUR" }]);
     if (url.endsWith("/rest/v1/quotes") && init?.method === "POST") return new Response(null, { status: opts.insertStatus ?? 201 });
     if (url.includes("/rest/v1/quotes?ref=eq.")) return new Response(null, { status: 204 });
@@ -185,4 +186,21 @@ Deno.test("database failure returns a generic error", async () => {
   assertEquals(res.status, 500);
   const body = await res.json();
   assert(!JSON.stringify(body).includes("insert failed"), "must not leak internals");
+});
+
+Deno.test("uses admin edits and leaves out hidden fabrics", async () => {
+  resetCatalogCache();
+  const edits = [
+    { product_id: "cemb-1", article: "CEMB 1", name: "Rose Garden", design_no: "D-77", quantity: "12.5", category: "Lace", colour_family: "Pink", status: "available" },
+    { product_id: "cemb-2", article: "CEMB 2", name: null, design_no: null, quantity: null, category: "Lace", colour_family: "Red", status: "hidden" },
+  ];
+  const { f, calls } = mockFetch({ edits });
+  const res = await createHandler(env, f)(post(good));
+  assertEquals(res.status, 200);
+  const row = JSON.parse(String(calls.find((c) => c.url.endsWith("/rest/v1/quotes") && c.init?.method === "POST")!.init!.body));
+  assertEquals(row.items.length, 1);
+  assertEquals(row.items[0].designNo, "D-77");
+  assertEquals(row.items[0].quantity, 12.5);
+  const wa = decodeURIComponent(calls.find((c) => c.url.startsWith("https://api.callmebot.com/"))!.url);
+  assert(wa.includes("Rose Garden (CEMB 1) · D-77 · 12.5 m"));
 });
