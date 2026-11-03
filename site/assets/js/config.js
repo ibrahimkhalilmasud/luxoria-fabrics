@@ -10,6 +10,6 @@ window.LUXORIA_CONFIG = {
   showroom: "Private viewings by appointment",
   pageSize: 36,
   // Supabase project (Settings > API). Use the PUBLIC "anon" / "publishable" key only.
-  supabaseUrl: "", // e.g. "https://abcdefghijkl.supabase.co"
-  supabaseKey: "",
+  supabaseUrl: "https://rfwvzgvrhugfeqcgbsbv.supabase.co",
+  supabaseKey: "sb_publishable_QMiITabpFFdDTGN8KIVVnQ_yQsY5auJ",
 };
