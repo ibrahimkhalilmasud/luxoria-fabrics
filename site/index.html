@@ -6,39 +6,38 @@
   <title>Luxoria — Couture Fabrics</title>
   <meta name="description" content="Luxoria Couture Fabrics — exclusive Italian laces and embroideries, curated for ateliers, designers and couture houses.">
   <meta name="theme-color" content="#0b0b0c">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://*.supabase.co; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0b0c'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23c9a96e'%3EL%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/ui.css">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
 
   <header class="nav" id="nav">
-    <a class="nav__brand" href="#top" aria-label="Luxoria home">
+    <a class="nav__brand" href="index.html" aria-label="Luxoria home">
       <span class="crest" aria-hidden="true">
         <svg viewBox="0 0 40 40"><path d="M20 3 L23 13 L33 9 L28 18 L37 20 L28 22 L33 31 L23 27 L20 37 L17 27 L7 31 L12 22 L3 20 L12 18 L7 9 L17 13 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/></svg>
       </span>
       <span class="nav__word">LUXORIA</span>
     </a>
     <nav class="nav__links" aria-label="Main">
-      <a href="#collection">Collection</a>
-      <a href="#acquire">How to Acquire</a>
-      <a href="#maison">The Maison</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html#collection" aria-current="page">Collection</a>
+      <a href="showroom.html">Showroom</a>
+      <a href="index.html#acquire">How to Acquire</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
     <div class="nav__actions">
-      <label class="price-switch" id="priceSwitch" hidden>
-        <span>Prices</span>
-        <input type="checkbox" id="priceToggle" role="switch">
-        <span class="price-switch__track" aria-hidden="true"><span></span></span>
-      </label>
-      <button class="selection-btn" id="openSelection" aria-label="Open your selection">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.5 1.1 5 3 1.5-1.9 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
-        <span class="selection-btn__label">Selection</span>
-        <span class="badge" id="selectionCount">0</span>
-      </button>
+      <a class="nav__icon-link" href="showroom.html" aria-label="Showroom"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="6" height="18" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="14" y="3" width="6" height="18" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/></svg><span>Showroom</span></a>
+      <a class="cart-link" id="cartLink" href="cart.html" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8L5 8Z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+        <span class="cart-link__label">Cart</span>
+        <span class="badge" id="cartCount" hidden>0</span>
+      </a>
     </div>
   </header>
 
@@ -55,7 +54,7 @@
         <p class="hero__lede reveal">Rare Italian laces and hand-finished embroideries, held in limited lengths for ateliers, designers and couture houses.</p>
         <div class="hero__cta reveal">
           <a class="btn btn--gold" href="#collection">Explore the Collection</a>
-          <a class="btn btn--ghost" href="#acquire">How to Acquire</a>
+          <a class="btn btn--ghost" href="showroom.html">Enter the Showroom</a>
         </div>
       </div>
       <dl class="hero__stats reveal" id="heroStats"></dl>
@@ -73,7 +72,7 @@
       <div class="section-head">
         <p class="eyebrow">The Archive</p>
         <h2>Collection</h2>
-        <p class="section-head__sub">Every piece is a finite length. Refine by colour, series and available metres, then add favourites to your selection to request swatches or a quotation.</p>
+        <p class="section-head__sub">Every piece is a finite length. Refine by colour, quality and available metres, tap <strong>+</strong> to add a fabric to your cart, then request swatches or a quotation in one message.</p>
       </div>
 
       <div class="toolbar">
@@ -93,8 +92,6 @@
             <option value="article-desc">Article · Z–A</option>
             <option value="qty-desc">Most metres</option>
             <option value="qty-asc">Fewest metres</option>
-            <option value="price-asc" data-price>Price · Low to high</option>
-            <option value="price-desc" data-price>Price · High to low</option>
           </select>
         </label>
         <div class="view-switch" role="group" aria-label="Grid density">
@@ -122,23 +119,23 @@
             <h4>Collection</h4>
             <div class="chips" id="fCollection"></div>
           </div>
-          <div class="filter-group">
+          <div class="filter-group" id="fQualityGroup">
+            <h4>Quality</h4>
+            <div class="chips" id="fQuality"></div>
+          </div>
+          <div class="filter-group" id="fDesignGroup">
             <h4>Design Series</h4>
-            <div class="chips" id="fDesign"></div>
+            <div class="chips chips--scroll" id="fDesign"></div>
           </div>
           <div class="filter-group">
             <h4>Minimum length <output id="fQtyOut">Any</output></h4>
             <input type="range" id="fQty" min="0" max="10" step="0.5" value="0" aria-label="Minimum metres available">
             <div class="range-legend"><span>Any</span><span id="fQtyMax">10 m</span></div>
           </div>
-          <div class="filter-group" id="fPriceGroup" hidden>
-            <h4>Maximum price <output id="fPriceOut">Any</output></h4>
-            <input type="range" id="fPrice" min="0" max="100" step="1" value="100" aria-label="Maximum price">
-          </div>
           <div class="filter-group">
             <h4>Availability</h4>
             <label class="check"><input type="checkbox" id="fAvailable"> <span>In stock only</span></label>
-            <label class="check"><input type="checkbox" id="fSaved"> <span>My selection only</span></label>
+            <label class="check"><input type="checkbox" id="fInCart"> <span>In my cart only</span></label>
           </div>
           <button class="btn btn--gold filters__apply" id="applyFilters">Show results</button>
         </aside>
@@ -167,8 +164,8 @@
       <ol class="paths">
         <li class="path reveal">
           <span class="path__num">I</span>
-          <h3>Curate a Selection</h3>
-          <p>Tap the heart on any fabric to build your shortlist, then send it to us in one click by WhatsApp or email.</p>
+          <h3>Add to Cart</h3>
+          <p>Browse the collection or the showroom and tap <strong>+</strong> on any fabric. Your cart is saved on your device.</p>
         </li>
         <li class="path reveal">
           <span class="path__num">II</span>
@@ -187,7 +184,7 @@
         </li>
       </ol>
       <div class="acquire__cta">
-        <button class="btn btn--gold" data-open-selection>Review my selection</button>
+        <a class="btn btn--gold" href="cart.html">Review my cart</a>
         <a class="btn btn--ghost" href="#contact">Speak to an advisor</a>
       </div>
     </section>
@@ -200,7 +197,7 @@
         <p>Each lace in our archive was produced in a single run by Italian mills, so once a length is gone it does not return. We hold these pieces for the houses that understand the difference.</p>
         <ul class="pillars">
           <li><strong>Italian Origin</strong><span>Sourced directly from European mills</span></li>
-          <li><strong>Limited Lengths</strong><span>Finite metres per design</span></li>
+          <li><strong>Lace &amp; Silk</strong><span>Couture laces, crêpe de chine, georgette, lurex and more</span></li>
           <li><strong>Worldwide Dispatch</strong><span>Swatches and orders shipped globally</span></li>
         </ul>
       </div>
@@ -223,75 +220,9 @@
     <p class="footer__copy">© <span id="year"></span> Luxoria. All rights reserved.</p>
   </footer>
 
-  <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="vTitle" hidden>
-    <div class="viewer__backdrop" data-close></div>
-    <div class="viewer__panel">
-      <button class="icon-btn viewer__close" data-close aria-label="Close">✕</button>
-      <div class="viewer__stage" id="vStage">
-        <img id="vImg" alt="">
-        <div class="lens" id="vLens" aria-hidden="true"></div>
-        <p class="viewer__hint">Hover to magnify · Click for full screen</p>
-        <button class="icon-btn viewer__nav viewer__nav--prev" id="vPrev" aria-label="Previous fabric">‹</button>
-        <button class="icon-btn viewer__nav viewer__nav--next" id="vNext" aria-label="Next fabric">›</button>
-      </div>
-      <div class="viewer__info">
-        <p class="eyebrow" id="vEyebrow"></p>
-        <h3 id="vTitle"></h3>
-        <p class="viewer__price" id="vPrice"></p>
-        <dl class="specs" id="vSpecs"></dl>
-        <div class="palette" id="vPalette"></div>
-        <div class="viewer__actions">
-          <button class="btn btn--gold" id="vSave"></button>
-          <a class="btn btn--line" id="vEnquire" target="_blank" rel="noopener">Enquire about this piece</a>
-          <button class="link" id="vShare">Copy link to this fabric</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="zoom" id="zoom" hidden>
-    <button class="icon-btn zoom__close" id="zoomClose" aria-label="Close full screen">✕</button>
-    <div class="zoom__scroller" id="zoomScroller"><img id="zoomImg" alt=""></div>
-  </div>
-
-  <aside class="drawer" id="drawer" aria-label="Your selection" hidden>
-    <div class="drawer__backdrop" data-close-drawer></div>
-    <div class="drawer__panel">
-      <div class="drawer__head">
-        <h3>Your Selection</h3>
-        <button class="icon-btn" data-close-drawer aria-label="Close selection">✕</button>
-      </div>
-      <ul class="drawer__list" id="drawerList"></ul>
-      <div class="drawer__foot" id="drawerFoot">
-        <label class="field">
-          <span>Your name</span>
-          <input type="text" id="enqName" autocomplete="name">
-        </label>
-        <label class="field">
-          <span>Request</span>
-          <select id="enqType">
-            <option>Quotation</option>
-            <option>Swatches</option>
-            <option>Private viewing</option>
-            <option>Video walkthrough</option>
-          </select>
-        </label>
-        <label class="field">
-          <span>Message <small>(optional)</small></span>
-          <textarea id="enqMsg" rows="2" placeholder="Metres needed, delivery country, project…"></textarea>
-        </label>
-        <div class="drawer__send">
-          <a class="btn btn--gold" id="sendWhatsapp" target="_blank" rel="noopener">Send via WhatsApp</a>
-          <a class="btn btn--line" id="sendEmail">Send via Email</a>
-        </div>
-        <button class="link" id="clearSelection">Clear selection</button>
-      </div>
-    </div>
-  </aside>
-
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/js/config.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/home.js"></script>
 </body>
 </html>

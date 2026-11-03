@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Luxoria</title>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0b0c'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23c9a96e'%3EL%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/ui.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="page-admin">
+  <header class="adm-top">
+    <a class="nav__brand" href="../index.html" aria-label="Back to the public site">
+      <span class="nav__word">LUXORIA</span>
+    </a>
+    <span class="adm-top__tag">Admin</span>
+    <nav class="adm-tabs" id="admTabs" role="tablist" hidden>
+      <button role="tab" data-tab="quotes" aria-selected="true">Quotes <span class="badge" id="newCount" hidden>0</span></button>
+      <button role="tab" data-tab="prices" aria-selected="false">Prices</button>
+    </nav>
+    <button class="link adm-top__out" id="signOut" hidden>Sign out</button>
+  </header>
+
+  <!-- Step 1: email + password -->
+  <main class="adm-gate" id="gateLogin" hidden>
+    <form class="adm-card" id="loginForm" novalidate>
+      <p class="eyebrow">Private</p>
+      <h1>Sign in</h1>
+      <label class="field"><span>Email</span>
+        <input type="email" id="lEmail" autocomplete="username" maxlength="254" required></label>
+      <label class="field"><span>Password</span>
+        <input type="password" id="lPass" autocomplete="current-password" maxlength="200" required></label>
+      <p class="form-status" id="loginStatus" role="alert" hidden></p>
+      <button class="btn btn--gold btn--block" type="submit">Continue</button>
+    </form>
+  </main>
+
+  <!-- Step 2: authenticator code (enrol on first sign-in) -->
+  <main class="adm-gate" id="gateMfa" hidden>
+    <form class="adm-card" id="mfaForm" novalidate>
+      <p class="eyebrow">Two-step verification</p>
+      <h1 id="mfaTitle">Enter your code</h1>
+      <div class="adm-enrol" id="mfaEnrol" hidden>
+        <p>Scan this with Google Authenticator, Microsoft Authenticator or 1Password. This is needed once.</p>
+        <img id="mfaQr" alt="Authenticator QR code" width="180" height="180">
+        <p class="adm-secret">Or type the key: <code id="mfaSecret"></code></p>
+      </div>
+      <label class="field"><span>6-digit code</span>
+        <input type="text" id="mfaCode" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required></label>
+      <p class="form-status" id="mfaStatus" role="alert" hidden></p>
+      <button class="btn btn--gold btn--block" type="submit">Verify</button>
+      <button class="link" type="button" id="mfaCancel">Cancel</button>
+    </form>
+  </main>
+
+  <main class="adm-gate" id="gateMsg" hidden>
+    <div class="adm-card"><h1 id="gateMsgTitle"></h1><p id="gateMsgText"></p></div>
+  </main>
+
+  <!-- Quotes inbox -->
+  <main class="adm-main" id="paneQuotes" hidden>
+    <div class="adm-bar">
+      <div class="seg" role="group" aria-label="Filter by status" id="qStatus">
+        <button data-status="" aria-pressed="true">All</button>
+        <button data-status="new" aria-pressed="false">New</button>
+        <button data-status="contacted" aria-pressed="false">Contacted</button>
+        <button data-status="quoted" aria-pressed="false">Quoted</button>
+        <button data-status="won" aria-pressed="false">Won</button>
+        <button data-status="closed" aria-pressed="false">Closed</button>
+      </div>
+      <input class="adm-search" type="search" id="qSearch" placeholder="Search name, number, ref…" aria-label="Search quotes">
+      <button class="btn btn--line" id="qRefresh">Refresh</button>
+    </div>
+    <div class="adm-split">
+      <ul class="q-list" id="qList" aria-label="Quotes"></ul>
+      <section class="q-detail" id="qDetail" aria-live="polite">
+        <p class="adm-empty">Select a quote to see the details.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Price editor -->
+  <main class="adm-main" id="panePrices" hidden>
+    <div class="adm-bar">
+      <select id="pCollection" aria-label="Collection"></select>
+      <input class="adm-search" type="search" id="pSearch" placeholder="Search article, design, quality…" aria-label="Search fabrics">
+      <label class="adm-check"><input type="checkbox" id="pMissing"> Only without price</label>
+      <span class="adm-bar__gap"></span>
+      <input class="adm-bulk" type="number" id="pBulk" min="0" step="0.01" placeholder="Price" aria-label="Price for all shown">
+      <button class="btn btn--line" id="pBulkApply">Set for all shown</button>
+      <button class="btn btn--gold" id="pSave" disabled>Save changes</button>
+    </div>
+    <p class="adm-hint" id="pInfo"></p>
+    <div class="p-table-wrap">
+      <table class="p-table">
+        <thead><tr><th></th><th>Fabric</th><th>Details</th><th>Metres</th><th>Price</th><th>Currency</th></tr></thead>
+        <tbody id="pRows"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../vendor/supabase-2.117.3.js"></script>
+  <script type="module" src="../assets/js/admin.js"></script>
+</body>
+</html>

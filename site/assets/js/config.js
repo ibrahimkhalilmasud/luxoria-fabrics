@@ -1,15 +1,14 @@
 // Site-wide settings. Edit these values, commit, and the live site updates.
+// Everything here is PUBLIC. Never put a secret / service key in this file.
 window.LUXORIA_CONFIG = {
   brand: "Luxoria",
   tagline: "Couture Fabrics",
-  // Show the "Prices" switch in the header so visitors can reveal prices.
-  allowPriceToggle: true,
-  // Whether prices are visible on first visit (visitors can still toggle).
-  showPricesByDefault: false,
-  defaultCurrency: "EUR",
-  // Contact channels used by the enquiry buttons. Replace with your real details.
-  whatsapp: "", // international format, digits only, e.g. "971501234567"
+  // Your business WhatsApp, international format, digits only, e.g. "971501234567".
+  whatsapp: "",
   email: "sales@example.com",
   showroom: "Private viewings by appointment",
   pageSize: 36,
+  // Supabase project (Settings > API). Use the PUBLIC "anon" / "publishable" key only.
+  supabaseUrl: "", // e.g. "https://abcdefghijkl.supabase.co"
+  supabaseKey: "",
 };

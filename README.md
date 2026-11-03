@@ -1,47 +1,97 @@
 # Luxoria — Couture Fabrics
 
-A luxury, static showcase for our textile stock. No checkout: clients browse, filter,
-build a selection and send it to us by WhatsApp or email. Hosted free on GitHub Pages.
+A luxury showcase for our textile stock. No checkout: clients browse, filter, add fabrics
+to a cart and send it to us as a quotation request, by WhatsApp or by email.
+The site is static (GitHub Pages); quotations and prices live in Supabase behind an admin login.
 
 ```
-site/                 <- everything that goes live
-  index.html
-  assets/css/style.css
-  assets/js/config.js <- brand, WhatsApp number, email, price toggle settings
-  assets/js/app.js
-  data/products.json  <- generated, do not edit by hand
-  images/full|thumb/  <- generated web images
-data/catalog.csv      <- YOUR master sheet (names, prices, width, composition, status…)
-tools/build_catalog.py
+site/                       <- everything that goes live
+  index.html                <- collection + filters
+  showroom.html             <- full-screen scrolling gallery with "+" on every photo
+  cart.html                 <- selection, client details, send / request quotation
+  admin/index.html          <- private admin (login + authenticator code)
+  assets/js/config.js       <- brand, WhatsApp, email, Supabase URL + PUBLIC key
+  data/products.json        <- generated, do not edit by hand (contains NO prices)
+  images/full|thumb/        <- generated web images
+data/catalog.csv            <- master sheet (names, width, composition, status…) — no prices
+supabase/schema.sql         <- database tables + security rules
+supabase/functions/submit-quote/  <- receives quotations, sends WhatsApp + email alerts
+tools/build_catalog.py      <- photos -> web images + products.json
 ```
+
+## Security model
+
+- **Prices are never in this repository or on the public site.** They are stored only in the
+  Supabase `prices` table and are visible only in the admin area.
+- Every table has Row Level Security. The public key in `config.js` can read **nothing**.
+- Admin access needs: a user you created, listed in `public.admins`, **and** a verified
+  authenticator code (MFA, `aal2`). A stolen password alone is not enough.
+- Clients can only create quotations through the `submit-quote` function, which validates
+  every field, accepts only your site's origin, rate-limits by (hashed) IP and has a spam trap.
+- The admin session lives in the browser tab only and signs out after 30 minutes idle.
+
+## One-time setup
+
+### 1. Supabase
+
+1. Create a project at supabase.com (free tier is fine).
+2. **SQL Editor** → paste and run `supabase/schema.sql`.
+3. **Authentication → Sign In / Providers**: turn **off** "Allow new users to sign up".
+   Keep Email enabled.
+4. **Authentication → Users → Add user**: your email + a long unique password (tick "Auto confirm").
+5. SQL Editor, make that user an admin:
+   ```sql
+   insert into public.admins (user_id) select id from auth.users where email = 'you@example.com';
+   ```
+6. **Authentication → Multi-Factor**: make sure TOTP (authenticator app) is enabled.
+7. Sign in at `https://<your-site>/admin/` straight away and scan the QR code with your
+   authenticator app — the first person to complete this step owns the second factor.
+
+### 2. Alerts
+
+- **WhatsApp (CallMeBot)**: from your phone, send `I allow callmebot to send me messages` to
+  the CallMeBot number listed on callmebot.com/blog/free-api-whatsapp-messages. You get an API key.
+- **Email (Resend)**: create an account at resend.com → API Keys → create a key.
+  Until you verify your own domain, mail is sent from `onboarding@resend.dev` and only to your
+  Resend account email.
+
+### 3. Deploy the function
+
+With the Supabase CLI (`npm i -g supabase`, then `supabase login` and `supabase link`):
+
+```bash
+supabase secrets set SITE_URL=https://<user>.github.io/<repo> ALLOWED_ORIGINS=https://<user>.github.io IP_SALT=<long-random-text> CALLMEBOT_PHONE=<your number with +> CALLMEBOT_APIKEY=<key> RESEND_API_KEY=<key> ADMIN_EMAIL=<you@example.com>
+```
+
+```bash
+supabase functions deploy submit-quote --no-verify-jwt
+```
+
+`SUPABASE_URL` and the service key are provided to the function automatically. Optional:
+`RESEND_FROM="Luxoria <quotes@yourdomain.com>"` once your domain is verified in Resend.
+
+### 4. Connect the site
+
+In `site/assets/js/config.js` set `whatsapp`, `email`, `supabaseUrl` and `supabaseKey`
+(Project Settings → API → the **anon / publishable** key — never the service / secret key).
+Commit and push.
 
 ## Add or update fabrics
 
-1. Put the raw photos in a folder (any size, JPG/PNG). The file name becomes the article number.
-2. Run (needs Python with `pip install pillow pypdf`):
+Needs Python with `pip install pillow pypdf`.
 
-   ```bash
-   python tools/build_catalog.py --source "C:/path/to/photos" --collection CEMB --category Lace --pdfs "C:/path/to/catalogue-pdfs"
-   ```
+```bash
+python tools/build_catalog.py --source "C:/path/to/CEMB" --collection CEMB --category Lace --pdfs "C:/path/to/CEMB Stock"
+```
 
-   Use a different `--collection` / `--category` for each supplier or fabric type
-   (e.g. `--collection BEIRUT --category Lace`, `--category Silk`). Collections accumulate.
-3. Open `data/catalog.csv` in Excel and fill in whatever you like:
-   `name, width_cm, composition, colour_family, price, currency, status (available/reserved/sold), featured (yes)`.
-   Run the command again to apply the changes.
-4. Commit and push — the site redeploys automatically in about a minute.
+```bash
+python tools/build_catalog.py --source "C:/path/to/Silk_In_Stock" --collection Silk --category Silk --parse-names silk
+```
 
-## Prices
-
-Prices are hidden by default. In `site/assets/js/config.js`:
-
-- `allowPriceToggle: true` shows the "Prices" switch in the header.
-- `showPricesByDefault: false` keeps them hidden until a visitor switches them on.
-- Pieces without a price show "Price on request".
-
-## Contact details
-
-Set `whatsapp` (digits only, with country code) and `email` in `site/assets/js/config.js`.
+`--parse-names silk` reads article, quality, mill and metres from the silk file names.
+Collections accumulate. Edit `data/catalog.csv` in Excel for names, width, composition,
+status (available / reserved / sold) or `featured` (yes), then run the command again.
+Set prices in the admin area, not in the sheet.
 
 ## Preview locally
 
@@ -53,6 +103,6 @@ Then open http://localhost:8420.
 
 ## Size budget
 
-GitHub Pages sites are limited to about 1 GB. Each fabric costs roughly 0.5 MB
-(full image + thumbnail), so ~1,700 pieces fit. If the archive grows much beyond
-that, move `site/images` to a CDN bucket (e.g. Cloudflare R2) and keep the code here.
+GitHub Pages sites are limited to about 1 GB. Each fabric costs roughly 0.4 MB
+(full image + thumbnail), so ~1,700 pieces fit. Beyond that, move `site/images` to a
+CDN bucket (e.g. Cloudflare R2) and keep the code here.
