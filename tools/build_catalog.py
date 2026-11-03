@@ -3,7 +3,7 @@
 For every photo it:
   * writes a web-optimised full image  -> site/images/full/<id>.webp
   * writes a grid thumbnail            -> site/images/thumb/<id>.webp
-  * detects the dominant colour and maps it to a colour family (for filtering)
+  * reads the fabric's ground colour, accent colours and photo quality (tools/photo_analysis.py)
 and merges optional metadata from:
   * catalogue PDFs (Design No / Qty / Article), via --pdfs
   * data/catalog.csv  (your editable master sheet: name, width, composition, status ...)
@@ -22,7 +22,6 @@ Already-converted images are skipped, so re-running after adding photos is fast.
 from __future__ import annotations
 
 import argparse
-import colorsys
 import csv
 import json
 import re
@@ -33,6 +32,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 from name_parsers import parse_embroidery_name, parse_silk_name
+from photo_analysis import COLOUR_FAMILIES, analyse, grades_by_category
 
 Image.MAX_IMAGE_PIXELS = None
 
@@ -58,80 +58,8 @@ CSV_FIELDS = [
     "featured", "notes",
 ]
 
-# Colour family -> swatch hex, used for detection labels and the UI chips.
-COLOUR_FAMILIES = {
-    "Noir": "#121212",
-    "Ivory": "#efe6d2",
-    "Champagne": "#d9bf8f",
-    "Gold": "#b8892f",
-    "Copper": "#b8653a",
-    "Blush": "#e4a7a0",
-    "Rouge": "#9e1b2c",
-    "Fuchsia": "#c2307a",
-    "Violet": "#5e3a8c",
-    "Sapphire": "#1f4fa3",
-    "Teal": "#1f7f86",
-    "Emerald": "#1f6b45",
-    "Silver": "#a7a9ac",
-}
-
-
 def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
-
-
-def classify_colour(rgb: tuple[int, int, int]) -> str:
-    h, l, s = colorsys.rgb_to_hls(*(c / 255 for c in rgb))
-    hue = h * 360
-    if l < 0.17:
-        return "Noir"
-    if s < 0.14:
-        if l > 0.78:
-            return "Ivory"
-        return "Silver" if l > 0.35 else "Noir"
-    if hue < 12 or hue >= 345:
-        return "Blush" if l > 0.62 else "Rouge"
-    if hue < 32:
-        return "Blush" if l > 0.68 else "Copper"
-    if hue < 52:
-        if l > 0.72:
-            return "Ivory"
-        return "Champagne" if l > 0.55 else "Gold"
-    if hue < 70:
-        return "Champagne" if l > 0.55 else "Gold"
-    if hue < 165:
-        return "Emerald"
-    if hue < 195:
-        return "Teal"
-    if hue < 255:
-        return "Sapphire"
-    if hue < 295:
-        return "Violet"
-    return "Fuchsia"
-
-
-def dominant_colours(im: Image.Image) -> tuple[str, list[str]]:
-    """Return (family of the most present colour, palette of 4 hex accents)."""
-    small = im.copy()
-    small.thumbnail((160, 160))
-    quant = small.quantize(colors=6, method=Image.Quantize.MEDIANCUT)
-    palette = quant.getpalette()
-    counts = sorted(quant.getcolors(), reverse=True)
-    swatches = []
-    families: dict[str, int] = {}
-    for count, idx in counts:
-        rgb = tuple(palette[idx * 3: idx * 3 + 3])
-        swatches.append("#%02x%02x%02x" % rgb)
-        fam = classify_colour(rgb)
-        families[fam] = families.get(fam, 0) + count
-    # A dark ground with colourful embroidery reads as the embroidery colour
-    # unless the black dominates overwhelmingly.
-    total = sum(families.values())
-    ordered = sorted(families.items(), key=lambda kv: kv[1], reverse=True)
-    family = ordered[0][0]
-    if family == "Noir" and len(ordered) > 1 and ordered[0][1] / total < 0.55:
-        family = ordered[1][0]
-    return family, swatches[:4]
 
 
 def process_image(job: tuple[str, str, bool]) -> dict:
@@ -148,10 +76,10 @@ def process_image(job: tuple[str, str, bool]) -> dict:
             ratio = THUMB_WIDTH / im.width
             thumb = im.resize((THUMB_WIDTH, max(1, round(im.height * ratio))), Image.Resampling.LANCZOS)
             thumb.save(thumb_path, "WEBP", quality=THUMB_QUALITY, method=5)
-        family, palette = dominant_colours(im)
+        found = analyse(im)
     with Image.open(full_path) as f:
         w, h = f.size
-    return {"id": pid, "colour_family": family, "palette": palette, "w": w, "h": h}
+    return {"id": pid, **found, "w": w, "h": h}
 
 
 def read_pdf_metadata(pdf_dir: Path | None) -> dict[str, dict]:
@@ -250,7 +178,9 @@ def to_product(row: dict, img: dict) -> dict:
         "width": to_number(row.get("width_cm")),
         "composition": row.get("composition") or "",
         "colourFamily": row.get("colour_family") or img["colourFamily"],
+        "accents": [c for c in img.get("accents", []) if c != (row.get("colour_family") or img["colourFamily"])],
         "palette": img["palette"],
+        "photoScore": img.get("score", img.get("photoScore", 0)),
         "status": (row.get("status") or "available").lower(),
         "featured": str(row.get("featured", "")).lower() in {"1", "yes", "true", "y"},
         "notes": row.get("notes") or "",
@@ -295,10 +225,7 @@ def build(args: argparse.Namespace) -> None:
     jobs = [(src, pid, args.force) for pid, (_, src, _) in articles.items()]
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
         for i, res in enumerate(pool.map(process_image, jobs, chunksize=2), 1):
-            images[res["id"]] = {
-                "colourFamily": res["colour_family"], "palette": res["palette"],
-                "w": res["w"], "h": res["h"],
-            }
+            images[res["id"]] = {k: v for k, v in res.items() if k != "id"}
             if i % 10 == 0 or i == len(jobs):
                 print(f"  {i}/{len(jobs)}")
 
@@ -311,6 +238,8 @@ def build(args: argparse.Namespace) -> None:
     # Every row with a built image becomes a product, so several collections can be merged.
     products = [to_product(row, images[pid]) for pid, row in rows.items() if pid in images]
     products.sort(key=natural_key)
+    grades = grades_by_category(products)
+    products = [{**p, "grade": grades[p["id"]]} for p in products]
     payload = {"colourFamilies": COLOUR_FAMILIES, "products": products}
     PRODUCTS_JSON.write_text(json.dumps(payload, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Wrote {len(products)} products -> {PRODUCTS_JSON.relative_to(ROOT)}")

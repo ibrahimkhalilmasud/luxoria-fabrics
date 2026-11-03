@@ -67,7 +67,7 @@ export function specsOf(p) {
     ["Available", qtyText(p.quantity)],
     ["Width", p.width ? `${p.width} cm` : ""],
     ["Composition / quality", p.composition],
-    ["Colour", p.colourFamily],
+    ["Colour", [p.colourFamily, p.accents?.length ? `with ${p.accents.join(", ")}` : ""].filter(Boolean).join(" · ")],
     ["Status", p.status ? p.status[0].toUpperCase() + p.status.slice(1) : ""],
     ["Note", p.notes],
   ].filter(([, v]) => v);

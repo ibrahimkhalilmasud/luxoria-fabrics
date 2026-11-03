@@ -319,14 +319,34 @@
 .family:hover .family__media, .family:focus-visible .family__media { transform: scale(1.1); }
 .family:hover, .family:focus-visible { border-color: var(--gold); outline: 0; }
 
+/* ---------- Shop by colour (home) ---------- */
+.hues-wrap { padding: var(--space-section) var(--gutter) 0; }
+.hues { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(0.5rem, 1vw, 0.9rem); }
+.hue {
+  position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden; isolation: isolate;
+  border: 1px solid var(--line); color: var(--ivory); text-decoration: none; background: var(--ink);
+}
+.hue__media { position: absolute; inset: 0; z-index: -2; background-size: cover; background-position: center; transition: transform 1.2s var(--ease); }
+.hue::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 45%, rgba(11, 11, 12, 0.9)); }
+.hue__body { position: absolute; left: 0.8rem; right: 0.8rem; bottom: 0.8rem; display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 0.5rem; }
+.hue__body i { grid-row: span 2; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px rgba(11, 11, 12, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.3); }
+.hue__body strong { font: 400 1.15rem/1.1 var(--serif); }
+.hue__body small { font-size: 0.62rem; letter-spacing: 0.2em; color: var(--gold-bright); }
+.hue:hover .hue__media, .hue:focus-visible .hue__media { transform: scale(1.08); }
+.hue:hover, .hue:focus-visible { border-color: var(--gold); outline: 0; }
+
 .footer { grid-template-columns: auto 1fr auto auto; }
 .footer__links { display: flex; gap: 1.4rem; }
 .footer__links a { color: var(--whisper); text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.66rem; transition: color 0.3s; }
 .footer__links a:hover, .footer__links a:focus-visible { color: var(--gold); }
 
+@media (max-width: 1100px) {
+  .hues { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
 @media (max-width: 720px) {
   .families { grid-template-columns: 1fr; }
   .family { aspect-ratio: 16 / 10; }
+  .hues { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .footer { grid-template-columns: 1fr; }
   .footer__links { justify-content: center; }
 }

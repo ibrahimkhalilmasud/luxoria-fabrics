@@ -59,8 +59,10 @@ function matches(p, f, skip) {
 }
 
 const SORTS = {
-  // Silk, then embroidery, then lace; signature pieces lead within each family.
-  featured: (a, b) => (categoryRank(a.category) - categoryRank(b.category)) || (b.featured - a.featured) || (a._order - b._order),
+  // Silk, then embroidery, then lace; within each family signature pieces, then the
+  // best photographs (grade 1-3), each grade in serial-number order.
+  featured: (a, b) => (categoryRank(a.category) - categoryRank(b.category)) || (b.featured - a.featured)
+    || ((a.grade || 2) - (b.grade || 2)) || (a._order - b._order),
   article: (a, b) => a._order - b._order,
   "article-desc": (a, b) => b._order - a._order,
   "qty-desc": (a, b) => (b.quantity ?? -1) - (a.quantity ?? -1),
@@ -98,8 +100,8 @@ function renderFacets() {
     .map(([name, hex]) => {
       const n = colourCounts.get(name) || 0;
       const on = f.colours.has(name);
-      return `<button class="swatch" style="--c:${esc(hex)}" data-facet="colours" data-value="${esc(name)}"
-        aria-pressed="${on}" aria-label="${esc(name)} (${n})" ${!n && !on ? "disabled" : ""}><span class="tip">${esc(name)} · ${n}</span></button>`;
+      return `<button class="swatch" data-facet="colours" data-value="${esc(name)}" aria-pressed="${on}"
+        ${!n && !on ? "disabled" : ""}><i style="--c:${esc(hex)}" aria-hidden="true"></i>${esc(name)}<small>${n}</small></button>`;
     }).join("");
 
   FACETS.forEach(([key, field, sel, group]) => {
@@ -186,7 +188,8 @@ function pickShowcase(n, offset = 0) {
   const groups = families().map((c) => {
     const items = state.products.filter((p) => p.category === c);
     const featured = items.filter((p) => p.featured);
-    const rest = items.filter((p) => !p.featured);
+    const best = items.filter((p) => !p.featured && p.grade === 1);
+    const rest = best.length >= n ? best : items.filter((p) => !p.featured);
     const step = Math.max(1, Math.floor(rest.length / n));
     const spread = rest.filter((_, i) => i % step === offset % step);
     return [...featured, ...spread];
@@ -203,7 +206,7 @@ function renderFamilies() {
   if (!el) return;
   el.innerHTML = families().map((c, i) => {
     const items = state.products.filter((p) => p.category === c);
-    const cover = items.find((p) => p.featured) || items[Math.floor(items.length / 3)];
+    const cover = items.find((p) => p.featured) || bestPhoto(items);
     return `<a class="family reveal is-in" href="?category=${encodeURIComponent(c)}#collection" data-family="${esc(c)}">
       <span class="family__media" style="background-image:url('${esc(cover.image)}')"></span>
       <span class="family__num">${["I", "II", "III", "IV", "V"][i] || i + 1}</span>
@@ -214,11 +217,43 @@ function renderFamilies() {
     const a = e.target.closest("[data-family]");
     if (!a) return;
     e.preventDefault();
-    state.filters = emptyFilters();
-    state.filters.categories.add(a.dataset.family);
-    $("#search").value = "";
-    apply();
-    $("#collection").scrollIntoView({ behavior: "smooth" });
+    showOnly("categories", a.dataset.family);
+  });
+}
+
+const bestPhoto = (items) => items.reduce((a, b) => ((b.photoScore || 0) > (a.photoScore || 0) ? b : a));
+
+/** Best photo among the pieces where the colour stands most alone (fewest accent colours). */
+const clearestOf = (items) => {
+  const fewest = Math.min(...items.map((p) => p.accents?.length ?? 0));
+  return bestPhoto(items.filter((p) => (p.accents?.length ?? 0) === fewest));
+};
+
+/** Applies one filter from a home-page tile and jumps to the collection. */
+function showOnly(key, value) {
+  state.filters = emptyFilters();
+  state.filters[key].add(value);
+  $("#search").value = "";
+  apply();
+  $("#collection").scrollIntoView({ behavior: "smooth" });
+}
+
+function renderHues() {
+  const el = $("#hues");
+  if (!el) return;
+  el.innerHTML = Object.entries(state.families).map(([name, swatch]) => {
+    const items = state.products.filter((p) => p.colourFamily === name);
+    if (!items.length) return "";
+    return `<a class="hue" href="?colour=${encodeURIComponent(name)}#collection" data-hue="${esc(name)}">
+      <span class="hue__media" style="background-image:url('${esc((name === "Multicolour" ? bestPhoto : clearestOf)(items).thumb)}')"></span>
+      <span class="hue__body"><i style="--c:${esc(swatch)}" aria-hidden="true"></i><strong>${esc(name)}</strong><small>${items.length}</small></span>
+    </a>`;
+  }).join("");
+  el.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-hue]");
+    if (!a) return;
+    e.preventDefault();
+    showOnly("colours", a.dataset.hue);
   });
 }
 
@@ -336,6 +371,8 @@ async function init() {
     const data = await loadCatalog();
     state.products = data.products;
     state.families = data.families;
+    // Old shared links may name a colour that no longer exists; drop it instead of showing nothing.
+    state.filters.colours = new Set([...state.filters.colours].filter((c) => c in state.families));
     cart.prune(data.byId);
   } catch (err) {
     $("#resultCount").textContent = "The collection could not be loaded. Please refresh the page.";
@@ -343,6 +380,7 @@ async function init() {
   }
   renderShowcase();
   renderFamilies();
+  renderHues();
   renderContact();
   bind();
   apply();

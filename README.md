@@ -93,12 +93,25 @@ python tools/build_catalog.py --source "C:/path/to/Silk_In_Stock" --collection S
 python tools/build_catalog.py --source "C:/path/to/Embroidery Stock" --collection Embroidery --category Embroidery --parse-names embroidery
 ```
 
+Each photo's ground colour, accent colours and photo quality are read automatically
+(`tools/photo_analysis.py`). A colour typed in the `colour_family` column of `data/catalog.csv`
+always wins — every photo has been checked by eye and about half were corrected there.
+Allowed colours: Black, Grey, Ivory, Beige, Brown, Gold, Orange, Red, Pink, Purple, Blue, Teal,
+Green, Multicolour. After editing colours, refresh the site data without the original photos:
+
+```bash
+python tools/analyse_photos.py
+```
+
+The default order shows the best photographs first (top 30% of each family, then the next 40%,
+then the rest), each group in serial-number order; "Serial number" sorting ignores photo quality.
+
 `--parse-names silk` reads article, quality, mill and metres from the silk file names;
 `--parse-names embroidery` reads the series code and design number (e.g. `RUSS-51`).
 The site always shows Silk first, then Embroidery, then Lace (`CATEGORY_ORDER` in
 `tools/build_catalog.py` and `site/assets/js/core.js`). HEIC photos are skipped — save them as JPG.
 Collections accumulate. Edit `data/catalog.csv` in Excel for names, width, composition,
-status (available / reserved / sold) or `featured` (yes), then run the command again.
+status (available / reserved / sold), `colour_family` or `featured` (yes), then run the command again.
 Set prices in the admin area, not in the sheet.
 
 ## Preview locally
