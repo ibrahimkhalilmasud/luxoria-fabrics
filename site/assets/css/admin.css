@@ -105,3 +105,7 @@
   .p-table th:nth-child(4), .p-table td:nth-child(4) { display: none; }
   .p-table input { width: 84px; }
 }
+
+.adm-steps { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.8rem; color: var(--mist); font-size: 0.88rem; }
+.adm-steps strong { color: var(--ivory); font-weight: 400; }
+.adm-steps code { font-size: 0.8rem; color: var(--gold-bright); }

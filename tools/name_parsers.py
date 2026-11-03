@@ -54,3 +54,34 @@ def parse_silk_name(stem: str) -> dict:
         "composition": quality,
         "notes": f"Mill: {mills[0]}" if mills else "",
     }
+
+
+def parse_embroidery_name(stem: str) -> dict:
+    """Embroidery names look like "RUSS-51", "UESS-118 A B (1)" or "01- USSS - BLACK TURQ CADY SILK - 4.0"."""
+    text = re.sub(r"\(\d+\)", " ", stem.upper().replace("_", " "))
+    text = re.sub(r"(\d)([AB])\b", r"\1 \2", text)  # "100A B" -> "100 A B"
+    qty = None
+    m = re.search(r"-\s*(\d+\.\d+)\s*$", text)  # metres always carry a decimal, design numbers never do
+    if m:
+        qty = float(m.group(1))
+        text = text[: m.start()]
+    tokens = [t for t in re.split(r"[\s-]+", text) if t]
+    series = next((t for t in tokens if re.fullmatch(r"[A-Z]{3,5}", t)), "")
+    number = next((t for t in tokens if t.isdigit()), "")
+    sides = " ".join(t for t in tokens if t in {"A", "B"})
+    if series and number:
+        article = f"{series} {int(number)}" + (f" {sides}" if sides else "")
+        words = [t for t in tokens if t not in {series, number, "A", "B"}]
+    elif len(tokens) >= 3 and tokens[0] == "P" and tokens[1].isdigit():  # camera name "P_20230713_154828_1"
+        article = f"Studio {tokens[2]}"
+        words = []
+    else:
+        article = " ".join(tokens)
+        words = []
+    return {
+        "article": article,
+        "design_no": series,
+        "quantity_m": qty if qty is not None else "",
+        "composition": " ".join(words).title(),
+        "notes": "",
+    }

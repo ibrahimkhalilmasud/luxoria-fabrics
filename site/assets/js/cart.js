@@ -121,8 +121,13 @@ async function sendQuotation() {
   if (!list.length || !validateForm(f)) return;
   remember(f);
   if (!backendReady()) {
-    toast("Online quotations are not switched on yet — opening WhatsApp instead.");
-    window.open(whatsappHref(messageText(f, list)), "_blank", "noopener");
+    if (CFG.whatsapp) {
+      toast("Online quotations are not switched on yet — opening WhatsApp instead.");
+      window.open(whatsappHref(messageText(f, list)), "_blank", "noopener");
+    } else {
+      $("#formStatus").textContent = "Online quotations open shortly. Your selection is saved on this device — please come back soon.";
+      $("#formStatus").hidden = false;
+    }
     return;
   }
   setBusy(true);

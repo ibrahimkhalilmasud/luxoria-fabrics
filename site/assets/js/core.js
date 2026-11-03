@@ -45,6 +45,14 @@ export function loadCatalog() {
   return catalogPromise;
 }
 
+/* Showcase order of the fabric families; anything else follows alphabetically. */
+export const CATEGORY_ORDER = ["Silk", "Embroidery", "Lace"];
+export const categoryRank = (c) => {
+  const i = CATEGORY_ORDER.indexOf(c);
+  return i < 0 ? CATEGORY_ORDER.length : i;
+};
+export const byCategory = (a, b) => (categoryRank(a) - categoryRank(b)) || String(a).localeCompare(String(b));
+
 export const titleOf = (p) => p.name || p.article;
 export const qtyText = (q) => (q == null ? "On request" : `${Number(q).toFixed(q % 1 ? 1 : 0)} m`);
 export const seriesText = (p) => (p.designNo ? `Series ${p.designNo}` : "");

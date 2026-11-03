@@ -1,5 +1,5 @@
 /* Showroom: an immersive, swipeable feed of every fabric with a one-tap "+" to add to cart. */
-import { $, $$, cart, esc, ICON_PLUS, initHeader, loadCatalog, qtyText, seriesText, storage, syncCartButtons, titleOf, toggleCart } from "./core.js";
+import { $, $$, byCategory, cart, esc, ICON_PLUS, initHeader, loadCatalog, qtyText, seriesText, storage, syncCartButtons, titleOf, toggleCart } from "./core.js";
 import { openViewer } from "./viewer.js";
 
 const STORE_DIR = "luxoria.showroomDir";
@@ -42,7 +42,7 @@ function render() {
 }
 
 function renderCategories() {
-  const cats = [...new Set(state.products.map((p) => p.category).filter(Boolean))].sort();
+  const cats = [...new Set(state.products.map((p) => p.category).filter(Boolean))].sort(byCategory);
   $("#feedCats").innerHTML = ["", ...cats].map((c) =>
     `<button class="chip" data-cat="${esc(c)}" aria-pressed="false">${esc(c || "All")}</button>`).join("");
   $("#feedCats").hidden = cats.length < 2;

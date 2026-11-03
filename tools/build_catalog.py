@@ -32,7 +32,7 @@ from pathlib import Path
 
 from PIL import Image, ImageOps
 
-from name_parsers import parse_silk_name
+from name_parsers import parse_embroidery_name, parse_silk_name
 
 Image.MAX_IMAGE_PIXELS = None
 
@@ -48,7 +48,9 @@ THUMB_WIDTH = 400
 FULL_QUALITY = 70
 THUMB_QUALITY = 62
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff"}
-NAME_PARSERS = {"silk": parse_silk_name}
+NAME_PARSERS = {"silk": parse_silk_name, "embroidery": parse_embroidery_name}
+# Showcase order of the categories; anything else follows alphabetically.
+CATEGORY_ORDER = ["Silk", "Embroidery", "Lace"]
 
 CSV_FIELDS = [
     "id", "article", "name", "collection", "category", "design_no", "quantity_m",
@@ -214,7 +216,9 @@ def to_number(value) -> float | None:
 
 
 def natural_key(p: dict):
-    return [p["collection"]] + [int(t) if t.isdigit() else t for t in re.split(r"(\d+)", p["article"])]
+    cat = p["category"]
+    rank = CATEGORY_ORDER.index(cat) if cat in CATEGORY_ORDER else len(CATEGORY_ORDER)
+    return [rank, cat, p["collection"]] + [int(t) if t.isdigit() else t for t in re.split(r"(\d+)", p["article"])]
 
 
 def new_csv_row(pid: str, article: str, args: argparse.Namespace, pdf_meta: dict, name_meta: dict) -> dict:
@@ -272,7 +276,10 @@ def build(args: argparse.Namespace) -> None:
     articles = {}
     for f in files:
         meta = parser(f.stem) if parser else {}
-        if meta:
+        if meta and args.parse_names == "embroidery":  # series code is already part of the article
+            article = meta["article"]
+            base = f"{prefix}-" + slugify(f"{article} {meta['composition']}")
+        elif meta:
             article = meta["article"]
             base = f"{prefix}-" + slugify(f"{article} {meta['design_no']} {meta['composition']}")
         else:

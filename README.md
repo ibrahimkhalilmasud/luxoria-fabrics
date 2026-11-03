@@ -89,7 +89,14 @@ python tools/build_catalog.py --source "C:/path/to/CEMB" --collection CEMB --cat
 python tools/build_catalog.py --source "C:/path/to/Silk_In_Stock" --collection Silk --category Silk --parse-names silk
 ```
 
-`--parse-names silk` reads article, quality, mill and metres from the silk file names.
+```bash
+python tools/build_catalog.py --source "C:/path/to/Embroidery Stock" --collection Embroidery --category Embroidery --parse-names embroidery
+```
+
+`--parse-names silk` reads article, quality, mill and metres from the silk file names;
+`--parse-names embroidery` reads the series code and design number (e.g. `RUSS-51`).
+The site always shows Silk first, then Embroidery, then Lace (`CATEGORY_ORDER` in
+`tools/build_catalog.py` and `site/assets/js/core.js`). HEIC photos are skipped — save them as JPG.
 Collections accumulate. Edit `data/catalog.csv` in Excel for names, width, composition,
 status (available / reserved / sold) or `featured` (yes), then run the command again.
 Set prices in the admin area, not in the sheet.

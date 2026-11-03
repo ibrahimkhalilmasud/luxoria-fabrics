@@ -39,7 +39,8 @@ if (window.top !== window.self) {
 
 const sb = createClientOrNull();
 if (!sb) {
-  message("Backend not configured", "Add supabaseUrl and supabaseKey to assets/js/config.js, then reload.");
+  message("Admin is not connected yet", "The private area needs its secure database before anyone can sign in. One-time setup:");
+  $("#gateSetup").hidden = false;
 } else {
   bindUi();
   sb.auth.onAuthStateChange((event) => { if (event === "SIGNED_OUT") show("gateLogin"); });

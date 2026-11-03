@@ -1,5 +1,5 @@
 /* Home page: hero showcase + filterable collection grid. */
-import { $, $$, cart, CFG, esc, ICON_PLUS, initHeader, initReveal, lazyImages, loadCatalog, lockScroll, qtyText, seriesText, storage, syncCartButtons, titleOf, toggleCart } from "./core.js";
+import { $, $$, byCategory, cart, categoryRank, CFG, esc, ICON_PLUS, initHeader, initReveal, lazyImages, loadCatalog, lockScroll, mailHref, qtyText, seriesText, storage, syncCartButtons, titleOf, toggleCart, whatsappHref } from "./core.js";
 import { openViewer } from "./viewer.js";
 
 const STORE_DENSITY = "luxoria.density";
@@ -59,7 +59,8 @@ function matches(p, f, skip) {
 }
 
 const SORTS = {
-  featured: (a, b) => (b.featured - a.featured) || (a._order - b._order),
+  // Silk, then embroidery, then lace; signature pieces lead within each family.
+  featured: (a, b) => (categoryRank(a.category) - categoryRank(b.category)) || (b.featured - a.featured) || (a._order - b._order),
   article: (a, b) => a._order - b._order,
   "article-desc": (a, b) => b._order - a._order,
   "qty-desc": (a, b) => (b.quantity ?? -1) - (a.quantity ?? -1),
@@ -103,7 +104,7 @@ function renderFacets() {
 
   FACETS.forEach(([key, field, sel, group]) => {
     const values = [...new Set(state.products.map((p) => p[field]).filter(Boolean))]
-      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+      .sort(key === "categories" ? byCategory : (a, b) => a.localeCompare(b, undefined, { numeric: true }));
     $(group).hidden = values.length < 2;
     const counts = countBy(field, key);
     $(sel).innerHTML = values.map((v) => {
@@ -178,17 +179,64 @@ function renderMore() {
 }
 
 /* ---------- Hero ---------- */
-function pickShowcase(n) {
-  const pool = state.products.filter((p) => p.featured);
-  const rest = state.products.filter((p) => !p.featured);
-  const step = Math.max(1, Math.floor(rest.length / n));
-  for (let i = 0; pool.length < n && i < rest.length; i += step) pool.push(rest[i]);
-  return pool.slice(0, n);
+const families = () => [...new Set(state.products.map((p) => p.category).filter(Boolean))].sort(byCategory);
+
+/** n pieces spread over the families in showcase order (silk first), signature pieces preferred. */
+function pickShowcase(n, offset = 0) {
+  const groups = families().map((c) => {
+    const items = state.products.filter((p) => p.category === c);
+    const featured = items.filter((p) => p.featured);
+    const rest = items.filter((p) => !p.featured);
+    const step = Math.max(1, Math.floor(rest.length / n));
+    const spread = rest.filter((_, i) => i % step === offset % step);
+    return [...featured, ...spread];
+  });
+  const out = [];
+  for (let round = 0; out.length < n && groups.some((g) => g.length > round); round++) {
+    groups.forEach((g) => { if (out.length < n && g[round]) out.push(g[round]); });
+  }
+  return out;
+}
+
+function renderFamilies() {
+  const el = $("#families");
+  if (!el) return;
+  el.innerHTML = families().map((c, i) => {
+    const items = state.products.filter((p) => p.category === c);
+    const cover = items.find((p) => p.featured) || items[Math.floor(items.length / 3)];
+    return `<a class="family reveal is-in" href="?category=${encodeURIComponent(c)}#collection" data-family="${esc(c)}">
+      <span class="family__media" style="background-image:url('${esc(cover.image)}')"></span>
+      <span class="family__num">${["I", "II", "III", "IV", "V"][i] || i + 1}</span>
+      <span class="family__body"><strong>${esc(c)}</strong><small>${items.length.toLocaleString()} pieces</small></span>
+    </a>`;
+  }).join("");
+  el.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-family]");
+    if (!a) return;
+    e.preventDefault();
+    state.filters = emptyFilters();
+    state.filters.categories.add(a.dataset.family);
+    $("#search").value = "";
+    apply();
+    $("#collection").scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+function renderContact() {
+  const hello = `Hello ${CFG.brand}, I would like to know more about your fabrics.`;
+  const links = [
+    CFG.whatsapp && { href: whatsappHref(hello), label: "WhatsApp", cls: "btn--gold", external: true },
+    CFG.email && { href: mailHref(`Enquiry — ${CFG.brand}`, hello), label: "Email", cls: "btn--line" },
+    { href: "cart.html", label: "Request a quotation", cls: CFG.whatsapp ? "btn--line" : "btn--gold" },
+    { href: "showroom.html", label: "Enter the showroom", cls: "btn--ghost" },
+  ].filter(Boolean);
+  $("#contactChannels").innerHTML = links.map((l) =>
+    `<a class="btn ${l.cls}" href="${esc(l.href)}"${l.external ? ' target="_blank" rel="noopener noreferrer"' : ""}>${esc(l.label)}</a>`).join("");
 }
 
 function renderShowcase() {
   $("#heroMedia").innerHTML = pickShowcase(5).map((p) => `<figure style="background-image:url('${esc(p.thumb)}')"></figure>`).join("");
-  $("#maisonMedia").innerHTML = pickShowcase(9).slice(-3).map((p) => `<figure style="background-image:url('${esc(p.image)}')"></figure>`).join("");
+  $("#maisonMedia").innerHTML = pickShowcase(3, 1).map((p) => `<figure style="background-image:url('${esc(p.image)}')"></figure>`).join("");
   const categories = new Set(state.products.map((p) => p.category).filter(Boolean)).size;
   const metres = Math.round(state.products.reduce((s, p) => s + (p.quantity || 0), 0));
   const stats = [["Pieces", state.products.length.toLocaleString()], ["Categories", categories], ["Metres", metres.toLocaleString()]];
@@ -294,6 +342,8 @@ async function init() {
     throw err;
   }
   renderShowcase();
+  renderFamilies();
+  renderContact();
   bind();
   apply();
   openFromHash();

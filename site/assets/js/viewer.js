@@ -125,7 +125,9 @@ function render(dir = 0) {
   $(".palette", root).innerHTML = (p.palette || []).map((c) => `<span style="--c:${esc(c)}" title="${esc(c)}"></span>`).join("");
 
   const text = `Hello ${CFG.brand}, I am interested in ${titleOf(p)}${p.designNo ? ` (${seriesText(p)})` : ""} — ${qtyText(p.quantity)} — ${productUrl(p.id)}`;
-  $('[data-fv="enquire"]', root).href = CFG.whatsapp ? whatsappHref(text) : mailHref(`Enquiry — ${titleOf(p)}`, text);
+  const enquire = $('[data-fv="enquire"]', root);
+  enquire.hidden = !CFG.whatsapp && !CFG.email;
+  enquire.href = CFG.whatsapp ? whatsappHref(text) : mailHref(`Enquiry — ${titleOf(p)}`, text);
 
   const many = state.list.length > 1;
   $(".fv__nav--prev", root).hidden = !many;

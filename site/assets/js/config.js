@@ -5,7 +5,8 @@ window.LUXORIA_CONFIG = {
   tagline: "Couture Fabrics",
   // Your business WhatsApp, international format, digits only, e.g. "971501234567".
   whatsapp: "",
-  email: "sales@example.com",
+  // Business email shown to clients. Leave "" to hide email options.
+  email: "",
   showroom: "Private viewings by appointment",
   pageSize: 36,
   // Supabase project (Settings > API). Use the PUBLIC "anon" / "publishable" key only.

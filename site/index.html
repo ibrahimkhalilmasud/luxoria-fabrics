@@ -4,14 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Luxoria — Couture Fabrics</title>
-  <meta name="description" content="Luxoria Couture Fabrics — exclusive Italian laces and embroideries, curated for ateliers, designers and couture houses.">
+  <meta name="description" content="Luxoria Couture Fabrics — exclusive silks, embroideries and laces in limited lengths, curated for ateliers, designers and couture houses.">
   <meta name="theme-color" content="#0b0b0c">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://*.supabase.co; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://*.supabase.co; base-uri 'self'; form-action 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0b0c'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23c9a96e'%3EL%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/ui.css">
 </head>
@@ -46,12 +44,12 @@
       <div class="hero__media" id="heroMedia" aria-hidden="true"></div>
       <div class="hero__veil" aria-hidden="true"></div>
       <div class="hero__content">
-        <p class="eyebrow reveal">Made in Italy · Exclusive Stock</p>
+        <p class="eyebrow reveal">Silk · Embroidery · Lace</p>
         <h1 class="hero__title reveal">
           <span>The Art of</span>
-          <em>Couture Lace</em>
+          <em>Couture Fabrics</em>
         </h1>
-        <p class="hero__lede reveal">Rare Italian laces and hand-finished embroideries, held in limited lengths for ateliers, designers and couture houses.</p>
+        <p class="hero__lede reveal">Pure silks, hand-finished embroideries and couture laces, held in limited lengths for ateliers, designers and couture houses.</p>
         <div class="hero__cta reveal">
           <a class="btn btn--gold" href="#collection">Explore the Collection</a>
           <a class="btn btn--ghost" href="showroom.html">Enter the Showroom</a>
@@ -63,10 +61,19 @@
 
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Italian Lace</span><i>✦</i><span>Couture Embroidery</span><i>✦</i><span>3D Floral Appliqué</span><i>✦</i><span>Beaded Tulle</span><i>✦</i><span>Limited Lengths</span><i>✦</i><span>Swatches on Request</span><i>✦</i>
-        <span>Italian Lace</span><i>✦</i><span>Couture Embroidery</span><i>✦</i><span>3D Floral Appliqué</span><i>✦</i><span>Beaded Tulle</span><i>✦</i><span>Limited Lengths</span><i>✦</i><span>Swatches on Request</span><i>✦</i>
+        <span>Pure Silk</span><i>✦</i><span>Crêpe de Chine</span><i>✦</i><span>Couture Embroidery</span><i>✦</i><span>Italian Lace</span><i>✦</i><span>Limited Lengths</span><i>✦</i><span>Swatches on Request</span><i>✦</i>
+        <span>Pure Silk</span><i>✦</i><span>Crêpe de Chine</span><i>✦</i><span>Couture Embroidery</span><i>✦</i><span>Italian Lace</span><i>✦</i><span>Limited Lengths</span><i>✦</i><span>Swatches on Request</span><i>✦</i>
       </div>
     </div>
+
+    <section class="families-wrap" aria-labelledby="familiesTitle">
+      <div class="section-head">
+        <p class="eyebrow">The Fabrics</p>
+        <h2 id="familiesTitle">Three families</h2>
+        <p class="section-head__sub">Begin with silk, move to embroidery, finish with lace — or open any family to see every piece in stock.</p>
+      </div>
+      <div class="families" id="families"></div>
+    </section>
 
     <section class="collection" id="collection">
       <div class="section-head">
@@ -194,10 +201,11 @@
       <div class="maison__text">
         <p class="eyebrow">The Maison</p>
         <h2>Finite by nature.<br><em>Timeless by design.</em></h2>
-        <p>Each lace in our archive was produced in a single run by Italian mills, so once a length is gone it does not return. We hold these pieces for the houses that understand the difference.</p>
+        <p>Every silk, embroidery and lace in our archive was produced in a limited run, so once a length is gone it does not return. We hold these pieces for the houses that understand the difference.</p>
         <ul class="pillars">
-          <li><strong>Italian Origin</strong><span>Sourced directly from European mills</span></li>
-          <li><strong>Lace &amp; Silk</strong><span>Couture laces, crêpe de chine, georgette, lurex and more</span></li>
+          <li><strong>Silk</strong><span>Crêpe de chine, georgette, satin, twill and lurex from European mills</span></li>
+          <li><strong>Embroidery</strong><span>Hand-finished embroidered silks and cadys</span></li>
+          <li><strong>Lace</strong><span>Couture laces, 3D florals and beaded tulles</span></li>
           <li><strong>Worldwide Dispatch</strong><span>Swatches and orders shipped globally</span></li>
         </ul>
       </div>
@@ -217,6 +225,11 @@
       <span class="footer__tag">Couture Fabrics</span>
     </div>
     <p class="footer__note">Colours may vary slightly from screen to fabric. Swatches available on request.</p>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="showroom.html">Showroom</a>
+      <a href="cart.html">Cart</a>
+      <a href="admin/" rel="nofollow">Staff sign-in</a>
+    </nav>
     <p class="footer__copy">© <span id="year"></span> Luxoria. All rights reserved.</p>
   </footer>
 

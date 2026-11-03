@@ -6,10 +6,10 @@
   <title>Admin — Luxoria</title>
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="theme-color" content="#0b0b0c">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
   <meta name="referrer" content="no-referrer">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0b0c'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23c9a96e'%3EL%3C/text%3E%3C/svg%3E">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/fonts.css">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/ui.css">
   <link rel="stylesheet" href="../assets/css/admin.css">
@@ -60,7 +60,15 @@
   </main>
 
   <main class="adm-gate" id="gateMsg" hidden>
-    <div class="adm-card"><h1 id="gateMsgTitle"></h1><p id="gateMsgText"></p></div>
+    <div class="adm-card"><h1 id="gateMsgTitle"></h1><p id="gateMsgText"></p>
+      <ol class="adm-steps" id="gateSetup" hidden>
+        <li><strong>Create the database.</strong> Make a free project at supabase.com and run <code>supabase/schema.sql</code> from the repository in its SQL editor.</li>
+        <li><strong>Create your login.</strong> In Supabase → Authentication, turn off public sign-ups, add your own user, then add it to the <code>admins</code> table.</li>
+        <li><strong>Connect the site.</strong> Put the project URL and its public <em>anon</em> key in <code>assets/js/config.js</code> and publish.</li>
+        <li><strong>Sign in here</strong> and scan the QR code with an authenticator app. From then on every sign-in needs your password and a 6-digit code.</li>
+      </ol>
+      <a class="link" href="../">Back to the website</a>
+    </div>
   </main>
 
   <!-- Quotes inbox -->
