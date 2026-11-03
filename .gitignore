@@ -5,3 +5,5 @@ Thumbs.db
 desktop.ini
 .claude/
 supabase/.temp/
+supabase/config.toml
+supabase/.gitignore
