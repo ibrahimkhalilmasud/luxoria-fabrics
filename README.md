@@ -2,7 +2,8 @@
 
 A luxury showcase for our textile stock. No checkout: clients browse, filter, add fabrics
 to a cart and send it to us as a quotation request, by WhatsApp or by email.
-The site is static (GitHub Pages); quotations and prices live in Supabase behind an admin login.
+The site is static (GitHub Pages, live at https://luxoria.aiqorva.com — DNS is a `luxoria`
+CNAME to `ibrahimkhalilmasud.github.io` in the Hostinger zone of aiqorva.com); quotations and prices live in Supabase behind an admin login.
 
 ```
 site/                       <- everything that goes live
@@ -44,7 +45,7 @@ tools/build_catalog.py      <- photos -> web images + products.json
    insert into public.admins (user_id) select id from auth.users where email = 'you@example.com';
    ```
 6. **Authentication → Multi-Factor**: make sure TOTP (authenticator app) is enabled.
-7. Sign in at `https://<your-site>/admin/` straight away and scan the QR code with your
+7. Sign in at `https://luxoria.aiqorva.com/admin/` straight away and scan the QR code with your
    authenticator app — the first person to complete this step owns the second factor.
 
 ### 2. Alerts
@@ -60,7 +61,7 @@ tools/build_catalog.py      <- photos -> web images + products.json
 With the Supabase CLI (`npm i -g supabase`, then `supabase login` and `supabase link`):
 
 ```bash
-supabase secrets set SITE_URL=https://<user>.github.io/<repo> ALLOWED_ORIGINS=https://<user>.github.io IP_SALT=<long-random-text> CALLMEBOT_PHONE=<your number with +> CALLMEBOT_APIKEY=<key> RESEND_API_KEY=<key> ADMIN_EMAIL=<you@example.com>
+supabase secrets set SITE_URL=https://luxoria.aiqorva.com ALLOWED_ORIGINS=https://luxoria.aiqorva.com IP_SALT=<long-random-text> CALLMEBOT_PHONE=<your number with +> CALLMEBOT_APIKEY=<key> RESEND_API_KEY=<key> ADMIN_EMAIL=<you@example.com>
 ```
 
 ```bash
