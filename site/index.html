@@ -6,12 +6,14 @@
   <title>Luxoria — Couture Fabrics</title>
   <meta name="description" content="Luxoria Couture Fabrics — exclusive silks, embroideries and laces in limited lengths, curated for ateliers, designers and couture houses.">
   <meta name="theme-color" content="#0b0b0c">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://*.supabase.co; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://*.supabase.co; media-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0b0c'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23c9a96e'%3EL%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/ui.css">
+  <link rel="stylesheet" href="assets/css/luxe.css">
+  <link rel="preload" href="data/lookbook.json" as="fetch" crossorigin>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -25,6 +27,7 @@
     </a>
     <nav class="nav__links" aria-label="Main">
       <a href="index.html#collection" aria-current="page">Collection</a>
+      <a href="lookbook.html">Lookbook</a>
       <a href="showroom.html">Showroom</a>
       <a href="index.html#acquire">How to Acquire</a>
       <a href="index.html#contact">Contact</a>
@@ -52,7 +55,7 @@
         <p class="hero__lede reveal">Pure silks, hand-finished embroideries and couture laces, held in limited lengths for ateliers, designers and couture houses.</p>
         <div class="hero__cta reveal">
           <a class="btn btn--gold" href="#collection">Explore the Collection</a>
-          <a class="btn btn--ghost" href="showroom.html">Enter the Showroom</a>
+          <a class="btn btn--ghost" href="lookbook.html">See it worn</a>
         </div>
       </div>
       <dl class="hero__stats reveal" id="heroStats"></dl>
@@ -65,6 +68,23 @@
         <span>Pure Silk</span><i>✦</i><span>Crêpe de Chine</span><i>✦</i><span>Couture Embroidery</span><i>✦</i><span>Italian Lace</span><i>✦</i><span>Limited Lengths</span><i>✦</i><span>Swatches on Request</span><i>✦</i>
       </div>
     </div>
+
+    <section class="atelier" id="atelier" aria-labelledby="atelierTitle" hidden>
+      <div class="atelier__head">
+        <div class="section-head">
+          <p class="eyebrow">The Lookbook</p>
+          <h2 id="atelierTitle">Worn in Luxoria</h2>
+          <p class="section-head__sub">Every gown here is cut from a fabric in our archive. Touch a look to see the fabric it is made from, how many metres remain, and reserve it before it is gone.</p>
+        </div>
+        <a class="btn btn--line" href="lookbook.html">Open the Lookbook</a>
+      </div>
+      <div class="rail" id="atelierRail"></div>
+      <ul class="atelier__promise">
+        <li>Each design in limited lengths</li>
+        <li>Swatches sent on request</li>
+        <li>Live video viewing with an advisor</li>
+      </ul>
+    </section>
 
     <section class="families-wrap" aria-labelledby="familiesTitle">
       <div class="section-head">
@@ -235,6 +255,7 @@
     </div>
     <p class="footer__note">Colours may vary slightly from screen to fabric. Swatches available on request.</p>
     <nav class="footer__links" aria-label="Footer">
+      <a href="lookbook.html">Lookbook</a>
       <a href="showroom.html">Showroom</a>
       <a href="cart.html">Cart</a>
       <a href="admin/" rel="nofollow">Staff sign-in</a>

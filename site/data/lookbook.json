@@ -1,0 +1,6800 @@
+{
+ "collections": [
+  "Silk",
+  "Embroidery",
+  "Couture Lace",
+  "Beirut Lace"
+ ],
+ "looks": [
+  {
+   "id": "1a-vss-cdc",
+   "code": "1A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.57,
+   "photos": [
+    {
+     "src": "images/looks/1a-vss-cdc-1.webp",
+     "thumb": "images/looks/1a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/1a-vss-cdc-2.webp",
+     "thumb": "images/looks/1a-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/1a-vss-cdc-3.webp",
+     "thumb": "images/looks/1a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-1-a-vss-cr-pe-de-chine",
+    "silk-1-a-vss-cr-pe-de-chine-2"
+   ]
+  },
+  {
+   "id": "3a-vss-cdc",
+   "code": "3A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.857,
+   "photos": [
+    {
+     "src": "images/looks/3a-vss-cdc-1.webp",
+     "thumb": "images/looks/3a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/3a-vss-cdc-2.webp",
+     "thumb": "images/looks/3a-vss-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/3a-vss-cdc-3.webp",
+     "thumb": "images/looks/3a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-3-a-vss-cr-pe-de-chine",
+    "silk-3-a-vss-cr-pe-de-chine-2"
+   ]
+  },
+  {
+   "id": "4a-vss-cdc",
+   "code": "4A-VSS_CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.338,
+   "photos": [
+    {
+     "src": "images/looks/4a-vss-cdc-1.webp",
+     "thumb": "images/looks/4a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/4a-vss-cdc-2.webp",
+     "thumb": "images/looks/4a-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/4a-vss-cdc-3.webp",
+     "thumb": "images/looks/4a-vss-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-4-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "05a-vss-cdc-tessi",
+   "code": "05A-VSS-CDC-TESSI",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.673,
+   "photos": [
+    {
+     "src": "images/looks/05a-vss-cdc-tessi-1.webp",
+     "thumb": "images/looks/05a-vss-cdc-tessi-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/05a-vss-cdc-tessi-2.webp",
+     "thumb": "images/looks/05a-vss-cdc-tessi-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/05a-vss-cdc-tessi-3.webp",
+     "thumb": "images/looks/05a-vss-cdc-tessi-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-05-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "5a-vss-cdc",
+   "code": "5A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.556,
+   "photos": [
+    {
+     "src": "images/looks/5a-vss-cdc-1.webp",
+     "thumb": "images/looks/5a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/5a-vss-cdc-2.webp",
+     "thumb": "images/looks/5a-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/5a-vss-cdc-3.webp",
+     "thumb": "images/looks/5a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-5-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "6a-vss-cdc",
+   "code": "6A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.375,
+   "photos": [
+    {
+     "src": "images/looks/6a-vss-cdc-1.webp",
+     "thumb": "images/looks/6a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/6a-vss-cdc-2.webp",
+     "thumb": "images/looks/6a-vss-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/6a-vss-cdc-3.webp",
+     "thumb": "images/looks/6a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-6-a-vss-cr-pe-de-chine",
+    "silk-6-a-vss-cr-pe-de-chine-2"
+   ]
+  },
+  {
+   "id": "7a-vss-cdc",
+   "code": "7A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.915,
+   "photos": [
+    {
+     "src": "images/looks/7a-vss-cdc-1.webp",
+     "thumb": "images/looks/7a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/7a-vss-cdc-2.webp",
+     "thumb": "images/looks/7a-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/7a-vss-cdc-3.webp",
+     "thumb": "images/looks/7a-vss-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-7-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "10a-vss-cdc",
+   "code": "10A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.055,
+   "photos": [
+    {
+     "src": "images/looks/10a-vss-cdc-1.webp",
+     "thumb": "images/looks/10a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/10a-vss-cdc-2.webp",
+     "thumb": "images/looks/10a-vss-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/10a-vss-cdc-3.webp",
+     "thumb": "images/looks/10a-vss-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-10-a-vss-cr-pe-de-chine",
+    "silk-10-a-vss-cr-pe-de-chine-2"
+   ]
+  },
+  {
+   "id": "12a-vss-nc-cdc",
+   "code": "12A-VSS-NC-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.505,
+   "photos": [
+    {
+     "src": "images/looks/12a-vss-nc-cdc-1.webp",
+     "thumb": "images/looks/12a-vss-nc-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/12a-vss-nc-cdc-2.webp",
+     "thumb": "images/looks/12a-vss-nc-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/12a-vss-nc-cdc-3.webp",
+     "thumb": "images/looks/12a-vss-nc-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-12-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "13a-vss-cdc",
+   "code": "13A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.507,
+   "photos": [
+    {
+     "src": "images/looks/13a-vss-cdc-1.webp",
+     "thumb": "images/looks/13a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/13a-vss-cdc-2.webp",
+     "thumb": "images/looks/13a-vss-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/13a-vss-cdc-3.webp",
+     "thumb": "images/looks/13a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-13-a-vss-cr-pe-de-chine",
+    "silk-13-a-vss-cr-pe-de-chine-2",
+    "silk-13-a-vss-cr-pe-de-chine-3",
+    "silk-13-a-vss-cr-pe-de-chine-4"
+   ]
+  },
+  {
+   "id": "13a-vss-quo-cdc",
+   "code": "13A-VSS-QUO-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.381,
+   "photos": [
+    {
+     "src": "images/looks/13a-vss-quo-cdc-1.webp",
+     "thumb": "images/looks/13a-vss-quo-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/13a-vss-quo-cdc-2.webp",
+     "thumb": "images/looks/13a-vss-quo-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/13a-vss-quo-cdc-3.webp",
+     "thumb": "images/looks/13a-vss-quo-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-13-a-vss-cr-pe-de-chine",
+    "silk-13-a-vss-cr-pe-de-chine-2",
+    "silk-13-a-vss-cr-pe-de-chine-3",
+    "silk-13-a-vss-cr-pe-de-chine-4"
+   ]
+  },
+  {
+   "id": "15a-vss-cdc",
+   "code": "15A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.718,
+   "photos": [
+    {
+     "src": "images/looks/15a-vss-cdc-1.webp",
+     "thumb": "images/looks/15a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/15a-vss-cdc-2.webp",
+     "thumb": "images/looks/15a-vss-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/15a-vss-cdc-3.webp",
+     "thumb": "images/looks/15a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-15-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "15b-noo-georgette-m-m",
+   "code": "15B-NOO-GEORGETTE-M&M",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.419,
+   "photos": [
+    {
+     "src": "images/looks/15b-noo-georgette-m-m-1.webp",
+     "thumb": "images/looks/15b-noo-georgette-m-m-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/15b-noo-georgette-m-m-2.webp",
+     "thumb": "images/looks/15b-noo-georgette-m-m-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/15b-noo-georgette-m-m-3.webp",
+     "thumb": "images/looks/15b-noo-georgette-m-m-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-15-b-noo-georgette"
+   ]
+  },
+  {
+   "id": "16a-vss-cdc",
+   "code": "16A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.156,
+   "photos": [
+    {
+     "src": "images/looks/16a-vss-cdc-1.webp",
+     "thumb": "images/looks/16a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/16a-vss-cdc-2.webp",
+     "thumb": "images/looks/16a-vss-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/16a-vss-cdc-3.webp",
+     "thumb": "images/looks/16a-vss-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-16-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "19a-dsss-nc-cdc",
+   "code": "19A-DSSS-NC-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.594,
+   "photos": [
+    {
+     "src": "images/looks/19a-dsss-nc-cdc-1.webp",
+     "thumb": "images/looks/19a-dsss-nc-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/19a-dsss-nc-cdc-2.webp",
+     "thumb": "images/looks/19a-dsss-nc-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/19a-dsss-nc-cdc-3.webp",
+     "thumb": "images/looks/19a-dsss-nc-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-19-a-dsss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "19a-vss-cdc",
+   "code": "19A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.985,
+   "photos": [
+    {
+     "src": "images/looks/19a-vss-cdc-1.webp",
+     "thumb": "images/looks/19a-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/19a-vss-cdc-2.webp",
+     "thumb": "images/looks/19a-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/19a-vss-cdc-3.webp",
+     "thumb": "images/looks/19a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-19-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "20a-vss-cdc",
+   "code": "20A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.551,
+   "photos": [
+    {
+     "src": "images/looks/20a-vss-cdc-1.webp",
+     "thumb": "images/looks/20a-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/20a-vss-cdc-2.webp",
+     "thumb": "images/looks/20a-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/20a-vss-cdc-3.webp",
+     "thumb": "images/looks/20a-vss-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-20-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "23-vss-nc-cdc",
+   "code": "23-VSS-NC-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.147,
+   "photos": [
+    {
+     "src": "images/looks/23-vss-nc-cdc-1.webp",
+     "thumb": "images/looks/23-vss-nc-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/23-vss-nc-cdc-2.webp",
+     "thumb": "images/looks/23-vss-nc-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/23-vss-nc-cdc-3.webp",
+     "thumb": "images/looks/23-vss-nc-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-23-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "25a-vss-cdc",
+   "code": "25A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.354,
+   "photos": [
+    {
+     "src": "images/looks/25a-vss-cdc-1.webp",
+     "thumb": "images/looks/25a-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/25a-vss-cdc-2.webp",
+     "thumb": "images/looks/25a-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/25a-vss-cdc-3.webp",
+     "thumb": "images/looks/25a-vss-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-25-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "32a-vss-cdc",
+   "code": "32A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.127,
+   "photos": [
+    {
+     "src": "images/looks/32a-vss-cdc-1.webp",
+     "thumb": "images/looks/32a-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/32a-vss-cdc-2.webp",
+     "thumb": "images/looks/32a-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/32a-vss-cdc-3.webp",
+     "thumb": "images/looks/32a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-32-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "36a-vss-cdc",
+   "code": "36A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.422,
+   "photos": [
+    {
+     "src": "images/looks/36a-vss-cdc-1.webp",
+     "thumb": "images/looks/36a-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/36a-vss-cdc-2.webp",
+     "thumb": "images/looks/36a-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/36a-vss-cdc-3.webp",
+     "thumb": "images/looks/36a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-36-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "36b-nss-nc-georgette",
+   "code": "36B-NSS-NC-GEORGETTE",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.309,
+   "photos": [
+    {
+     "src": "images/looks/36b-nss-nc-georgette-1.webp",
+     "thumb": "images/looks/36b-nss-nc-georgette-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/36b-nss-nc-georgette-2.webp",
+     "thumb": "images/looks/36b-nss-nc-georgette-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/36b-nss-nc-georgette-3.webp",
+     "thumb": "images/looks/36b-nss-nc-georgette-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "48a-vss-cdc",
+   "code": "48A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 8.939,
+   "photos": [
+    {
+     "src": "images/looks/48a-vss-cdc-1.webp",
+     "thumb": "images/looks/48a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/48a-vss-cdc-2.webp",
+     "thumb": "images/looks/48a-vss-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/48a-vss-cdc-3.webp",
+     "thumb": "images/looks/48a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-48-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "50a-vss-cdc",
+   "code": "50A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.343,
+   "photos": [
+    {
+     "src": "images/looks/50a-vss-cdc-1.webp",
+     "thumb": "images/looks/50a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/50a-vss-cdc-2.webp",
+     "thumb": "images/looks/50a-vss-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/50a-vss-cdc-3.webp",
+     "thumb": "images/looks/50a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-50-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "52-vss-cdc",
+   "code": "52-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.046,
+   "photos": [
+    {
+     "src": "images/looks/52-vss-cdc-1.webp",
+     "thumb": "images/looks/52-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/52-vss-cdc-2.webp",
+     "thumb": "images/looks/52-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/52-vss-cdc-3.webp",
+     "thumb": "images/looks/52-vss-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-52-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "55a-dsgs-cdc",
+   "code": "55A-DSGS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.469,
+   "photos": [
+    {
+     "src": "images/looks/55a-dsgs-cdc-1.webp",
+     "thumb": "images/looks/55a-dsgs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/55a-dsgs-cdc-2.webp",
+     "thumb": "images/looks/55a-dsgs-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/55a-dsgs-cdc-3.webp",
+     "thumb": "images/looks/55a-dsgs-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-55-a-dsgs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "56-vvs-cdc",
+   "code": "56-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.404,
+   "photos": [
+    {
+     "src": "images/looks/56-vvs-cdc-1.webp",
+     "thumb": "images/looks/56-vvs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/56-vvs-cdc-2.webp",
+     "thumb": "images/looks/56-vvs-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/56-vvs-cdc-3.webp",
+     "thumb": "images/looks/56-vvs-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-56-a-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "57-vvs-cdc",
+   "code": "57-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.937,
+   "photos": [
+    {
+     "src": "images/looks/57-vvs-cdc-1.webp",
+     "thumb": "images/looks/57-vvs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/57-vvs-cdc-2.webp",
+     "thumb": "images/looks/57-vvs-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/57-vvs-cdc-3.webp",
+     "thumb": "images/looks/57-vvs-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "60a-ius",
+   "code": "60A-IUS",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.63,
+   "photos": [
+    {
+     "src": "images/looks/60a-ius-1.webp",
+     "thumb": "images/looks/60a-ius-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/60a-ius-2.webp",
+     "thumb": "images/looks/60a-ius-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/60a-ius-3.webp",
+     "thumb": "images/looks/60a-ius-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "61a-vvs-cdc",
+   "code": "61A-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.287,
+   "photos": [
+    {
+     "src": "images/looks/61a-vvs-cdc-1.webp",
+     "thumb": "images/looks/61a-vvs-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/61a-vvs-cdc-2.webp",
+     "thumb": "images/looks/61a-vvs-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/61a-vvs-cdc-3.webp",
+     "thumb": "images/looks/61a-vvs-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-61-a-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "62a-vss-cdc",
+   "code": "62A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.106,
+   "photos": [
+    {
+     "src": "images/looks/62a-vss-cdc-1.webp",
+     "thumb": "images/looks/62a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/62a-vss-cdc-2.webp",
+     "thumb": "images/looks/62a-vss-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/62a-vss-cdc-3.webp",
+     "thumb": "images/looks/62a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "62b-ens-cdc",
+   "code": "62B-ENS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.612,
+   "photos": [
+    {
+     "src": "images/looks/62b-ens-cdc-1.webp",
+     "thumb": "images/looks/62b-ens-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/62b-ens-cdc-2.webp",
+     "thumb": "images/looks/62b-ens-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/62b-ens-cdc-3.webp",
+     "thumb": "images/looks/62b-ens-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "64-a-vvs-cdc",
+   "code": "64 A-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.699,
+   "photos": [
+    {
+     "src": "images/looks/64-a-vvs-cdc-1.webp",
+     "thumb": "images/looks/64-a-vvs-cdc-1-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/64-a-vvs-cdc-2.webp",
+     "thumb": "images/looks/64-a-vvs-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/64-a-vvs-cdc-3.webp",
+     "thumb": "images/looks/64-a-vvs-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-64-a-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "65-a-vss-cdc",
+   "code": "65 A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.098,
+   "photos": [
+    {
+     "src": "images/looks/65-a-vss-cdc-1.webp",
+     "thumb": "images/looks/65-a-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/65-a-vss-cdc-2.webp",
+     "thumb": "images/looks/65-a-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/65-a-vss-cdc-3.webp",
+     "thumb": "images/looks/65-a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "66a-iis-cdc",
+   "code": "66A-IIS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.384,
+   "photos": [
+    {
+     "src": "images/looks/66a-iis-cdc-1.webp",
+     "thumb": "images/looks/66a-iis-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/66a-iis-cdc-2.webp",
+     "thumb": "images/looks/66a-iis-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/66a-iis-cdc-3.webp",
+     "thumb": "images/looks/66a-iis-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "101b-vvs-cdc",
+   "code": "101B-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.684,
+   "photos": [
+    {
+     "src": "images/looks/101b-vvs-cdc-1.webp",
+     "thumb": "images/looks/101b-vvs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/101b-vvs-cdc-2.webp",
+     "thumb": "images/looks/101b-vvs-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/101b-vvs-cdc-3.webp",
+     "thumb": "images/looks/101b-vvs-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "102b-vvs-cdc",
+   "code": "102B-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.246,
+   "photos": [
+    {
+     "src": "images/looks/102b-vvs-cdc-1.webp",
+     "thumb": "images/looks/102b-vvs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/102b-vvs-cdc-2.webp",
+     "thumb": "images/looks/102b-vvs-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/102b-vvs-cdc-3.webp",
+     "thumb": "images/looks/102b-vvs-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "103b-vvs-cdc",
+   "code": "103B-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.892,
+   "photos": [
+    {
+     "src": "images/looks/103b-vvs-cdc-1.webp",
+     "thumb": "images/looks/103b-vvs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/103b-vvs-cdc-2.webp",
+     "thumb": "images/looks/103b-vvs-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/103b-vvs-cdc-3.webp",
+     "thumb": "images/looks/103b-vvs-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-103-b-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "104b-duss-cdc",
+   "code": "104B-DUSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.919,
+   "photos": [
+    {
+     "src": "images/looks/104b-duss-cdc-1.webp",
+     "thumb": "images/looks/104b-duss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/104b-duss-cdc-2.webp",
+     "thumb": "images/looks/104b-duss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/104b-duss-cdc-3.webp",
+     "thumb": "images/looks/104b-duss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-104-b-duss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "105b-duss-cdc",
+   "code": "105B-DUSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.786,
+   "photos": [
+    {
+     "src": "images/looks/105b-duss-cdc-1.webp",
+     "thumb": "images/looks/105b-duss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/105b-duss-cdc-2.webp",
+     "thumb": "images/looks/105b-duss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/105b-duss-cdc-3.webp",
+     "thumb": "images/looks/105b-duss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-105-b-duss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "106b-vvs-cdc",
+   "code": "106B-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.792,
+   "photos": [
+    {
+     "src": "images/looks/106b-vvs-cdc-1.webp",
+     "thumb": "images/looks/106b-vvs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/106b-vvs-cdc-2.webp",
+     "thumb": "images/looks/106b-vvs-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/106b-vvs-cdc-3.webp",
+     "thumb": "images/looks/106b-vvs-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-106-b-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "107b-ens-cdc",
+   "code": "107B-ENS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.272,
+   "photos": [
+    {
+     "src": "images/looks/107b-ens-cdc-1.webp",
+     "thumb": "images/looks/107b-ens-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/107b-ens-cdc-2.webp",
+     "thumb": "images/looks/107b-ens-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/107b-ens-cdc-3.webp",
+     "thumb": "images/looks/107b-ens-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-107-b-ens-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "108b-vvs-cdc",
+   "code": "108B-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.471,
+   "photos": [
+    {
+     "src": "images/looks/108b-vvs-cdc-1.webp",
+     "thumb": "images/looks/108b-vvs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/108b-vvs-cdc-2.webp",
+     "thumb": "images/looks/108b-vvs-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/108b-vvs-cdc-3.webp",
+     "thumb": "images/looks/108b-vvs-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-108-b-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "109b-vss-cdc",
+   "code": "109B-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.182,
+   "photos": [
+    {
+     "src": "images/looks/109b-vss-cdc-1.webp",
+     "thumb": "images/looks/109b-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/109b-vss-cdc-2.webp",
+     "thumb": "images/looks/109b-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/109b-vss-cdc-3.webp",
+     "thumb": "images/looks/109b-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "110b-ddss-cdc",
+   "code": "110B-DDSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.245,
+   "photos": [
+    {
+     "src": "images/looks/110b-ddss-cdc-1.webp",
+     "thumb": "images/looks/110b-ddss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/110b-ddss-cdc-2.webp",
+     "thumb": "images/looks/110b-ddss-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/110b-ddss-cdc-3.webp",
+     "thumb": "images/looks/110b-ddss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-110-b-ddss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "111b-vvs-cdc",
+   "code": "111B-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.284,
+   "photos": [
+    {
+     "src": "images/looks/111b-vvs-cdc-1.webp",
+     "thumb": "images/looks/111b-vvs-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/111b-vvs-cdc-2.webp",
+     "thumb": "images/looks/111b-vvs-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/111b-vvs-cdc-3.webp",
+     "thumb": "images/looks/111b-vvs-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-111-b-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "112b-vss-cdc",
+   "code": "112B-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.684,
+   "photos": [
+    {
+     "src": "images/looks/112b-vss-cdc-1.webp",
+     "thumb": "images/looks/112b-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/112b-vss-cdc-2.webp",
+     "thumb": "images/looks/112b-vss-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/112b-vss-cdc-3.webp",
+     "thumb": "images/looks/112b-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-112-b-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "113b-vss-cdc",
+   "code": "113B-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.016,
+   "photos": [
+    {
+     "src": "images/looks/113b-vss-cdc-1.webp",
+     "thumb": "images/looks/113b-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/113b-vss-cdc-2.webp",
+     "thumb": "images/looks/113b-vss-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/113b-vss-cdc-3.webp",
+     "thumb": "images/looks/113b-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-113-b-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "114b-vss-cdc",
+   "code": "114B-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.789,
+   "photos": [
+    {
+     "src": "images/looks/114b-vss-cdc-1.webp",
+     "thumb": "images/looks/114b-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/114b-vss-cdc-2.webp",
+     "thumb": "images/looks/114b-vss-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/114b-vss-cdc-3.webp",
+     "thumb": "images/looks/114b-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-114-b-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "115b-vvs-cdc",
+   "code": "115B-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.486,
+   "photos": [
+    {
+     "src": "images/looks/115b-vvs-cdc-1.webp",
+     "thumb": "images/looks/115b-vvs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/115b-vvs-cdc-2.webp",
+     "thumb": "images/looks/115b-vvs-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/115b-vvs-cdc-3.webp",
+     "thumb": "images/looks/115b-vvs-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-115-b-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "116b-vvs-cdc",
+   "code": "116B-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.29,
+   "photos": [
+    {
+     "src": "images/looks/116b-vvs-cdc-1.webp",
+     "thumb": "images/looks/116b-vvs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/116b-vvs-cdc-2.webp",
+     "thumb": "images/looks/116b-vvs-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/116b-vvs-cdc-3.webp",
+     "thumb": "images/looks/116b-vvs-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-116-b-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "117b-vvs-cdc",
+   "code": "117B-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.938,
+   "photos": [
+    {
+     "src": "images/looks/117b-vvs-cdc-1.webp",
+     "thumb": "images/looks/117b-vvs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/117b-vvs-cdc-2.webp",
+     "thumb": "images/looks/117b-vvs-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/117b-vvs-cdc-3.webp",
+     "thumb": "images/looks/117b-vvs-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-117-b-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "120a-vss-cdc",
+   "code": "120A-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.431,
+   "photos": [
+    {
+     "src": "images/looks/120a-vss-cdc-1.webp",
+     "thumb": "images/looks/120a-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/120a-vss-cdc-2.webp",
+     "thumb": "images/looks/120a-vss-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/120a-vss-cdc-3.webp",
+     "thumb": "images/looks/120a-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-120-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "122a-ddss-cdc-argo",
+   "code": "122A-DDSS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.972,
+   "photos": [
+    {
+     "src": "images/looks/122a-ddss-cdc-argo-1.webp",
+     "thumb": "images/looks/122a-ddss-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/122a-ddss-cdc-argo-2.webp",
+     "thumb": "images/looks/122a-ddss-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/122a-ddss-cdc-argo-3.webp",
+     "thumb": "images/looks/122a-ddss-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-122-a-ddss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "123a-vss-cdc-argo",
+   "code": "123A-VSS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.608,
+   "photos": [
+    {
+     "src": "images/looks/123a-vss-cdc-argo-1.webp",
+     "thumb": "images/looks/123a-vss-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/123a-vss-cdc-argo-2.webp",
+     "thumb": "images/looks/123a-vss-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/123a-vss-cdc-argo-3.webp",
+     "thumb": "images/looks/123a-vss-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-123-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "125a-vss-cdc-argo",
+   "code": "125A-VSS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.851,
+   "photos": [
+    {
+     "src": "images/looks/125a-vss-cdc-argo-1.webp",
+     "thumb": "images/looks/125a-vss-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/125a-vss-cdc-argo-2.webp",
+     "thumb": "images/looks/125a-vss-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/125a-vss-cdc-argo-3.webp",
+     "thumb": "images/looks/125a-vss-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-125-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "202a-vrs-cdc-alb",
+   "code": "202A-VRS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.559,
+   "photos": [
+    {
+     "src": "images/looks/202a-vrs-cdc-alb-1.webp",
+     "thumb": "images/looks/202a-vrs-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/202a-vrs-cdc-alb-2.webp",
+     "thumb": "images/looks/202a-vrs-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/202a-vrs-cdc-alb-3.webp",
+     "thumb": "images/looks/202a-vrs-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-202-a-vrs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "204a-vss-cdc-alb",
+   "code": "204A-VSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.741,
+   "photos": [
+    {
+     "src": "images/looks/204a-vss-cdc-alb-1.webp",
+     "thumb": "images/looks/204a-vss-cdc-alb-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/204a-vss-cdc-alb-2.webp",
+     "thumb": "images/looks/204a-vss-cdc-alb-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/204a-vss-cdc-alb-3.webp",
+     "thumb": "images/looks/204a-vss-cdc-alb-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-204-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "206a-dsss-cdc-alb",
+   "code": "206A-DSSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.44,
+   "photos": [
+    {
+     "src": "images/looks/206a-dsss-cdc-alb-1.webp",
+     "thumb": "images/looks/206a-dsss-cdc-alb-1-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/206a-dsss-cdc-alb-2.webp",
+     "thumb": "images/looks/206a-dsss-cdc-alb-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/206a-dsss-cdc-alb-3.webp",
+     "thumb": "images/looks/206a-dsss-cdc-alb-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "207a-vvs-cdc-alb",
+   "code": "207A-VVS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.846,
+   "photos": [
+    {
+     "src": "images/looks/207a-vvs-cdc-alb-1.webp",
+     "thumb": "images/looks/207a-vvs-cdc-alb-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/207a-vvs-cdc-alb-2.webp",
+     "thumb": "images/looks/207a-vvs-cdc-alb-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/207a-vvs-cdc-alb-3.webp",
+     "thumb": "images/looks/207a-vvs-cdc-alb-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-207-a-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "208a-ddss-cdc-alb",
+   "code": "208A-DDSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.79,
+   "photos": [
+    {
+     "src": "images/looks/208a-ddss-cdc-alb-1.webp",
+     "thumb": "images/looks/208a-ddss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/208a-ddss-cdc-alb-2.webp",
+     "thumb": "images/looks/208a-ddss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/208a-ddss-cdc-alb-3.webp",
+     "thumb": "images/looks/208a-ddss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-208-a-ddss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "209a-vvs-cdc-alb",
+   "code": "209A-VVS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.528,
+   "photos": [
+    {
+     "src": "images/looks/209a-vvs-cdc-alb-1.webp",
+     "thumb": "images/looks/209a-vvs-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/209a-vvs-cdc-alb-2.webp",
+     "thumb": "images/looks/209a-vvs-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/209a-vvs-cdc-alb-3.webp",
+     "thumb": "images/looks/209a-vvs-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-209-a-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "210a-vvs-cdc-alb",
+   "code": "210A-VVS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.669,
+   "photos": [
+    {
+     "src": "images/looks/210a-vvs-cdc-alb-1.webp",
+     "thumb": "images/looks/210a-vvs-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/210a-vvs-cdc-alb-2.webp",
+     "thumb": "images/looks/210a-vvs-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/210a-vvs-cdc-alb-3.webp",
+     "thumb": "images/looks/210a-vvs-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-210-a-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "213a-vvs-cdc-alb",
+   "code": "213A-VVS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.367,
+   "photos": [
+    {
+     "src": "images/looks/213a-vvs-cdc-alb-1.webp",
+     "thumb": "images/looks/213a-vvs-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/213a-vvs-cdc-alb-2.webp",
+     "thumb": "images/looks/213a-vvs-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/213a-vvs-cdc-alb-3.webp",
+     "thumb": "images/looks/213a-vvs-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-213-a-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "214a-vss-cdc-alb",
+   "code": "214A-VSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.809,
+   "photos": [
+    {
+     "src": "images/looks/214a-vss-cdc-alb-1.webp",
+     "thumb": "images/looks/214a-vss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/214a-vss-cdc-alb-2.webp",
+     "thumb": "images/looks/214a-vss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/214a-vss-cdc-alb-3.webp",
+     "thumb": "images/looks/214a-vss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-214-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "218a-vvs-cdc-alb",
+   "code": "218A-VVS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.573,
+   "photos": [
+    {
+     "src": "images/looks/218a-vvs-cdc-alb-1.webp",
+     "thumb": "images/looks/218a-vvs-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/218a-vvs-cdc-alb-2.webp",
+     "thumb": "images/looks/218a-vvs-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/218a-vvs-cdc-alb-3.webp",
+     "thumb": "images/looks/218a-vvs-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-218-a-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "219a-dsss-cdc-alb",
+   "code": "219A-DSSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.155,
+   "photos": [
+    {
+     "src": "images/looks/219a-dsss-cdc-alb-1.webp",
+     "thumb": "images/looks/219a-dsss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/219a-dsss-cdc-alb-2.webp",
+     "thumb": "images/looks/219a-dsss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/219a-dsss-cdc-alb-3.webp",
+     "thumb": "images/looks/219a-dsss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-219-a-dsss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "251-ddss-cdc-alb",
+   "code": "251-DDSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.108,
+   "photos": [
+    {
+     "src": "images/looks/251-ddss-cdc-alb-1.webp",
+     "thumb": "images/looks/251-ddss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/251-ddss-cdc-alb-2.webp",
+     "thumb": "images/looks/251-ddss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/251-ddss-cdc-alb-3.webp",
+     "thumb": "images/looks/251-ddss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-251-s-ddss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "256-vss-cdc-alb",
+   "code": "256-VSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.233,
+   "photos": [
+    {
+     "src": "images/looks/256-vss-cdc-alb-1.webp",
+     "thumb": "images/looks/256-vss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/256-vss-cdc-alb-2.webp",
+     "thumb": "images/looks/256-vss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/256-vss-cdc-alb-3.webp",
+     "thumb": "images/looks/256-vss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "257s-dsss-cdc-alb",
+   "code": "257S-DSSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.948,
+   "photos": [
+    {
+     "src": "images/looks/257s-dsss-cdc-alb-1.webp",
+     "thumb": "images/looks/257s-dsss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/257s-dsss-cdc-alb-2.webp",
+     "thumb": "images/looks/257s-dsss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/257s-dsss-cdc-alb-3.webp",
+     "thumb": "images/looks/257s-dsss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "258-a-dass-cdc-alb",
+   "code": "258 A-DASS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.993,
+   "photos": [
+    {
+     "src": "images/looks/258-a-dass-cdc-alb-1.webp",
+     "thumb": "images/looks/258-a-dass-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/258-a-dass-cdc-alb-2.webp",
+     "thumb": "images/looks/258-a-dass-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/258-a-dass-cdc-alb-3.webp",
+     "thumb": "images/looks/258-a-dass-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-258-a-dass-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "261-ess-cdc-alb",
+   "code": "261-ESS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.068,
+   "photos": [
+    {
+     "src": "images/looks/261-ess-cdc-alb-1.webp",
+     "thumb": "images/looks/261-ess-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/261-ess-cdc-alb-2.webp",
+     "thumb": "images/looks/261-ess-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/261-ess-cdc-alb-3.webp",
+     "thumb": "images/looks/261-ess-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-261-a-ess-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "262-vss-cdc-alb",
+   "code": "262-VSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.358,
+   "photos": [
+    {
+     "src": "images/looks/262-vss-cdc-alb-1.webp",
+     "thumb": "images/looks/262-vss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/262-vss-cdc-alb-2.webp",
+     "thumb": "images/looks/262-vss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/262-vss-cdc-alb-3.webp",
+     "thumb": "images/looks/262-vss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-262-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "263-vss-cdc-alb",
+   "code": "263-VSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.955,
+   "photos": [
+    {
+     "src": "images/looks/263-vss-cdc-alb-1.webp",
+     "thumb": "images/looks/263-vss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/263-vss-cdc-alb-2.webp",
+     "thumb": "images/looks/263-vss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/263-vss-cdc-alb-3.webp",
+     "thumb": "images/looks/263-vss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-263-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "264-dsss-cdc-alb",
+   "code": "264-DSSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.421,
+   "photos": [
+    {
+     "src": "images/looks/264-dsss-cdc-alb-1.webp",
+     "thumb": "images/looks/264-dsss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/264-dsss-cdc-alb-2.webp",
+     "thumb": "images/looks/264-dsss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/264-dsss-cdc-alb-3.webp",
+     "thumb": "images/looks/264-dsss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-264-dsss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "270-ddss-cdc-alb",
+   "code": "270-DDSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.377,
+   "photos": [
+    {
+     "src": "images/looks/270-ddss-cdc-alb-1.webp",
+     "thumb": "images/looks/270-ddss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/270-ddss-cdc-alb-2.webp",
+     "thumb": "images/looks/270-ddss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/270-ddss-cdc-alb-3.webp",
+     "thumb": "images/looks/270-ddss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-270-ddss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "271-vss-cdc-alb",
+   "code": "271-VSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.597,
+   "photos": [
+    {
+     "src": "images/looks/271-vss-cdc-alb-1.webp",
+     "thumb": "images/looks/271-vss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/271-vss-cdc-alb-2.webp",
+     "thumb": "images/looks/271-vss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/271-vss-cdc-alb-3.webp",
+     "thumb": "images/looks/271-vss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-271-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "276-dsss-cdc",
+   "code": "276-DSSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.408,
+   "photos": [
+    {
+     "src": "images/looks/276-dsss-cdc-1.webp",
+     "thumb": "images/looks/276-dsss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/276-dsss-cdc-2.webp",
+     "thumb": "images/looks/276-dsss-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/276-dsss-cdc-3.webp",
+     "thumb": "images/looks/276-dsss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-276-dsss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "278-vss-cdc-alb",
+   "code": "278-VSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.12,
+   "photos": [
+    {
+     "src": "images/looks/278-vss-cdc-alb-1.webp",
+     "thumb": "images/looks/278-vss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/278-vss-cdc-alb-2.webp",
+     "thumb": "images/looks/278-vss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/278-vss-cdc-alb-3.webp",
+     "thumb": "images/looks/278-vss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-278-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "279-ddss-cdc-alb",
+   "code": "279-DDSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.707,
+   "photos": [
+    {
+     "src": "images/looks/279-ddss-cdc-alb-1.webp",
+     "thumb": "images/looks/279-ddss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/279-ddss-cdc-alb-2.webp",
+     "thumb": "images/looks/279-ddss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/279-ddss-cdc-alb-3.webp",
+     "thumb": "images/looks/279-ddss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-279-ddss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "281-ddss-cdc-alb",
+   "code": "281-DDSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.3,
+   "photos": [
+    {
+     "src": "images/looks/281-ddss-cdc-alb-1.webp",
+     "thumb": "images/looks/281-ddss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/281-ddss-cdc-alb-2.webp",
+     "thumb": "images/looks/281-ddss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/281-ddss-cdc-alb-3.webp",
+     "thumb": "images/looks/281-ddss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-281-ddss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "282-vss-cdc-alb",
+   "code": "282-VSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.073,
+   "photos": [
+    {
+     "src": "images/looks/282-vss-cdc-alb-1.webp",
+     "thumb": "images/looks/282-vss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/282-vss-cdc-alb-2.webp",
+     "thumb": "images/looks/282-vss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/282-vss-cdc-alb-3.webp",
+     "thumb": "images/looks/282-vss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-282-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "295-nss-georgette-alb",
+   "code": "295-NSS-GEORGETTE-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.943,
+   "photos": [
+    {
+     "src": "images/looks/295-nss-georgette-alb-1.webp",
+     "thumb": "images/looks/295-nss-georgette-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/295-nss-georgette-alb-2.webp",
+     "thumb": "images/looks/295-nss-georgette-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/295-nss-georgette-alb-3.webp",
+     "thumb": "images/looks/295-nss-georgette-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-295-nss-georgette"
+   ]
+  },
+  {
+   "id": "299-vss-cdc-alb",
+   "code": "299-VSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.726,
+   "photos": [
+    {
+     "src": "images/looks/299-vss-cdc-alb-1.webp",
+     "thumb": "images/looks/299-vss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/299-vss-cdc-alb-2.webp",
+     "thumb": "images/looks/299-vss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/299-vss-cdc-alb-3.webp",
+     "thumb": "images/looks/299-vss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-299-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "301s-drss-alb-cdc",
+   "code": "301S-DRSS-ALB-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.503,
+   "photos": [
+    {
+     "src": "images/looks/301s-drss-alb-cdc-1.webp",
+     "thumb": "images/looks/301s-drss-alb-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/301s-drss-alb-cdc-2.webp",
+     "thumb": "images/looks/301s-drss-alb-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/301s-drss-alb-cdc-3.webp",
+     "thumb": "images/looks/301s-drss-alb-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "305a-duss-cdc-alb",
+   "code": "305A-DUSS-CDC-ALB",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.846,
+   "photos": [
+    {
+     "src": "images/looks/305a-duss-cdc-alb-1.webp",
+     "thumb": "images/looks/305a-duss-cdc-alb-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/305a-duss-cdc-alb-2.webp",
+     "thumb": "images/looks/305a-duss-cdc-alb-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/305a-duss-cdc-alb-3.webp",
+     "thumb": "images/looks/305a-duss-cdc-alb-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-305-a-duss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "310-vvs-alb-cdc",
+   "code": "310-VVS-ALB-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.059,
+   "photos": [
+    {
+     "src": "images/looks/310-vvs-alb-cdc-1.webp",
+     "thumb": "images/looks/310-vvs-alb-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/310-vvs-alb-cdc-2.webp",
+     "thumb": "images/looks/310-vvs-alb-cdc-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/310-vvs-alb-cdc-3.webp",
+     "thumb": "images/looks/310-vvs-alb-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-310-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "340s-vvs-cdc",
+   "code": "340S-VVS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.808,
+   "photos": [
+    {
+     "src": "images/looks/340s-vvs-cdc-1.webp",
+     "thumb": "images/looks/340s-vvs-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/340s-vvs-cdc-2.webp",
+     "thumb": "images/looks/340s-vvs-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/340s-vvs-cdc-3.webp",
+     "thumb": "images/looks/340s-vvs-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "343-vss-cdc",
+   "code": "343-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.274,
+   "photos": [
+    {
+     "src": "images/looks/343-vss-cdc-1.webp",
+     "thumb": "images/looks/343-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/343-vss-cdc-2.webp",
+     "thumb": "images/looks/343-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/343-vss-cdc-3.webp",
+     "thumb": "images/looks/343-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "345s-vss-cdc",
+   "code": "345S-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.271,
+   "photos": [
+    {
+     "src": "images/looks/345s-vss-cdc-1.webp",
+     "thumb": "images/looks/345s-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/345s-vss-cdc-2.webp",
+     "thumb": "images/looks/345s-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/345s-vss-cdc-3.webp",
+     "thumb": "images/looks/345s-vss-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-345-s-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "446-b-vss-cdc-mar",
+   "code": "446 B-VSS-CDC-MAR",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.883,
+   "photos": [
+    {
+     "src": "images/looks/446-b-vss-cdc-mar-1.webp",
+     "thumb": "images/looks/446-b-vss-cdc-mar-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/446-b-vss-cdc-mar-2.webp",
+     "thumb": "images/looks/446-b-vss-cdc-mar-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/446-b-vss-cdc-mar-3.webp",
+     "thumb": "images/looks/446-b-vss-cdc-mar-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-446-b-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "456-vss-mar-cdc",
+   "code": "456-VSS-MAR-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.019,
+   "photos": [
+    {
+     "src": "images/looks/456-vss-mar-cdc-1.webp",
+     "thumb": "images/looks/456-vss-mar-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/456-vss-mar-cdc-2.webp",
+     "thumb": "images/looks/456-vss-mar-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/456-vss-mar-cdc-3.webp",
+     "thumb": "images/looks/456-vss-mar-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-456-b-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "460b-vss-cdc",
+   "code": "460B-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.2,
+   "photos": [
+    {
+     "src": "images/looks/460b-vss-cdc-1.webp",
+     "thumb": "images/looks/460b-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/460b-vss-cdc-2.webp",
+     "thumb": "images/looks/460b-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/460b-vss-cdc-3.webp",
+     "thumb": "images/looks/460b-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-460-b-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "461-vss-cdc",
+   "code": "461-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.392,
+   "photos": [
+    {
+     "src": "images/looks/461-vss-cdc-1.webp",
+     "thumb": "images/looks/461-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/461-vss-cdc-2.webp",
+     "thumb": "images/looks/461-vss-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/461-vss-cdc-3.webp",
+     "thumb": "images/looks/461-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-461-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "464b-vss-cdc",
+   "code": "464B-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.327,
+   "photos": [
+    {
+     "src": "images/looks/464b-vss-cdc-1.webp",
+     "thumb": "images/looks/464b-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/464b-vss-cdc-2.webp",
+     "thumb": "images/looks/464b-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/464b-vss-cdc-3.webp",
+     "thumb": "images/looks/464b-vss-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-464-b-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "465b-vss-cdc",
+   "code": "465B-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.922,
+   "photos": [
+    {
+     "src": "images/looks/465b-vss-cdc-1.webp",
+     "thumb": "images/looks/465b-vss-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/465b-vss-cdc-2.webp",
+     "thumb": "images/looks/465b-vss-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/465b-vss-cdc-3.webp",
+     "thumb": "images/looks/465b-vss-cdc-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-465-b-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "476s-vss-mar-cdc",
+   "code": "476S-VSS-MAR-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.532,
+   "photos": [
+    {
+     "src": "images/looks/476s-vss-mar-cdc-1.webp",
+     "thumb": "images/looks/476s-vss-mar-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/476s-vss-mar-cdc-2.webp",
+     "thumb": "images/looks/476s-vss-mar-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/476s-vss-mar-cdc-3.webp",
+     "thumb": "images/looks/476s-vss-mar-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "502s-vss-mar-cdc",
+   "code": "502S-VSS-MAR-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.7,
+   "photos": [
+    {
+     "src": "images/looks/502s-vss-mar-cdc-1.webp",
+     "thumb": "images/looks/502s-vss-mar-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/502s-vss-mar-cdc-2.webp",
+     "thumb": "images/looks/502s-vss-mar-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/502s-vss-mar-cdc-3.webp",
+     "thumb": "images/looks/502s-vss-mar-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-502-s-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "601b-vvs-cdc-argo",
+   "code": "601B-VVS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.709,
+   "photos": [
+    {
+     "src": "images/looks/601b-vvs-cdc-argo-1.webp",
+     "thumb": "images/looks/601b-vvs-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/601b-vvs-cdc-argo-2.webp",
+     "thumb": "images/looks/601b-vvs-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/601b-vvs-cdc-argo-3.webp",
+     "thumb": "images/looks/601b-vvs-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-601-b-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "603a-ess-cdc-argo",
+   "code": "603A-ESS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.025,
+   "photos": [
+    {
+     "src": "images/looks/603a-ess-cdc-argo-1.webp",
+     "thumb": "images/looks/603a-ess-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/603a-ess-cdc-argo-2.webp",
+     "thumb": "images/looks/603a-ess-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/603a-ess-cdc-argo-3.webp",
+     "thumb": "images/looks/603a-ess-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-603-a-ess-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "604b-vvs-cdc-argo",
+   "code": "604B-VVS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.836,
+   "photos": [
+    {
+     "src": "images/looks/604b-vvs-cdc-argo-1.webp",
+     "thumb": "images/looks/604b-vvs-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/604b-vvs-cdc-argo-2.webp",
+     "thumb": "images/looks/604b-vvs-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/604b-vvs-cdc-argo-3.webp",
+     "thumb": "images/looks/604b-vvs-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-604-b-vvs-georgette"
+   ]
+  },
+  {
+   "id": "605a-vss-cdc-argo",
+   "code": "605A-VSS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.662,
+   "photos": [
+    {
+     "src": "images/looks/605a-vss-cdc-argo-1.webp",
+     "thumb": "images/looks/605a-vss-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/605a-vss-cdc-argo-2.webp",
+     "thumb": "images/looks/605a-vss-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/605a-vss-cdc-argo-3.webp",
+     "thumb": "images/looks/605a-vss-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-605-a-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "606-vss-satin-argo",
+   "code": "606-VSS-SATIN-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.817,
+   "photos": [
+    {
+     "src": "images/looks/606-vss-satin-argo-1.webp",
+     "thumb": "images/looks/606-vss-satin-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/606-vss-satin-argo-2.webp",
+     "thumb": "images/looks/606-vss-satin-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/606-vss-satin-argo-3.webp",
+     "thumb": "images/looks/606-vss-satin-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-606-vss-satin"
+   ]
+  },
+  {
+   "id": "607-vss-cdc-argo",
+   "code": "607-VSS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.396,
+   "photos": [
+    {
+     "src": "images/looks/607-vss-cdc-argo-1.webp",
+     "thumb": "images/looks/607-vss-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/607-vss-cdc-argo-2.webp",
+     "thumb": "images/looks/607-vss-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/607-vss-cdc-argo-3.webp",
+     "thumb": "images/looks/607-vss-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-607-vss-satin"
+   ]
+  },
+  {
+   "id": "608-dsss-argo-cdc",
+   "code": "608-DSSS-ARGO-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.208,
+   "photos": [
+    {
+     "src": "images/looks/608-dsss-argo-cdc-1.webp",
+     "thumb": "images/looks/608-dsss-argo-cdc-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/608-dsss-argo-cdc-2.webp",
+     "thumb": "images/looks/608-dsss-argo-cdc-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/608-dsss-argo-cdc-3.webp",
+     "thumb": "images/looks/608-dsss-argo-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-608-dsss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "611-vss-cdc-argo",
+   "code": "611-VSS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.875,
+   "photos": [
+    {
+     "src": "images/looks/611-vss-cdc-argo-1.webp",
+     "thumb": "images/looks/611-vss-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/611-vss-cdc-argo-2.webp",
+     "thumb": "images/looks/611-vss-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/611-vss-cdc-argo-3.webp",
+     "thumb": "images/looks/611-vss-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-611-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "612-vvs-cdc-argo",
+   "code": "612-VVS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.076,
+   "photos": [
+    {
+     "src": "images/looks/612-vvs-cdc-argo-1.webp",
+     "thumb": "images/looks/612-vvs-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/612-vvs-cdc-argo-2.webp",
+     "thumb": "images/looks/612-vvs-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/612-vvs-cdc-argo-3.webp",
+     "thumb": "images/looks/612-vvs-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-612-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "614-vvs-cdc-argo",
+   "code": "614-VVS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.378,
+   "photos": [
+    {
+     "src": "images/looks/614-vvs-cdc-argo-1.webp",
+     "thumb": "images/looks/614-vvs-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/614-vvs-cdc-argo-2.webp",
+     "thumb": "images/looks/614-vvs-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/614-vvs-cdc-argo-3.webp",
+     "thumb": "images/looks/614-vvs-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-614-vvs-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "617-vss-cdc-argo",
+   "code": "617-VSS-CDC-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.61,
+   "photos": [
+    {
+     "src": "images/looks/617-vss-cdc-argo-1.webp",
+     "thumb": "images/looks/617-vss-cdc-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/617-vss-cdc-argo-2.webp",
+     "thumb": "images/looks/617-vss-cdc-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/617-vss-cdc-argo-3.webp",
+     "thumb": "images/looks/617-vss-cdc-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-617-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "619-dsss-lurex-argo",
+   "code": "619-DSSS-LUREX-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.774,
+   "photos": [
+    {
+     "src": "images/looks/619-dsss-lurex-argo-1.webp",
+     "thumb": "images/looks/619-dsss-lurex-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/619-dsss-lurex-argo-2.webp",
+     "thumb": "images/looks/619-dsss-lurex-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/619-dsss-lurex-argo-3.webp",
+     "thumb": "images/looks/619-dsss-lurex-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-619-dsss-lurex"
+   ]
+  },
+  {
+   "id": "621-dsss-lurex-argo",
+   "code": "621-DSSS-LUREX-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.655,
+   "photos": [
+    {
+     "src": "images/looks/621-dsss-lurex-argo-1.webp",
+     "thumb": "images/looks/621-dsss-lurex-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/621-dsss-lurex-argo-2.webp",
+     "thumb": "images/looks/621-dsss-lurex-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/621-dsss-lurex-argo-3.webp",
+     "thumb": "images/looks/621-dsss-lurex-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-621-dsss-lurex"
+   ]
+  },
+  {
+   "id": "622-dsss-lurex-argo",
+   "code": "622-DSSS-LUREX-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.419,
+   "photos": [
+    {
+     "src": "images/looks/622-dsss-lurex-argo-1.webp",
+     "thumb": "images/looks/622-dsss-lurex-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/622-dsss-lurex-argo-2.webp",
+     "thumb": "images/looks/622-dsss-lurex-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/622-dsss-lurex-argo-3.webp",
+     "thumb": "images/looks/622-dsss-lurex-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-622-dsss-lurex"
+   ]
+  },
+  {
+   "id": "632-dsss-lurex-argo",
+   "code": "632-DSSS-LUREX-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.747,
+   "photos": [
+    {
+     "src": "images/looks/632-dsss-lurex-argo-1.webp",
+     "thumb": "images/looks/632-dsss-lurex-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/632-dsss-lurex-argo-2.webp",
+     "thumb": "images/looks/632-dsss-lurex-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/632-dsss-lurex-argo-3.webp",
+     "thumb": "images/looks/632-dsss-lurex-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-632-dsss-lurex"
+   ]
+  },
+  {
+   "id": "633-dsss-lurex-argo",
+   "code": "633-DSSS-LUREX-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.96,
+   "photos": [
+    {
+     "src": "images/looks/633-dsss-lurex-argo-1.webp",
+     "thumb": "images/looks/633-dsss-lurex-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/633-dsss-lurex-argo-2.webp",
+     "thumb": "images/looks/633-dsss-lurex-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/633-dsss-lurex-argo-3.webp",
+     "thumb": "images/looks/633-dsss-lurex-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-633-dsss-lurex"
+   ]
+  },
+  {
+   "id": "634-vvs-satin-argo",
+   "code": "634-VVS-SATIN-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.655,
+   "photos": [
+    {
+     "src": "images/looks/634-vvs-satin-argo-1.webp",
+     "thumb": "images/looks/634-vvs-satin-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/634-vvs-satin-argo-2.webp",
+     "thumb": "images/looks/634-vvs-satin-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/634-vvs-satin-argo-3.webp",
+     "thumb": "images/looks/634-vvs-satin-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-634-vvs-satin"
+   ]
+  },
+  {
+   "id": "636-vvs-chiffon-argo",
+   "code": "636-VVS-CHIFFON-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.202,
+   "photos": [
+    {
+     "src": "images/looks/636-vvs-chiffon-argo-1.webp",
+     "thumb": "images/looks/636-vvs-chiffon-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/636-vvs-chiffon-argo-2.webp",
+     "thumb": "images/looks/636-vvs-chiffon-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/636-vvs-chiffon-argo-3.webp",
+     "thumb": "images/looks/636-vvs-chiffon-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-636-vvs-chiffon"
+   ]
+  },
+  {
+   "id": "637-vvs-chiffon-argo",
+   "code": "637-VVS-CHIFFON-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.055,
+   "photos": [
+    {
+     "src": "images/looks/637-vvs-chiffon-argo-1.webp",
+     "thumb": "images/looks/637-vvs-chiffon-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/637-vvs-chiffon-argo-2.webp",
+     "thumb": "images/looks/637-vvs-chiffon-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/637-vvs-chiffon-argo-3.webp",
+     "thumb": "images/looks/637-vvs-chiffon-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-637-vvs-chiffon"
+   ]
+  },
+  {
+   "id": "639-nss-georgette-argo",
+   "code": "639-NSS-GEORGETTE-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.136,
+   "photos": [
+    {
+     "src": "images/looks/639-nss-georgette-argo-1.webp",
+     "thumb": "images/looks/639-nss-georgette-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/639-nss-georgette-argo-2.webp",
+     "thumb": "images/looks/639-nss-georgette-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/639-nss-georgette-argo-3.webp",
+     "thumb": "images/looks/639-nss-georgette-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-639-nss-georgette"
+   ]
+  },
+  {
+   "id": "640-nss-georgette-argo",
+   "code": "640-NSS-GEORGETTE-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.626,
+   "photos": [
+    {
+     "src": "images/looks/640-nss-georgette-argo-1.webp",
+     "thumb": "images/looks/640-nss-georgette-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/640-nss-georgette-argo-2.webp",
+     "thumb": "images/looks/640-nss-georgette-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/640-nss-georgette-argo-3.webp",
+     "thumb": "images/looks/640-nss-georgette-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-640-nss-georgette"
+   ]
+  },
+  {
+   "id": "641-nss-georgette-argo",
+   "code": "641-NSS-GEORGETTE-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.091,
+   "photos": [
+    {
+     "src": "images/looks/641-nss-georgette-argo-1.webp",
+     "thumb": "images/looks/641-nss-georgette-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/641-nss-georgette-argo-2.webp",
+     "thumb": "images/looks/641-nss-georgette-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/641-nss-georgette-argo-3.webp",
+     "thumb": "images/looks/641-nss-georgette-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-641-nss-georgette"
+   ]
+  },
+  {
+   "id": "652-vss-satin-argo",
+   "code": "652-VSS-SATIN-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.026,
+   "photos": [
+    {
+     "src": "images/looks/652-vss-satin-argo-1.webp",
+     "thumb": "images/looks/652-vss-satin-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/652-vss-satin-argo-2.webp",
+     "thumb": "images/looks/652-vss-satin-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/652-vss-satin-argo-3.webp",
+     "thumb": "images/looks/652-vss-satin-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-652-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "654-iss-chiffon-argo",
+   "code": "654-ISS-CHIFFON-ARGO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.601,
+   "photos": [
+    {
+     "src": "images/looks/654-iss-chiffon-argo-1.webp",
+     "thumb": "images/looks/654-iss-chiffon-argo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/654-iss-chiffon-argo-2.webp",
+     "thumb": "images/looks/654-iss-chiffon-argo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/654-iss-chiffon-argo-3.webp",
+     "thumb": "images/looks/654-iss-chiffon-argo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-654-iss-chiffon"
+   ]
+  },
+  {
+   "id": "721s-vss-nella-satin",
+   "code": "721S-VSS-NELLA-SATIN",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.125,
+   "photos": [
+    {
+     "src": "images/looks/721s-vss-nella-satin-1.webp",
+     "thumb": "images/looks/721s-vss-nella-satin-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/721s-vss-nella-satin-2.webp",
+     "thumb": "images/looks/721s-vss-nella-satin-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/721s-vss-nella-satin-3.webp",
+     "thumb": "images/looks/721s-vss-nella-satin-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "728-vss-cdc-nella",
+   "code": "728-VSS-CDC-NELLA",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.866,
+   "photos": [
+    {
+     "src": "images/looks/728-vss-cdc-nella-1.webp",
+     "thumb": "images/looks/728-vss-cdc-nella-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/728-vss-cdc-nella-2.webp",
+     "thumb": "images/looks/728-vss-cdc-nella-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/728-vss-cdc-nella-3.webp",
+     "thumb": "images/looks/728-vss-cdc-nella-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-728-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "729-vss-cdc",
+   "code": "729-VSS-CDC",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 8.936,
+   "photos": [
+    {
+     "src": "images/looks/729-vss-cdc-1.webp",
+     "thumb": "images/looks/729-vss-cdc-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/729-vss-cdc-2.webp",
+     "thumb": "images/looks/729-vss-cdc-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/729-vss-cdc-3.webp",
+     "thumb": "images/looks/729-vss-cdc-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-729-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "743-vss-cdc-nella",
+   "code": "743-VSS-CDC-NELLA",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.212,
+   "photos": [
+    {
+     "src": "images/looks/743-vss-cdc-nella-1.webp",
+     "thumb": "images/looks/743-vss-cdc-nella-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/743-vss-cdc-nella-2.webp",
+     "thumb": "images/looks/743-vss-cdc-nella-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/743-vss-cdc-nella-3.webp",
+     "thumb": "images/looks/743-vss-cdc-nella-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-743-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "807-vss-cdc-avan",
+   "code": "807-VSS-CDC-AVAN",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.248,
+   "photos": [
+    {
+     "src": "images/looks/807-vss-cdc-avan-1.webp",
+     "thumb": "images/looks/807-vss-cdc-avan-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/807-vss-cdc-avan-2.webp",
+     "thumb": "images/looks/807-vss-cdc-avan-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/807-vss-cdc-avan-3.webp",
+     "thumb": "images/looks/807-vss-cdc-avan-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-807-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "810-vss-cdc-avan",
+   "code": "810-VSS-CDC-AVAN",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.932,
+   "photos": [
+    {
+     "src": "images/looks/810-vss-cdc-avan-1.webp",
+     "thumb": "images/looks/810-vss-cdc-avan-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/810-vss-cdc-avan-2.webp",
+     "thumb": "images/looks/810-vss-cdc-avan-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/810-vss-cdc-avan-3.webp",
+     "thumb": "images/looks/810-vss-cdc-avan-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-810-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "816-vss-cdc-avan",
+   "code": "816-VSS-CDC-AVAN",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.75,
+   "photos": [
+    {
+     "src": "images/looks/816-vss-cdc-avan-1.webp",
+     "thumb": "images/looks/816-vss-cdc-avan-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/816-vss-cdc-avan-2.webp",
+     "thumb": "images/looks/816-vss-cdc-avan-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/816-vss-cdc-avan-3.webp",
+     "thumb": "images/looks/816-vss-cdc-avan-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-816-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "832-vss-cdc-avan",
+   "code": "832-VSS-CDC-AVAN",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.832,
+   "photos": [
+    {
+     "src": "images/looks/832-vss-cdc-avan-1.webp",
+     "thumb": "images/looks/832-vss-cdc-avan-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/832-vss-cdc-avan-2.webp",
+     "thumb": "images/looks/832-vss-cdc-avan-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/832-vss-cdc-avan-3.webp",
+     "thumb": "images/looks/832-vss-cdc-avan-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "861-vss-satin-casa",
+   "code": "861-VSS-SATIN-CASA",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.553,
+   "photos": [
+    {
+     "src": "images/looks/861-vss-satin-casa-1.webp",
+     "thumb": "images/looks/861-vss-satin-casa-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/861-vss-satin-casa-2.webp",
+     "thumb": "images/looks/861-vss-satin-casa-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/861-vss-satin-casa-3.webp",
+     "thumb": "images/looks/861-vss-satin-casa-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-861-vss-satin"
+   ]
+  },
+  {
+   "id": "863-vss-satin-casa",
+   "code": "863-VSS-SATIN-CASA",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.233,
+   "photos": [
+    {
+     "src": "images/looks/863-vss-satin-casa-1.webp",
+     "thumb": "images/looks/863-vss-satin-casa-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/863-vss-satin-casa-2.webp",
+     "thumb": "images/looks/863-vss-satin-casa-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/863-vss-satin-casa-3.webp",
+     "thumb": "images/looks/863-vss-satin-casa-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-863-vss-satin"
+   ]
+  },
+  {
+   "id": "867-vss-cdc-casa",
+   "code": "867-VSS-CDC-CASA",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.765,
+   "photos": [
+    {
+     "src": "images/looks/867-vss-cdc-casa-1.webp",
+     "thumb": "images/looks/867-vss-cdc-casa-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/867-vss-cdc-casa-2.webp",
+     "thumb": "images/looks/867-vss-cdc-casa-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/867-vss-cdc-casa-3.webp",
+     "thumb": "images/looks/867-vss-cdc-casa-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-867-vss-cr-pe-de-chine"
+   ]
+  },
+  {
+   "id": "887-ess-satin",
+   "code": "887-ESS-SATIN",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.91,
+   "photos": [
+    {
+     "src": "images/looks/887-ess-satin-1.webp",
+     "thumb": "images/looks/887-ess-satin-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/887-ess-satin-2.webp",
+     "thumb": "images/looks/887-ess-satin-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/887-ess-satin-3.webp",
+     "thumb": "images/looks/887-ess-satin-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "911-ess-cdc-styl",
+   "code": "911-ESS-CDC-STYL",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 9.735,
+   "photos": [
+    {
+     "src": "images/looks/911-ess-cdc-styl-1.webp",
+     "thumb": "images/looks/911-ess-cdc-styl-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/911-ess-cdc-styl-2.webp",
+     "thumb": "images/looks/911-ess-cdc-styl-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/911-ess-cdc-styl-3.webp",
+     "thumb": "images/looks/911-ess-cdc-styl-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "984-rass-fil-coupe",
+   "code": "984-RASS-FIL Coupe",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.569,
+   "photos": [
+    {
+     "src": "images/looks/984-rass-fil-coupe-1.webp",
+     "thumb": "images/looks/984-rass-fil-coupe-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/984-rass-fil-coupe-2.webp",
+     "thumb": "images/looks/984-rass-fil-coupe-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/984-rass-fil-coupe-3.webp",
+     "thumb": "images/looks/984-rass-fil-coupe-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-984-rass-fil-coupe"
+   ]
+  },
+  {
+   "id": "990-uass-lurex-ruffo",
+   "code": "990-UASS-LUREX-RUFFO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.294,
+   "photos": [
+    {
+     "src": "images/looks/990-uass-lurex-ruffo-1.webp",
+     "thumb": "images/looks/990-uass-lurex-ruffo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/990-uass-lurex-ruffo-2.webp",
+     "thumb": "images/looks/990-uass-lurex-ruffo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/990-uass-lurex-ruffo-3.webp",
+     "thumb": "images/looks/990-uass-lurex-ruffo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-990-uass-lurex-on-chiffon-deluxe"
+   ]
+  },
+  {
+   "id": "991-uass-lurex-ruffo",
+   "code": "991-UASS-LUREX-RUFFO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.357,
+   "photos": [
+    {
+     "src": "images/looks/991-uass-lurex-ruffo-1.webp",
+     "thumb": "images/looks/991-uass-lurex-ruffo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/991-uass-lurex-ruffo-2.webp",
+     "thumb": "images/looks/991-uass-lurex-ruffo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/991-uass-lurex-ruffo-3.webp",
+     "thumb": "images/looks/991-uass-lurex-ruffo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-991-uass-lurex-on-chiffon-deluxe"
+   ]
+  },
+  {
+   "id": "1007-uass-lurex-ruffo",
+   "code": "1007-UASS-LUREX-RUFFO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 10.855,
+   "photos": [
+    {
+     "src": "images/looks/1007-uass-lurex-ruffo-1.webp",
+     "thumb": "images/looks/1007-uass-lurex-ruffo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/1007-uass-lurex-ruffo-2.webp",
+     "thumb": "images/looks/1007-uass-lurex-ruffo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/1007-uass-lurex-ruffo-3.webp",
+     "thumb": "images/looks/1007-uass-lurex-ruffo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-1007-uass-lurex-on-chiffon-deluxe"
+   ]
+  },
+  {
+   "id": "1008-uass-lurex-ruffo",
+   "code": "1008-UASS-LUREX-RUFFO",
+   "collection": "Silk",
+   "category": "Silk",
+   "score": 11.213,
+   "photos": [
+    {
+     "src": "images/looks/1008-uass-lurex-ruffo-1.webp",
+     "thumb": "images/looks/1008-uass-lurex-ruffo-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/1008-uass-lurex-ruffo-2.webp",
+     "thumb": "images/looks/1008-uass-lurex-ruffo-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/1008-uass-lurex-ruffo-3.webp",
+     "thumb": "images/looks/1008-uass-lurex-ruffo-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "silk-1008-uass-lurex-on-chiffon-deluxe"
+   ]
+  },
+  {
+   "id": "dess-76",
+   "code": "DESS-76",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.82,
+   "photos": [
+    {
+     "src": "images/looks/dess-76-1.webp",
+     "thumb": "images/looks/dess-76-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/dess-76-2.webp",
+     "thumb": "images/looks/dess-76-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/dess-76-3.webp",
+     "thumb": "images/looks/dess-76-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-dess-76"
+   ]
+  },
+  {
+   "id": "diss-74",
+   "code": "DISS-74",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.61,
+   "photos": [
+    {
+     "src": "images/looks/diss-74-1.webp",
+     "thumb": "images/looks/diss-74-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/diss-74-2.webp",
+     "thumb": "images/looks/diss-74-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/diss-74-3.webp",
+     "thumb": "images/looks/diss-74-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-diss-74"
+   ]
+  },
+  {
+   "id": "diss-75",
+   "code": "DISS-75",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 11.041,
+   "photos": [
+    {
+     "src": "images/looks/diss-75-1.webp",
+     "thumb": "images/looks/diss-75-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/diss-75-2.webp",
+     "thumb": "images/looks/diss-75-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/diss-75-3.webp",
+     "thumb": "images/looks/diss-75-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-diss-75"
+   ]
+  },
+  {
+   "id": "drss-78",
+   "code": "DRSS-78",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.843,
+   "photos": [
+    {
+     "src": "images/looks/drss-78-1.webp",
+     "thumb": "images/looks/drss-78-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/drss-78-2.webp",
+     "thumb": "images/looks/drss-78-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/drss-78-3.webp",
+     "thumb": "images/looks/drss-78-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-drss-78"
+   ]
+  },
+  {
+   "id": "dvss-70",
+   "code": "DVSS-70",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.768,
+   "photos": [
+    {
+     "src": "images/looks/dvss-70-1.webp",
+     "thumb": "images/looks/dvss-70-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/dvss-70-2.webp",
+     "thumb": "images/looks/dvss-70-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/dvss-70-3.webp",
+     "thumb": "images/looks/dvss-70-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-dvss-70"
+   ]
+  },
+  {
+   "id": "dvss-81",
+   "code": "DVSS-81",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 11.034,
+   "photos": [
+    {
+     "src": "images/looks/dvss-81-1.webp",
+     "thumb": "images/looks/dvss-81-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/dvss-81-2.webp",
+     "thumb": "images/looks/dvss-81-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/dvss-81-3.webp",
+     "thumb": "images/looks/dvss-81-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-dvss-81"
+   ]
+  },
+  {
+   "id": "russ-82",
+   "code": "RUSS-82_",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.427,
+   "photos": [
+    {
+     "src": "images/looks/russ-82-1.webp",
+     "thumb": "images/looks/russ-82-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/russ-82-2.webp",
+     "thumb": "images/looks/russ-82-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/russ-82-3.webp",
+     "thumb": "images/looks/russ-82-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-russ-82"
+   ]
+  },
+  {
+   "id": "11-vuss",
+   "code": "11-VUSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 11.0,
+   "photos": [
+    {
+     "src": "images/looks/11-vuss-1.webp",
+     "thumb": "images/looks/11-vuss-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/11-vuss-2.webp",
+     "thumb": "images/looks/11-vuss-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/11-vuss-3.webp",
+     "thumb": "images/looks/11-vuss-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-vuss-11"
+   ]
+  },
+  {
+   "id": "12-vrss",
+   "code": "12-VRSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 11.176,
+   "photos": [
+    {
+     "src": "images/looks/12-vrss-1.webp",
+     "thumb": "images/looks/12-vrss-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/12-vrss-2.webp",
+     "thumb": "images/looks/12-vrss-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/12-vrss-3.webp",
+     "thumb": "images/looks/12-vrss-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-vrss-12"
+   ]
+  },
+  {
+   "id": "13-iass",
+   "code": "13-IASS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.754,
+   "photos": [
+    {
+     "src": "images/looks/13-iass-1.webp",
+     "thumb": "images/looks/13-iass-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/13-iass-2.webp",
+     "thumb": "images/looks/13-iass-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/13-iass-3.webp",
+     "thumb": "images/looks/13-iass-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-iass-13"
+   ]
+  },
+  {
+   "id": "15-nvss",
+   "code": "15-NVSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.415,
+   "photos": [
+    {
+     "src": "images/looks/15-nvss-1.webp",
+     "thumb": "images/looks/15-nvss-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/15-nvss-2.webp",
+     "thumb": "images/looks/15-nvss-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/15-nvss-3.webp",
+     "thumb": "images/looks/15-nvss-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-nvss-15"
+   ]
+  },
+  {
+   "id": "20-gass",
+   "code": "20-GASS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.909,
+   "photos": [
+    {
+     "src": "images/looks/20-gass-1.webp",
+     "thumb": "images/looks/20-gass-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/20-gass-2.webp",
+     "thumb": "images/looks/20-gass-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/20-gass-3.webp",
+     "thumb": "images/looks/20-gass-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-gass-20"
+   ]
+  },
+  {
+   "id": "24-uuss",
+   "code": "24-UUSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 8.782,
+   "photos": [
+    {
+     "src": "images/looks/24-uuss-1.webp",
+     "thumb": "images/looks/24-uuss-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/24-uuss-2.webp",
+     "thumb": "images/looks/24-uuss-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/24-uuss-3.webp",
+     "thumb": "images/looks/24-uuss-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-uuss-24"
+   ]
+  },
+  {
+   "id": "24-uusss",
+   "code": "24-UUSSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.211,
+   "photos": [
+    {
+     "src": "images/looks/24-uusss-1.webp",
+     "thumb": "images/looks/24-uusss-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/24-uusss-2.webp",
+     "thumb": "images/looks/24-uusss-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/24-uusss-3.webp",
+     "thumb": "images/looks/24-uusss-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-uuss-24"
+   ]
+  },
+  {
+   "id": "26-eess",
+   "code": "26-EESS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 9.395,
+   "photos": [
+    {
+     "src": "images/looks/26-eess-1.webp",
+     "thumb": "images/looks/26-eess-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/26-eess-2.webp",
+     "thumb": "images/looks/26-eess-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/26-eess-3.webp",
+     "thumb": "images/looks/26-eess-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-eess-26"
+   ]
+  },
+  {
+   "id": "30-uusss",
+   "code": "30-UUSSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.759,
+   "photos": [
+    {
+     "src": "images/looks/30-uusss-1.webp",
+     "thumb": "images/looks/30-uusss-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/30-uusss-2.webp",
+     "thumb": "images/looks/30-uusss-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/30-uusss-3.webp",
+     "thumb": "images/looks/30-uusss-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-uuss-30"
+   ]
+  },
+  {
+   "id": "32-usass",
+   "code": "32-USASS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 11.171,
+   "photos": [
+    {
+     "src": "images/looks/32-usass-1.webp",
+     "thumb": "images/looks/32-usass-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/32-usass-2.webp",
+     "thumb": "images/looks/32-usass-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/32-usass-3.webp",
+     "thumb": "images/looks/32-usass-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "33-dsass",
+   "code": "33-DSASS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.328,
+   "photos": [
+    {
+     "src": "images/looks/33-dsass-1.webp",
+     "thumb": "images/looks/33-dsass-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/33-dsass-2.webp",
+     "thumb": "images/looks/33-dsass-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/33-dsass-3.webp",
+     "thumb": "images/looks/33-dsass-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "34-rgss",
+   "code": "34-RGSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.328,
+   "photos": [
+    {
+     "src": "images/looks/34-rgss-1.webp",
+     "thumb": "images/looks/34-rgss-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/34-rgss-2.webp",
+     "thumb": "images/looks/34-rgss-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/34-rgss-3.webp",
+     "thumb": "images/looks/34-rgss-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-rgss-34"
+   ]
+  },
+  {
+   "id": "35-rgss",
+   "code": "35-RGSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.471,
+   "photos": [
+    {
+     "src": "images/looks/35-rgss-1.webp",
+     "thumb": "images/looks/35-rgss-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/35-rgss-2.webp",
+     "thumb": "images/looks/35-rgss-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/35-rgss-3.webp",
+     "thumb": "images/looks/35-rgss-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-rgss-35"
+   ]
+  },
+  {
+   "id": "38-russ",
+   "code": "38-RUSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.992,
+   "photos": [
+    {
+     "src": "images/looks/38-russ-1.webp",
+     "thumb": "images/looks/38-russ-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/38-russ-2.webp",
+     "thumb": "images/looks/38-russ-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/38-russ-3.webp",
+     "thumb": "images/looks/38-russ-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-russ-38"
+   ]
+  },
+  {
+   "id": "40-gsss",
+   "code": "40-GSSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.106,
+   "photos": [
+    {
+     "src": "images/looks/40-gsss-1.webp",
+     "thumb": "images/looks/40-gsss-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/40-gsss-2.webp",
+     "thumb": "images/looks/40-gsss-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/40-gsss-3.webp",
+     "thumb": "images/looks/40-gsss-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-gsss-40"
+   ]
+  },
+  {
+   "id": "231-vdss",
+   "code": "231-VDSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 9.926,
+   "photos": [
+    {
+     "src": "images/looks/231-vdss-1.webp",
+     "thumb": "images/looks/231-vdss-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/231-vdss-2.webp",
+     "thumb": "images/looks/231-vdss-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/231-vdss-3.webp",
+     "thumb": "images/looks/231-vdss-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-vdss-231"
+   ]
+  },
+  {
+   "id": "265-usss",
+   "code": "265-USSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 9.271,
+   "photos": [
+    {
+     "src": "images/looks/265-usss-1.webp",
+     "thumb": "images/looks/265-usss-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/265-usss-2.webp",
+     "thumb": "images/looks/265-usss-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/265-usss-3.webp",
+     "thumb": "images/looks/265-usss-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "embroidery-usss-265"
+   ]
+  },
+  {
+   "id": "272-uias",
+   "code": "272-UIAS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 9.97,
+   "photos": [
+    {
+     "src": "images/looks/272-uias-1.webp",
+     "thumb": "images/looks/272-uias-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/272-uias-2.webp",
+     "thumb": "images/looks/272-uias-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/272-uias-3.webp",
+     "thumb": "images/looks/272-uias-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "273-uvss",
+   "code": "273-UVSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 9.735,
+   "photos": [
+    {
+     "src": "images/looks/273-uvss-1.webp",
+     "thumb": "images/looks/273-uvss-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/273-uvss-2.webp",
+     "thumb": "images/looks/273-uvss-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/273-uvss-3.webp",
+     "thumb": "images/looks/273-uvss-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "274-usss",
+   "code": "274-USSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 9.511,
+   "photos": [
+    {
+     "src": "images/looks/274-usss-1.webp",
+     "thumb": "images/looks/274-usss-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/274-usss-2.webp",
+     "thumb": "images/looks/274-usss-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/274-usss-3.webp",
+     "thumb": "images/looks/274-usss-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "281-dass",
+   "code": "281-DASS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.504,
+   "photos": [
+    {
+     "src": "images/looks/281-dass-1.webp",
+     "thumb": "images/looks/281-dass-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/281-dass-2.webp",
+     "thumb": "images/looks/281-dass-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/281-dass-3.webp",
+     "thumb": "images/looks/281-dass-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "283-usas",
+   "code": "283-USAS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 9.794,
+   "photos": [
+    {
+     "src": "images/looks/283-usas-1.webp",
+     "thumb": "images/looks/283-usas-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/283-usas-2.webp",
+     "thumb": "images/looks/283-usas-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/283-usas-3.webp",
+     "thumb": "images/looks/283-usas-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "284-usss",
+   "code": "284-USSS",
+   "collection": "Embroidery",
+   "category": "Embroidery",
+   "score": 10.648,
+   "photos": [
+    {
+     "src": "images/looks/284-usss-1.webp",
+     "thumb": "images/looks/284-usss-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/284-usss-2.webp",
+     "thumb": "images/looks/284-usss-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/284-usss-3.webp",
+     "thumb": "images/looks/284-usss-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "2-cemb-60-sc",
+   "code": "2-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.801,
+   "photos": [
+    {
+     "src": "images/looks/2-cemb-60-sc-1.webp",
+     "thumb": "images/looks/2-cemb-60-sc-1-t.webp",
+     "w": 320,
+     "h": 429
+    },
+    {
+     "src": "images/looks/2-cemb-60-sc-2.webp",
+     "thumb": "images/looks/2-cemb-60-sc-2-t.webp",
+     "w": 619,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/2-cemb-60-sc-3.webp",
+     "thumb": "images/looks/2-cemb-60-sc-3-t.webp",
+     "w": 821,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-2"
+   ]
+  },
+  {
+   "id": "5-cemb-60",
+   "code": "5-CEMB-60",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 11.049,
+   "photos": [
+    {
+     "src": "images/looks/5-cemb-60-1.webp",
+     "thumb": "images/looks/5-cemb-60-1-t.webp",
+     "w": 821,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/5-cemb-60-2.webp",
+     "thumb": "images/looks/5-cemb-60-2-t.webp",
+     "w": 821,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/5-cemb-60-3.webp",
+     "thumb": "images/looks/5-cemb-60-3-t.webp",
+     "w": 821,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-5"
+   ]
+  },
+  {
+   "id": "10-cemb-60-sc",
+   "code": "10-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 11.366,
+   "photos": [
+    {
+     "src": "images/looks/10-cemb-60-sc-1.webp",
+     "thumb": "images/looks/10-cemb-60-sc-1-t.webp",
+     "w": 619,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/10-cemb-60-sc-2.webp",
+     "thumb": "images/looks/10-cemb-60-sc-2-t.webp",
+     "w": 886,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/10-cemb-60-sc-3.webp",
+     "thumb": "images/looks/10-cemb-60-sc-3-t.webp",
+     "w": 856,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-10"
+   ]
+  },
+  {
+   "id": "11-cemb-60-sc",
+   "code": "11-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.885,
+   "photos": [
+    {
+     "src": "images/looks/11-cemb-60-sc-1.webp",
+     "thumb": "images/looks/11-cemb-60-sc-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/11-cemb-60-sc-2.webp",
+     "thumb": "images/looks/11-cemb-60-sc-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/11-cemb-60-sc-3.webp",
+     "thumb": "images/looks/11-cemb-60-sc-3-t.webp",
+     "w": 821,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-11"
+   ]
+  },
+  {
+   "id": "12-cemb-60",
+   "code": "12-CEMB-60",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.452,
+   "photos": [
+    {
+     "src": "images/looks/12-cemb-60-1.webp",
+     "thumb": "images/looks/12-cemb-60-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/12-cemb-60-2.webp",
+     "thumb": "images/looks/12-cemb-60-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/12-cemb-60-3.webp",
+     "thumb": "images/looks/12-cemb-60-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-12"
+   ]
+  },
+  {
+   "id": "14-cemb-60-sc",
+   "code": "14-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.657,
+   "photos": [
+    {
+     "src": "images/looks/14-cemb-60-sc-1.webp",
+     "thumb": "images/looks/14-cemb-60-sc-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/14-cemb-60-sc-2.webp",
+     "thumb": "images/looks/14-cemb-60-sc-2-t.webp",
+     "w": 803,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/14-cemb-60-sc-3.webp",
+     "thumb": "images/looks/14-cemb-60-sc-3-t.webp",
+     "w": 821,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-14"
+   ]
+  },
+  {
+   "id": "21-cemb-60-sc",
+   "code": "21-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.631,
+   "photos": [
+    {
+     "src": "images/looks/21-cemb-60-sc-1.webp",
+     "thumb": "images/looks/21-cemb-60-sc-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/21-cemb-60-sc-2.webp",
+     "thumb": "images/looks/21-cemb-60-sc-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/21-cemb-60-sc-3.webp",
+     "thumb": "images/looks/21-cemb-60-sc-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-21"
+   ]
+  },
+  {
+   "id": "22-cemb-60-se",
+   "code": "22-CEMB-60-SE",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 11.76,
+   "photos": [
+    {
+     "src": "images/looks/22-cemb-60-se-1.webp",
+     "thumb": "images/looks/22-cemb-60-se-1-t.webp",
+     "w": 619,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/22-cemb-60-se-2.webp",
+     "thumb": "images/looks/22-cemb-60-se-2-t.webp",
+     "w": 619,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/22-cemb-60-se-3.webp",
+     "thumb": "images/looks/22-cemb-60-se-3-t.webp",
+     "w": 619,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-22"
+   ]
+  },
+  {
+   "id": "28-cemb-60",
+   "code": "28-CEMB-60",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 11.014,
+   "photos": [
+    {
+     "src": "images/looks/28-cemb-60-1.webp",
+     "thumb": "images/looks/28-cemb-60-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/28-cemb-60-2.webp",
+     "thumb": "images/looks/28-cemb-60-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/28-cemb-60-3.webp",
+     "thumb": "images/looks/28-cemb-60-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-28"
+   ]
+  },
+  {
+   "id": "29-cemb-60",
+   "code": "29-CEMB-60",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 9.863,
+   "photos": [
+    {
+     "src": "images/looks/29-cemb-60-1.webp",
+     "thumb": "images/looks/29-cemb-60-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/29-cemb-60-2.webp",
+     "thumb": "images/looks/29-cemb-60-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/29-cemb-60-3.webp",
+     "thumb": "images/looks/29-cemb-60-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-29"
+   ]
+  },
+  {
+   "id": "37-cemb-60",
+   "code": "37-CEMB-60",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.478,
+   "photos": [
+    {
+     "src": "images/looks/37-cemb-60-1.webp",
+     "thumb": "images/looks/37-cemb-60-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/37-cemb-60-2.webp",
+     "thumb": "images/looks/37-cemb-60-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/37-cemb-60-3.webp",
+     "thumb": "images/looks/37-cemb-60-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-37"
+   ]
+  },
+  {
+   "id": "45-cemb-60-sc",
+   "code": "45-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.23,
+   "photos": [
+    {
+     "src": "images/looks/45-cemb-60-sc-1.webp",
+     "thumb": "images/looks/45-cemb-60-sc-1-t.webp",
+     "w": 618,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/45-cemb-60-sc-2.webp",
+     "thumb": "images/looks/45-cemb-60-sc-2-t.webp",
+     "w": 856,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/45-cemb-60-sc-3.webp",
+     "thumb": "images/looks/45-cemb-60-sc-3-t.webp",
+     "w": 856,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-45"
+   ]
+  },
+  {
+   "id": "46-cemb-60-sc",
+   "code": "46-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 9.584,
+   "photos": [
+    {
+     "src": "images/looks/46-cemb-60-sc-1.webp",
+     "thumb": "images/looks/46-cemb-60-sc-1-t.webp",
+     "w": 825,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/46-cemb-60-sc-2.webp",
+     "thumb": "images/looks/46-cemb-60-sc-2-t.webp",
+     "w": 829,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/46-cemb-60-sc-3.webp",
+     "thumb": "images/looks/46-cemb-60-sc-3-t.webp",
+     "w": 825,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-46"
+   ]
+  },
+  {
+   "id": "47-cemb-60",
+   "code": "47-CEMB-60",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.465,
+   "photos": [
+    {
+     "src": "images/looks/47-cemb-60-1.webp",
+     "thumb": "images/looks/47-cemb-60-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/47-cemb-60-2.webp",
+     "thumb": "images/looks/47-cemb-60-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/47-cemb-60-3.webp",
+     "thumb": "images/looks/47-cemb-60-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-47"
+   ]
+  },
+  {
+   "id": "48-cemb-60-sc",
+   "code": "48-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.725,
+   "photos": [
+    {
+     "src": "images/looks/48-cemb-60-sc-1.webp",
+     "thumb": "images/looks/48-cemb-60-sc-1-t.webp",
+     "w": 738,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/48-cemb-60-sc-2.webp",
+     "thumb": "images/looks/48-cemb-60-sc-2-t.webp",
+     "w": 856,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/48-cemb-60-sc-3.webp",
+     "thumb": "images/looks/48-cemb-60-sc-3-t.webp",
+     "w": 856,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-48"
+   ]
+  },
+  {
+   "id": "50-cemb-60-sc",
+   "code": "50-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.699,
+   "photos": [
+    {
+     "src": "images/looks/50-cemb-60-sc-1.webp",
+     "thumb": "images/looks/50-cemb-60-sc-1-t.webp",
+     "w": 856,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/50-cemb-60-sc-2.webp",
+     "thumb": "images/looks/50-cemb-60-sc-2-t.webp",
+     "w": 856,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/50-cemb-60-sc-3.webp",
+     "thumb": "images/looks/50-cemb-60-sc-3-t.webp",
+     "w": 832,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-50"
+   ]
+  },
+  {
+   "id": "51-cemb-60-sc",
+   "code": "51-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.644,
+   "photos": [
+    {
+     "src": "images/looks/51-cemb-60-sc-1.webp",
+     "thumb": "images/looks/51-cemb-60-sc-1-t.webp",
+     "w": 856,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/51-cemb-60-sc-2.webp",
+     "thumb": "images/looks/51-cemb-60-sc-2-t.webp",
+     "w": 856,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/51-cemb-60-sc-3.webp",
+     "thumb": "images/looks/51-cemb-60-sc-3-t.webp",
+     "w": 821,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-51"
+   ]
+  },
+  {
+   "id": "55-cemb-60",
+   "code": "55-CEMB-60",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.03,
+   "photos": [
+    {
+     "src": "images/looks/55-cemb-60-1.webp",
+     "thumb": "images/looks/55-cemb-60-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/55-cemb-60-2.webp",
+     "thumb": "images/looks/55-cemb-60-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/55-cemb-60-3.webp",
+     "thumb": "images/looks/55-cemb-60-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-55"
+   ]
+  },
+  {
+   "id": "58-cemb-60-sc",
+   "code": "58-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 11.384,
+   "photos": [
+    {
+     "src": "images/looks/58-cemb-60-sc-1.webp",
+     "thumb": "images/looks/58-cemb-60-sc-1-t.webp",
+     "w": 847,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/58-cemb-60-sc-2.webp",
+     "thumb": "images/looks/58-cemb-60-sc-2-t.webp",
+     "w": 618,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/58-cemb-60-sc-3.webp",
+     "thumb": "images/looks/58-cemb-60-sc-3-t.webp",
+     "w": 618,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-58"
+   ]
+  },
+  {
+   "id": "60-cemb-60-sc",
+   "code": "60-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.442,
+   "photos": [
+    {
+     "src": "images/looks/60-cemb-60-sc-1.webp",
+     "thumb": "images/looks/60-cemb-60-sc-1-t.webp",
+     "w": 618,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/60-cemb-60-sc-2.webp",
+     "thumb": "images/looks/60-cemb-60-sc-2-t.webp",
+     "w": 856,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/60-cemb-60-sc-3.webp",
+     "thumb": "images/looks/60-cemb-60-sc-3-t.webp",
+     "w": 618,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-60"
+   ]
+  },
+  {
+   "id": "61-cemb-60-sc",
+   "code": "61-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.402,
+   "photos": [
+    {
+     "src": "images/looks/61-cemb-60-sc-1.webp",
+     "thumb": "images/looks/61-cemb-60-sc-1-t.webp",
+     "w": 856,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/61-cemb-60-sc-2.webp",
+     "thumb": "images/looks/61-cemb-60-sc-2-t.webp",
+     "w": 821,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/61-cemb-60-sc-3.webp",
+     "thumb": "images/looks/61-cemb-60-sc-3-t.webp",
+     "w": 225,
+     "h": 400
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "62-cemb-60-sc",
+   "code": "62-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.384,
+   "photos": [
+    {
+     "src": "images/looks/62-cemb-60-sc-1.webp",
+     "thumb": "images/looks/62-cemb-60-sc-1-t.webp",
+     "w": 225,
+     "h": 400
+    },
+    {
+     "src": "images/looks/62-cemb-60-sc-2.webp",
+     "thumb": "images/looks/62-cemb-60-sc-2-t.webp",
+     "w": 225,
+     "h": 400
+    },
+    {
+     "src": "images/looks/62-cemb-60-sc-3.webp",
+     "thumb": "images/looks/62-cemb-60-sc-3-t.webp",
+     "w": 225,
+     "h": 400
+    }
+   ],
+   "fabrics": [
+    "cemb-62"
+   ]
+  },
+  {
+   "id": "64-cemb-60",
+   "code": "64-CEMB-60",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.635,
+   "photos": [
+    {
+     "src": "images/looks/64-cemb-60-1.webp",
+     "thumb": "images/looks/64-cemb-60-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/64-cemb-60-2.webp",
+     "thumb": "images/looks/64-cemb-60-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/64-cemb-60-3.webp",
+     "thumb": "images/looks/64-cemb-60-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-64"
+   ]
+  },
+  {
+   "id": "65-cemb-60-sc",
+   "code": "65-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.409,
+   "photos": [
+    {
+     "src": "images/looks/65-cemb-60-sc-1.webp",
+     "thumb": "images/looks/65-cemb-60-sc-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/65-cemb-60-sc-2.webp",
+     "thumb": "images/looks/65-cemb-60-sc-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/65-cemb-60-sc-3.webp",
+     "thumb": "images/looks/65-cemb-60-sc-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-65"
+   ]
+  },
+  {
+   "id": "67-cemb-60-sc",
+   "code": "67-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.917,
+   "photos": [
+    {
+     "src": "images/looks/67-cemb-60-sc-1.webp",
+     "thumb": "images/looks/67-cemb-60-sc-1-t.webp",
+     "w": 619,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/67-cemb-60-sc-2.webp",
+     "thumb": "images/looks/67-cemb-60-sc-2-t.webp",
+     "w": 619,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/67-cemb-60-sc-3.webp",
+     "thumb": "images/looks/67-cemb-60-sc-3-t.webp",
+     "w": 821,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-67"
+   ]
+  },
+  {
+   "id": "68-cemb-60-sc",
+   "code": "68-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.257,
+   "photos": [
+    {
+     "src": "images/looks/68-cemb-60-sc-1.webp",
+     "thumb": "images/looks/68-cemb-60-sc-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/68-cemb-60-sc-2.webp",
+     "thumb": "images/looks/68-cemb-60-sc-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/68-cemb-60-sc-3.webp",
+     "thumb": "images/looks/68-cemb-60-sc-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-68"
+   ]
+  },
+  {
+   "id": "69-cemb-60",
+   "code": "69-CEMB-60",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 11.03,
+   "photos": [
+    {
+     "src": "images/looks/69-cemb-60-1.webp",
+     "thumb": "images/looks/69-cemb-60-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/69-cemb-60-2.webp",
+     "thumb": "images/looks/69-cemb-60-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/69-cemb-60-3.webp",
+     "thumb": "images/looks/69-cemb-60-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-69"
+   ]
+  },
+  {
+   "id": "70-cemb-60-sc",
+   "code": "70-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.519,
+   "photos": [
+    {
+     "src": "images/looks/70-cemb-60-sc-1.webp",
+     "thumb": "images/looks/70-cemb-60-sc-1-t.webp",
+     "w": 821,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/70-cemb-60-sc-2.webp",
+     "thumb": "images/looks/70-cemb-60-sc-2-t.webp",
+     "w": 856,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/70-cemb-60-sc-3.webp",
+     "thumb": "images/looks/70-cemb-60-sc-3-t.webp",
+     "w": 618,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-70"
+   ]
+  },
+  {
+   "id": "71-cemb-60-sc",
+   "code": "71-CEMB-60-SC",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.484,
+   "photos": [
+    {
+     "src": "images/looks/71-cemb-60-sc-1.webp",
+     "thumb": "images/looks/71-cemb-60-sc-1-t.webp",
+     "w": 821,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/71-cemb-60-sc-2.webp",
+     "thumb": "images/looks/71-cemb-60-sc-2-t.webp",
+     "w": 821,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/71-cemb-60-sc-3.webp",
+     "thumb": "images/looks/71-cemb-60-sc-3-t.webp",
+     "w": 856,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-71"
+   ]
+  },
+  {
+   "id": "72-cemb-60",
+   "code": "72-CEMB-60",
+   "collection": "Couture Lace",
+   "category": "Lace",
+   "score": 10.305,
+   "photos": [
+    {
+     "src": "images/looks/72-cemb-60-1.webp",
+     "thumb": "images/looks/72-cemb-60-1-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/72-cemb-60-2.webp",
+     "thumb": "images/looks/72-cemb-60-2-t.webp",
+     "w": 614,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/72-cemb-60-3.webp",
+     "thumb": "images/looks/72-cemb-60-3-t.webp",
+     "w": 614,
+     "h": 1100
+    }
+   ],
+   "fabrics": [
+    "cemb-72"
+   ]
+  },
+  {
+   "id": "10-drss-bei",
+   "code": "10-DRSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.279,
+   "photos": [
+    {
+     "src": "images/looks/10-drss-bei-1.webp",
+     "thumb": "images/looks/10-drss-bei-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/10-drss-bei-2.webp",
+     "thumb": "images/looks/10-drss-bei-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/10-drss-bei-3.webp",
+     "thumb": "images/looks/10-drss-bei-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "11-drss-bei",
+   "code": "11-DRSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 8.504,
+   "photos": [
+    {
+     "src": "images/looks/11-drss-bei-1.webp",
+     "thumb": "images/looks/11-drss-bei-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/11-drss-bei-2.webp",
+     "thumb": "images/looks/11-drss-bei-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/11-drss-bei-3.webp",
+     "thumb": "images/looks/11-drss-bei-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "15-drss-bei",
+   "code": "15-DRSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.527,
+   "photos": [
+    {
+     "src": "images/looks/15-drss-bei-1.webp",
+     "thumb": "images/looks/15-drss-bei-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/15-drss-bei-2.webp",
+     "thumb": "images/looks/15-drss-bei-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/15-drss-bei-3.webp",
+     "thumb": "images/looks/15-drss-bei-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "16-unss-bei",
+   "code": "16-UNSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 9.21,
+   "photos": [
+    {
+     "src": "images/looks/16-unss-bei-1.webp",
+     "thumb": "images/looks/16-unss-bei-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/16-unss-bei-2.webp",
+     "thumb": "images/looks/16-unss-bei-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/16-unss-bei-3.webp",
+     "thumb": "images/looks/16-unss-bei-3-t.webp",
+     "w": 734,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "17-drss-bei",
+   "code": "17-DRSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.529,
+   "photos": [
+    {
+     "src": "images/looks/17-drss-bei-1.webp",
+     "thumb": "images/looks/17-drss-bei-1-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/17-drss-bei-2.webp",
+     "thumb": "images/looks/17-drss-bei-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/17-drss-bei-3.webp",
+     "thumb": "images/looks/17-drss-bei-3-t.webp",
+     "w": 753,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "18-uuas-bei",
+   "code": "18-UUAS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 8.78,
+   "photos": [
+    {
+     "src": "images/looks/18-uuas-bei-1.webp",
+     "thumb": "images/looks/18-uuas-bei-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/18-uuas-bei-2.webp",
+     "thumb": "images/looks/18-uuas-bei-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/18-uuas-bei-3.webp",
+     "thumb": "images/looks/18-uuas-bei-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "19-drss-bei",
+   "code": "19-DRSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 9.565,
+   "photos": [
+    {
+     "src": "images/looks/19-drss-bei-1.webp",
+     "thumb": "images/looks/19-drss-bei-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/19-drss-bei-2.webp",
+     "thumb": "images/looks/19-drss-bei-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/19-drss-bei-3.webp",
+     "thumb": "images/looks/19-drss-bei-3-t.webp",
+     "w": 734,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "44-ueas-bei",
+   "code": "44-UEAS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 11.057,
+   "photos": [
+    {
+     "src": "images/looks/44-ueas-bei-1.webp",
+     "thumb": "images/looks/44-ueas-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/44-ueas-bei-2.webp",
+     "thumb": "images/looks/44-ueas-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/44-ueas-bei-3.webp",
+     "thumb": "images/looks/44-ueas-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "50-ueas-bei",
+   "code": "50-UEAS-BEI_",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 11.47,
+   "photos": [
+    {
+     "src": "images/looks/50-ueas-bei-1.webp",
+     "thumb": "images/looks/50-ueas-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/50-ueas-bei-2.webp",
+     "thumb": "images/looks/50-ueas-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/50-ueas-bei-3.webp",
+     "thumb": "images/looks/50-ueas-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "66-unss-bei",
+   "code": "66-UNSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 11.529,
+   "photos": [
+    {
+     "src": "images/looks/66-unss-bei-1.webp",
+     "thumb": "images/looks/66-unss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/66-unss-bei-2.webp",
+     "thumb": "images/looks/66-unss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/66-unss-bei-3.webp",
+     "thumb": "images/looks/66-unss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "70-russ-bei",
+   "code": "70-RUSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.862,
+   "photos": [
+    {
+     "src": "images/looks/70-russ-bei-1.webp",
+     "thumb": "images/looks/70-russ-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/70-russ-bei-2.webp",
+     "thumb": "images/looks/70-russ-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/70-russ-bei-3.webp",
+     "thumb": "images/looks/70-russ-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "77-russ-bei",
+   "code": "77-RUSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.737,
+   "photos": [
+    {
+     "src": "images/looks/77-russ-bei-1.webp",
+     "thumb": "images/looks/77-russ-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/77-russ-bei-2.webp",
+     "thumb": "images/looks/77-russ-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/77-russ-bei-3.webp",
+     "thumb": "images/looks/77-russ-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "78-unss",
+   "code": "78-UNSS",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 11.072,
+   "photos": [
+    {
+     "src": "images/looks/78-unss-1.webp",
+     "thumb": "images/looks/78-unss-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/78-unss-2.webp",
+     "thumb": "images/looks/78-unss-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/78-unss-3.webp",
+     "thumb": "images/looks/78-unss-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "79-unss-bei",
+   "code": "79-UNSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 11.33,
+   "photos": [
+    {
+     "src": "images/looks/79-unss-bei-1.webp",
+     "thumb": "images/looks/79-unss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/79-unss-bei-2.webp",
+     "thumb": "images/looks/79-unss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/79-unss-bei-3.webp",
+     "thumb": "images/looks/79-unss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "80-unss-bei",
+   "code": "80-UNSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.733,
+   "photos": [
+    {
+     "src": "images/looks/80-unss-bei-1.webp",
+     "thumb": "images/looks/80-unss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/80-unss-bei-2.webp",
+     "thumb": "images/looks/80-unss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/80-unss-bei-3.webp",
+     "thumb": "images/looks/80-unss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "81-unss-bei",
+   "code": "81-UNSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 11.294,
+   "photos": [
+    {
+     "src": "images/looks/81-unss-bei-1.webp",
+     "thumb": "images/looks/81-unss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/81-unss-bei-2.webp",
+     "thumb": "images/looks/81-unss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/81-unss-bei-3.webp",
+     "thumb": "images/looks/81-unss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "82-unss-bei",
+   "code": "82-UNSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.987,
+   "photos": [
+    {
+     "src": "images/looks/82-unss-bei-1.webp",
+     "thumb": "images/looks/82-unss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/82-unss-bei-2.webp",
+     "thumb": "images/looks/82-unss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/82-unss-bei-3.webp",
+     "thumb": "images/looks/82-unss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "83-unss-bei",
+   "code": "83-UNSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.559,
+   "photos": [
+    {
+     "src": "images/looks/83-unss-bei-1.webp",
+     "thumb": "images/looks/83-unss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/83-unss-bei-2.webp",
+     "thumb": "images/looks/83-unss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/83-unss-bei-3.webp",
+     "thumb": "images/looks/83-unss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "84-unss-bei",
+   "code": "84-UNSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 11.212,
+   "photos": [
+    {
+     "src": "images/looks/84-unss-bei-1.webp",
+     "thumb": "images/looks/84-unss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/84-unss-bei-2.webp",
+     "thumb": "images/looks/84-unss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/84-unss-bei-3.webp",
+     "thumb": "images/looks/84-unss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "85-unss",
+   "code": "85-UNSS",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 11.037,
+   "photos": [
+    {
+     "src": "images/looks/85-unss-1.webp",
+     "thumb": "images/looks/85-unss-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/85-unss-2.webp",
+     "thumb": "images/looks/85-unss-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/85-unss-3.webp",
+     "thumb": "images/looks/85-unss-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "86-ugss-bei",
+   "code": "86-UGSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 9.083,
+   "photos": [
+    {
+     "src": "images/looks/86-ugss-bei-1.webp",
+     "thumb": "images/looks/86-ugss-bei-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/86-ugss-bei-2.webp",
+     "thumb": "images/looks/86-ugss-bei-2-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/86-ugss-bei-3.webp",
+     "thumb": "images/looks/86-ugss-bei-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "87-ugss-bei",
+   "code": "87-UGSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.336,
+   "photos": [
+    {
+     "src": "images/looks/87-ugss-bei-1.webp",
+     "thumb": "images/looks/87-ugss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/87-ugss-bei-2.webp",
+     "thumb": "images/looks/87-ugss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/87-ugss-bei-3.webp",
+     "thumb": "images/looks/87-ugss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "88-ugss-bei",
+   "code": "88-UGSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.323,
+   "photos": [
+    {
+     "src": "images/looks/88-ugss-bei-1.webp",
+     "thumb": "images/looks/88-ugss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/88-ugss-bei-2.webp",
+     "thumb": "images/looks/88-ugss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/88-ugss-bei-3.webp",
+     "thumb": "images/looks/88-ugss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "89-ugss-bei",
+   "code": "89-UGSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.618,
+   "photos": [
+    {
+     "src": "images/looks/89-ugss-bei-1.webp",
+     "thumb": "images/looks/89-ugss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/89-ugss-bei-2.webp",
+     "thumb": "images/looks/89-ugss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/89-ugss-bei-3.webp",
+     "thumb": "images/looks/89-ugss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "90-ugss-bei",
+   "code": "90-UGSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 9.635,
+   "photos": [
+    {
+     "src": "images/looks/90-ugss-bei-1.webp",
+     "thumb": "images/looks/90-ugss-bei-1-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/90-ugss-bei-2.webp",
+     "thumb": "images/looks/90-ugss-bei-2-t.webp",
+     "w": 880,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/90-ugss-bei-3.webp",
+     "thumb": "images/looks/90-ugss-bei-3-t.webp",
+     "w": 734,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "91-ugss-bei",
+   "code": "91-UGSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 11.351,
+   "photos": [
+    {
+     "src": "images/looks/91-ugss-bei-1.webp",
+     "thumb": "images/looks/91-ugss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/91-ugss-bei-2.webp",
+     "thumb": "images/looks/91-ugss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/91-ugss-bei-3.webp",
+     "thumb": "images/looks/91-ugss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "92-ugss-bei",
+   "code": "92-UGSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.657,
+   "photos": [
+    {
+     "src": "images/looks/92-ugss-bei-1.webp",
+     "thumb": "images/looks/92-ugss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/92-ugss-bei-2.webp",
+     "thumb": "images/looks/92-ugss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/92-ugss-bei-3.webp",
+     "thumb": "images/looks/92-ugss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "93-ugss-bei",
+   "code": "93-UGSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.539,
+   "photos": [
+    {
+     "src": "images/looks/93-ugss-bei-1.webp",
+     "thumb": "images/looks/93-ugss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/93-ugss-bei-2.webp",
+     "thumb": "images/looks/93-ugss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/93-ugss-bei-3.webp",
+     "thumb": "images/looks/93-ugss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "94-ugss-bei",
+   "code": "94-UGSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.833,
+   "photos": [
+    {
+     "src": "images/looks/94-ugss-bei-1.webp",
+     "thumb": "images/looks/94-ugss-bei-1-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/94-ugss-bei-2.webp",
+     "thumb": "images/looks/94-ugss-bei-2-t.webp",
+     "w": 733,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/94-ugss-bei-3.webp",
+     "thumb": "images/looks/94-ugss-bei-3-t.webp",
+     "w": 733,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  },
+  {
+   "id": "95-drss-bei",
+   "code": "95-DRSS-BEI",
+   "collection": "Beirut Lace",
+   "category": "Lace",
+   "score": 10.152,
+   "photos": [
+    {
+     "src": "images/looks/95-drss-bei-1.webp",
+     "thumb": "images/looks/95-drss-bei-1-t.webp",
+     "w": 734,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/95-drss-bei-2.webp",
+     "thumb": "images/looks/95-drss-bei-2-t.webp",
+     "w": 753,
+     "h": 1100
+    },
+    {
+     "src": "images/looks/95-drss-bei-3.webp",
+     "thumb": "images/looks/95-drss-bei-3-t.webp",
+     "w": 880,
+     "h": 1100
+    }
+   ],
+   "fabrics": []
+  }
+ ]
+}

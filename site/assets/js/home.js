@@ -1,6 +1,8 @@
 /* Home page: hero showcase + filterable collection grid. */
 import { $, $$, byCategory, cart, categoryRank, CFG, esc, ICON_PLUS, initHeader, initReveal, lazyImages, loadCatalog, lockScroll, mailHref, qtyText, seriesText, storage, syncCartButtons, titleOf, toggleCart, whatsappHref } from "./core.js";
 import { openViewer } from "./viewer.js";
+import { initEntrance } from "./entrance.js";
+import { featuredLooks, loadLooks, lookCardHtml, openLook } from "./looks.js";
 
 const STORE_DENSITY = "luxoria.density";
 const FACETS = [
@@ -363,7 +365,33 @@ function openFromHash() {
   if (i >= 0) openViewer(list, i, { syncHash: true });
 }
 
+/** "Worn in Luxoria": the best model looks, and models in the hero and maison panels. */
+async function renderAtelier(byId) {
+  let data;
+  try {
+    data = await loadLooks(byId);
+  } catch {
+    return; // the fabric site works without the lookbook
+  }
+  const list = featuredLooks(data.looks, 14);
+  if (!list.length) return;
+  const rail = $("#atelierRail");
+  rail.innerHTML = list.map((l, i) => lookCardHtml(l, i)).join("")
+    + `<a class="rail__end" href="lookbook.html"><strong>${data.looks.length}</strong><span>looks, each linked to its fabric</span><span class="btn btn--gold">View the Lookbook</span></a>`;
+  lazyImages(rail);
+  rail.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-look]");
+    if (btn) openLook(list, list.findIndex((l) => l.id === btn.dataset.look));
+  });
+  $("#atelier").hidden = false;
+  const models = featuredLooks(data.looks, 8);
+  if (models.length < 8) return;
+  $("#heroMedia").innerHTML = models.slice(0, 5).map((l) => `<figure style="background-image:url('${esc(l.photos[0].thumb)}')"></figure>`).join("");
+  $("#maisonMedia").innerHTML = models.slice(5, 8).map((l) => `<figure style="background-image:url('${esc(l.photos[0].src)}')"></figure>`).join("");
+}
+
 async function init() {
+  initEntrance();
   initHeader();
   initReveal();
   readUrl();
@@ -379,6 +407,7 @@ async function init() {
     throw err;
   }
   renderShowcase();
+  renderAtelier(state.byId ?? new Map(state.products.map((p) => [p.id, p])));
   renderFamilies();
   renderHues();
   renderContact();

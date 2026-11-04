@@ -114,6 +114,26 @@ Collections accumulate. Edit `data/catalog.csv` in Excel for names, width, compo
 status (available / reserved / sold), `colour_family` or `featured` (yes), then run the command again.
 Set prices in the admin area, not in the sheet.
 
+## Lookbook, front door and music
+
+The home page opens behind two glass doors; a touch opens them with a burst of light and starts
+soft music (`site/audio/lounge.m4a`, with an on/off button bottom-left). The door shows once per
+visit and is skipped for shared links. Below the hero, **Worn in Luxoria** and the **Lookbook**
+page (`lookbook.html`) show models wearing gowns cut from our fabrics; each look opens with the
+fabric it is made from, the metres left, add-to-cart and a WhatsApp reserve button.
+
+Rebuild the looks after adding model photos (sources stay outside the repository):
+
+```bash
+python tools/build_lookbook.py "<...>/1st 100 Product Sample" "<...>/2nd 100 Product Sample" "<...>/30 CEMB"
+```
+
+It takes the `GALIH` model renders and the CEMB palace photos (white-background mock-ups and
+swatches are skipped), keeps the 3 best different photos per gown, writes
+`site/images/looks/` and `site/data/lookbook.json`, and links each gown to its fabric by code
+(`13A-VSS-CDC` → Silk 13 A, design VSS; `231-VDSS` → Embroidery VDSS 231; `11-CEMB-60-SC` → CEMB 11).
+Gowns without a catalogue match get an "Ask about this look" WhatsApp button instead.
+
 ## Editing fabrics from the admin area
 
 Admin → **Fabrics** lists every piece. Type metres and the price (Malaysian ringgit, RM per metre)
