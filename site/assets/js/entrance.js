@@ -1,98 +1,16 @@
 /* The front door: two etched glass doors over a model photograph. A touch opens them in a
    burst of warm light and starts soft lounge music. Shown once per visit, never on deep links. */
 import { $, lockScroll } from "./core.js";
+import { musicAllowed, playMusic, showPlayer } from "./music.js";
 
 const SEEN_KEY = "luxoria.entered";
-const SOUND_KEY = "luxoria.sound";
-const MUSIC_SRC = "audio/lounge.m4a";
-const FADE_IN_S = 4;
-const FADE_OUT_S = 0.8;
 const OPEN_MS = 2300;
 
 const session = {
   get: (k) => { try { return sessionStorage.getItem(k); } catch { return null; } },
   set: (k, v) => { try { sessionStorage.setItem(k, v); } catch { /* private mode: the door shows again next time */ } },
 };
-const local = {
-  get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
-  set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* the choice just isn't remembered */ } },
-};
 const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-/* ---------- Music ---------- */
-// iOS ignores audio.volume, so the fade runs through a Web Audio gain node where available.
-const music = { audio: null, ctx: null, gain: null, on: false };
-
-function startMusic() {
-  if (!music.audio) {
-    music.audio = new Audio(MUSIC_SRC);
-    music.audio.loop = true;
-    music.audio.preload = "none";
-    const Ctx = window.AudioContext || window.webkitAudioContext;
-    if (Ctx) {
-      try {
-        music.ctx = new Ctx();
-        music.gain = music.ctx.createGain();
-        music.ctx.createMediaElementSource(music.audio).connect(music.gain).connect(music.ctx.destination);
-      } catch { music.ctx = null; music.gain = null; }
-    }
-  }
-  if (music.ctx) {
-    music.ctx.resume();
-    const now = music.ctx.currentTime;
-    music.gain.gain.cancelScheduledValues(now);
-    music.gain.gain.setValueAtTime(0.0001, now);
-    music.gain.gain.exponentialRampToValueAtTime(1, now + FADE_IN_S);
-  }
-  // play() must run inside the tap itself or browsers block it.
-  music.audio.play().catch(() => { music.on = false; renderToggle(); });
-  music.on = true;
-  renderToggle();
-}
-
-function stopMusic() {
-  music.on = false;
-  renderToggle();
-  if (!music.audio) return;
-  if (music.ctx) {
-    const now = music.ctx.currentTime;
-    music.gain.gain.cancelScheduledValues(now);
-    music.gain.gain.setValueAtTime(Math.max(music.gain.gain.value, 0.0001), now);
-    music.gain.gain.linearRampToValueAtTime(0.0001, now + FADE_OUT_S);
-    setTimeout(() => { if (!music.on) music.audio.pause(); }, FADE_OUT_S * 1000);
-  } else {
-    music.audio.pause();
-  }
-}
-
-function setSound(on) {
-  local.set(SOUND_KEY, on ? "on" : "off");
-  if (on) startMusic(); else stopMusic();
-}
-
-function renderToggle() {
-  const btn = $("#soundToggle");
-  if (!btn) return;
-  btn.setAttribute("aria-pressed", String(music.on));
-  btn.setAttribute("aria-label", music.on ? "Turn music off" : "Play music");
-  btn.classList.toggle("is-on", music.on);
-}
-
-function mountToggle() {
-  const btn = document.createElement("button");
-  btn.className = "sound";
-  btn.id = "soundToggle";
-  btn.type = "button";
-  btn.innerHTML = '<span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="sound__label">Music</span>';
-  btn.addEventListener("click", () => setSound(!music.on));
-  document.body.append(btn);
-  renderToggle();
-  // Pause while the tab is hidden; carry on when the visitor returns.
-  document.addEventListener("visibilitychange", () => {
-    if (!music.audio || !music.on) return;
-    if (document.hidden) music.audio.pause(); else music.audio.play().catch(() => {});
-  });
-}
 
 /* ---------- Door ---------- */
 const ETCH = `<g fill="none" stroke="rgba(230,207,154,.55)" stroke-width="1">
@@ -149,7 +67,7 @@ function buildDoor() {
 function open(door) {
   if (door.classList.contains("is-opening")) return;
   // Start the music synchronously in the same tap, before any timers.
-  if (local.get(SOUND_KEY) !== "off") startMusic();
+  if (musicAllowed()) playMusic({ fadeSeconds: 4 });
   session.set(SEEN_KEY, "1");
   door.classList.add("is-opening");
   navigator.vibrate?.(12);
@@ -157,7 +75,7 @@ function open(door) {
     door.remove();
     lockScroll(false);
     document.body.classList.remove("has-door");
-    $("#soundToggle")?.classList.add("is-shown");
+    showPlayer({ announce: true });
   }, reducedMotion() ? 500 : OPEN_MS);
 }
 
@@ -174,12 +92,8 @@ async function scenePhoto() {
 }
 
 export async function initEntrance() {
-  mountToggle();
   const deepLink = location.hash.length > 1 || location.search.length > 1;
-  if (deepLink || session.get(SEEN_KEY)) {
-    $("#soundToggle").classList.add("is-shown");
-    return;
-  }
+  if (deepLink || session.get(SEEN_KEY)) return;
   const door = buildDoor();
   document.body.classList.add("has-door");
   document.body.append(door);

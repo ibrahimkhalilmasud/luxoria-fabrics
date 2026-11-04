@@ -1,5 +1,6 @@
 /* Shared building blocks for every public page: config, catalogue, cart, helpers. */
 import { applyEdit, fetchEdits } from "./edits.js";
+import { initMusic } from "./music.js";
 
 export const CFG = Object.freeze({ brand: "Luxoria", pageSize: 36, ...(window.LUXORIA_CONFIG || {}) });
 
@@ -193,6 +194,7 @@ export function initHeader() {
 
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
+  initMusic();
 }
 
 export function initReveal() {

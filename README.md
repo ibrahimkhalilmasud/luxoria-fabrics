@@ -117,8 +117,11 @@ Set prices in the admin area, not in the sheet.
 ## Lookbook, front door and music
 
 The home page opens behind two glass doors; a touch opens them with a burst of light and starts
-soft music (`site/audio/lounge.m4a`, with an on/off button bottom-left). The door shows once per
-visit and is skipped for shared links. Below the hero, **Worn in Luxoria** and the **Lookbook**
+soft music. The door shows once per visit and is skipped for shared links. The music carries on
+from page to page (a page picks up at the same moment; if the browser blocks sound on a new page,
+it resumes on the first tap). A floating player bottom-right has play/pause and next track; the
+playlist is `TRACKS` in `site/assets/js/music.js` (files in `site/audio/`, AAC ~96 kbps, quiet
+mastering around -25 dB mean). Below the hero, **Worn in Luxoria** and the **Lookbook**
 page (`lookbook.html`) show models wearing gowns cut from our fabrics; each look opens with the
 fabric it is made from, the metres left, add-to-cart and a WhatsApp reserve button.
 
