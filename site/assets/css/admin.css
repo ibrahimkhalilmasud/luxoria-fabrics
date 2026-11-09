@@ -124,3 +124,13 @@
 .adm-edit__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.2rem; }
 .adm-edit__wide { grid-column: 1 / -1; }
 .adm-edit__foot { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+
+/* Photo + delete in the fabric editor */
+.adm-photo { display: flex; gap: 1.2rem; align-items: center; padding: 1rem; border: 1px solid var(--line); }
+.adm-photo img { width: 90px; height: 160px; object-fit: contain; background: #0e0e10; flex: none; }
+.adm-photo__ctl { display: grid; gap: 0.7rem; align-content: start; }
+.adm-photo__btns { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.adm-photo small { color: var(--whisper); font-size: 0.72rem; line-height: 1.4; }
+.adm-danger { color: #e3988f; border-color: rgba(227, 152, 143, 0.4); }
+.adm-edit__foot .adm-danger { margin-right: 0.4rem; }
+.p-table tr.is-deleted td { opacity: 0.5; }

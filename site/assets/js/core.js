@@ -46,7 +46,7 @@ export function loadCatalog() {
     // Admin corrections win over the published file; "hidden" pieces leave the public site.
     const products = (data.products || [])
       .map((p) => applyEdit(p, edits.get(p.id)))
-      .filter((p) => p.status !== "hidden")
+      .filter((p) => p.status !== "hidden" && !p.deleted)
       .sort(bySerial)
       .map((p, i) => ({
         ...p,
