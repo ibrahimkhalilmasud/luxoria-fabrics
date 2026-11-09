@@ -2,12 +2,20 @@
 // Security is enforced by Supabase Row Level Security, not by this page: without an
 // aal2 session from a user listed in public.admins the database returns nothing.
 
-import { applyEdit, EDIT_COLUMNS, STATUSES as FABRIC_STATUSES, toEditRow } from "./edits.js";
+import { applyEdit, BASE_EDIT_COLUMNS, EDIT_COLUMNS, isCustomPhoto, STATUSES as FABRIC_STATUSES, toEditRow } from "./edits.js";
 
 const CFG = window.LUXORIA_CONFIG || {};
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+
+/** Published photos are relative paths; photos changed in the admin are full https URLs. */
+const imgSrc = (path) => (isCustomPhoto(path) ? path : `../${path}`);
+
+/** "Deleted" = hidden from the public website; it stays here so it can be restored. */
+const isGone = (p) => p.status === "hidden";
+/** Database row for a fabric; photo columns are only written when the database has them. */
+const editRow = (id, p) => toEditRow(id, p, { photo: state.photoReady });
 
 const IDLE_MS = 30 * 60 * 1000;
 const POLL_MS = 60 * 1000;
@@ -15,6 +23,10 @@ const MAX_LOGIN_TRIES = 5;
 const LOCKOUT_MS = 60 * 1000;
 const MAX_PRICE = 1e9;
 const MAX_QTY = 100000;
+const PHOTO_BUCKET = "fabric-photos";
+const MAX_PHOTO_BYTES = 15 * 1024 * 1024;
+const FULL_HEIGHT = 1600;
+const THUMB_HEIGHT = 400;
 const CURRENCY = "MYR"; // all prices are Malaysian ringgit, shown as RM
 const STATUS_LABELS = { available: "Available", reserved: "Reserved", sold: "Sold", hidden: "Hidden from website" };
 const STATUSES = ["new", "contacted", "quoted", "won", "closed"];
@@ -31,6 +43,9 @@ const state = {
   qStatus: "",
   qSearch: "",
   selected: null,
+  photoReady: false, // true once the database has the photo columns (one-time SQL step)
+  photo: null, // { full, thumb } picked in the editor, uploaded on Save
+  photoReset: false,
   factorId: null,
   tab: "quotes",
   loginFails: 0,
@@ -223,7 +238,10 @@ async function loadCatalog() {
       state.base = new Map(data.products.map((p) => [p.id, p]));
       state.colours = Object.keys(data.colourFamilies || {});
     }
-    const { data: rows, error } = await sb.from("product_edits").select(EDIT_COLUMNS);
+    let { data: rows, error } = await sb.from("product_edits").select(EDIT_COLUMNS);
+    state.photoReady = !error;
+    // Photo columns missing (SQL step not done yet): load the details exactly as before.
+    if (error) ({ data: rows, error } = await sb.from("product_edits").select(BASE_EDIT_COLUMNS));
     if (error) throw error;
     const edits = new Map(rows.map((r) => [r.product_id, r]));
     state.catalog = new Map([...state.base].map(([id, p]) => [id, applyEdit(p, edits.get(id))]));
@@ -314,7 +332,7 @@ function itemView(item) {
   const p = state.catalog.get(item.id) || item;
   const price = state.prices.get(item.id);
   const title = [p.name || p.article, p.designNo].filter(Boolean).join(" · ") || item.id;
-  const thumb = p.thumb ? `<img src="../${esc(p.thumb)}" alt="" loading="lazy" width="80" height="160">` : "";
+  const thumb = p.thumb ? `<img src="${esc(imgSrc(p.thumb))}" alt="" loading="lazy" width="80" height="160">` : "";
   return `<li class="q-item">
     <a href="../index.html#fabric/${encodeURIComponent(item.id)}" target="_blank" rel="noopener noreferrer">${thumb}</a>
     <div><strong>${esc(title)}</strong>
@@ -389,7 +407,7 @@ async function deleteQuote(q) {
 // ---------------------------------------------------------------- fabrics (details, metres, prices)
 // Details are public catalogue corrections (table product_edits); prices stay private (table prices).
 function bindPrices() {
-  ["#pCollection", "#pSearch", "#pMissing"].forEach((s) => $(s).addEventListener("input", renderPrices));
+  ["#pCollection", "#pSearch", "#pMissing", "#pDeleted"].forEach((s) => $(s).addEventListener("input", renderPrices));
   $("#pRows").addEventListener("input", onRowInput);
   $("#pRows").addEventListener("click", (e) => {
     const btn = e.target.closest("[data-edit]");
@@ -400,6 +418,10 @@ function bindPrices() {
   $("#editForm").addEventListener("submit", saveEditor);
   $("#editCancel").addEventListener("click", () => $("#editDialog").close());
   $("#editRestore").addEventListener("click", restoreOriginal);
+  $("#editDelete").addEventListener("click", toggleDeleted);
+  $("#ePhotoPick").addEventListener("click", () => $("#ePhoto").click());
+  $("#ePhoto").addEventListener("change", onPhotoPicked);
+  $("#ePhotoReset").addEventListener("click", onPhotoReset);
 }
 
 async function loadPrices() {
@@ -415,7 +437,9 @@ function visibleProducts() {
   const col = $("#pCollection").value;
   const q = $("#pSearch").value.trim().toLowerCase();
   const missing = $("#pMissing").checked;
+  const deleted = $("#pDeleted").checked;
   return [...state.catalog.values()].filter((p) => {
+    if (isGone(p) !== deleted) return false;
     if (col && p.collection !== col) return false;
     if (missing && state.prices.has(p.id)) return false;
     return !q || [p.article, p.name, p.designNo, p.composition, p.colourFamily, p.status, p.id].join(" ").toLowerCase().includes(q);
@@ -435,14 +459,17 @@ function current(id) {
 
 function renderPrices() {
   const rows = visibleProducts();
-  const edited = [...state.catalog.values()].filter((p) => p.edited).length;
-  $("#pInfo").textContent = `${rows.length} fabrics shown · ${state.prices.size} of ${state.catalog.size} priced · ${edited} with edited details. `
+  const live = [...state.catalog.values()].filter((p) => !isGone(p));
+  const edited = live.filter((p) => p.edited).length;
+  const gone = state.catalog.size - live.length;
+  $("#pInfo").textContent = `${rows.length} fabrics shown · ${state.prices.size} of ${live.length} priced · ${edited} with edited details${gone ? ` · ${gone} deleted` : ""}. `
     + "Prices are in Malaysian ringgit (RM) and are never shown on the public site. Details you edit appear on the website straight away.";
   $("#pRows").innerHTML = rows.map((p) => {
     const cur = current(p.id);
     const tags = [p.status !== "available" ? STATUS_LABELS[p.status] : "", p.featured ? "Signature" : "", p.edited ? "Edited" : ""].filter(Boolean);
-    return `<tr data-id="${esc(p.id)}"${state.edits.has(p.id) ? ' class="is-dirty"' : ""}>
-      <td><img src="../${esc(p.thumb)}" alt="" loading="lazy" width="36" height="72"></td>
+    const cls = [state.edits.has(p.id) ? "is-dirty" : "", isGone(p) ? "is-deleted" : ""].filter(Boolean).join(" ");
+    return `<tr data-id="${esc(p.id)}"${cls ? ` class="${cls}"` : ""}>
+      <td><img src="${esc(imgSrc(p.thumb))}" alt="" loading="lazy" width="36" height="72"></td>
       <td><strong>${esc(p.name || p.article)}</strong><span>${esc([p.name ? p.article : "", p.designNo].filter(Boolean).join(" · "))}</span>
         ${tags.length ? `<em class="p-tags">${tags.map(esc).join(" · ")}</em>` : ""}</td>
       <td>${esc([p.category, p.composition, p.colourFamily].filter(Boolean).join(" · "))}</td>
@@ -503,7 +530,7 @@ async function saveRows() {
     if ("quantity" in change) {
       if (!isValidQty(change.quantity)) return toast(`Check the metres for ${name}: use numbers like 12 or 12.5.`);
       const p = state.catalog.get(id);
-      details.push(toEditRow(id, { ...p, quantity: change.quantity === "" ? null : Number(change.quantity) }));
+      details.push(editRow(id, { ...p, quantity: change.quantity === "" ? null : Number(change.quantity) }));
     }
   }
   const btn = $("#pSave");
@@ -532,7 +559,18 @@ function openEditor(id) {
   const f = $("#editForm");
   f.dataset.id = id;
   $("#editTitle").textContent = p.name || p.article;
-  $("#editThumb").src = `../${p.thumb}`;
+  $("#editThumb").src = imgSrc(p.thumb);
+  $("#ePreview").src = imgSrc(p.thumb);
+  $("#ePhoto").value = "";
+  state.photo = null;
+  state.photoReset = false;
+  $("#ePhotoReset").hidden = !isCustomPhoto(p.image);
+  $("#editDelete").textContent = isGone(p) ? "Restore fabric" : "Delete fabric";
+  $("#editDelete").classList.toggle("adm-danger", !isGone(p));
+  $("#ePhotoPick").disabled = !state.photoReady;
+  $("#ePhotoNote").textContent = state.photoReady
+    ? "JPG, PNG or WebP up to 15 MB. It is resized automatically and goes live when you press Save."
+    : "Changing photos needs a one-time database step (run supabase/migrations/2026-11-photo-and-delete.sql in Supabase). Everything else works now.";
   Object.entries(FORM_TEXT).forEach(([el, field]) => { $(`#${el}`).value = p[field] || ""; });
   const cats = [...new Set([...state.base.values()].map((x) => x.category).filter(Boolean))];
   $("#eCategory").innerHTML = cats.map((c) => `<option${c === p.category ? " selected" : ""}>${esc(c)}</option>`).join("");
@@ -581,14 +619,18 @@ async function saveEditor(e) {
   if (problems.length) return setStatus($("#editStatus"), problems.join(" "));
   const btn = $("#editSave");
   setBusy(btn, true);
+  const photoFields = await resolvePhoto(id);
+  if (!photoFields) { setBusy(btn, false); return; }
   const results = await Promise.all([
-    sb.from("product_edits").upsert(toEditRow(id, p), { onConflict: "product_id" }),
+    sb.from("product_edits").upsert(editRow(id, { ...p, ...photoFields }), { onConflict: "product_id" }),
     price ? sb.from("prices").upsert({ product_id: id, price: Number(price), currency: CURRENCY }, { onConflict: "product_id" })
       : state.prices.has(id) ? sb.from("prices").delete().eq("product_id", id) : { error: null },
   ]);
   setBusy(btn, false);
   if (results.some((r) => r.error)) return setStatus($("#editStatus"), "Could not save. Please check your connection and try again.");
   state.edits.delete(id);
+  state.photo = null;
+  state.photoReset = false;
   await Promise.all([loadPrices(), loadCatalog()]);
   renderPrices();
   if (state.selected) renderQuotes();
@@ -598,13 +640,105 @@ async function saveEditor(e) {
 
 async function restoreOriginal() {
   const id = $("#editForm").dataset.id;
-  if (!confirm("Undo all detail edits for this fabric and go back to the original catalogue details? The price is kept.")) return;
+  if (!confirm("Undo all detail edits for this fabric, including a changed photo, and go back to the original catalogue? The price is kept.")) return;
   const { error } = await sb.from("product_edits").delete().eq("product_id", id);
   if (error) return setStatus($("#editStatus"), "Could not restore. Please try again.");
   await loadCatalog();
   renderPrices();
   $("#editDialog").close();
   toast("Original details restored.");
+}
+
+// ---------------------------------------------------------------- photo + delete
+/** Photo / deleted fields to save with the form: pending upload, reset to original, or unchanged. */
+async function resolvePhoto(id) {
+  const current = state.catalog.get(id);
+  const keep = { image: current.image, thumb: current.thumb, w: current.w, h: current.h };
+  if (state.photoReset) {
+    const orig = state.base.get(id);
+    return { ...keep, image: orig.image, thumb: orig.thumb, w: orig.w, h: orig.h };
+  }
+  if (!state.photo) return keep;
+  const { full, thumb } = state.photo;
+  setStatus($("#editStatus"), "Uploading photo…");
+  const stamp = Date.now();
+  const paths = { full: `${id}/${stamp}.${full.ext}`, thumb: `${id}/${stamp}-thumb.${thumb.ext}` };
+  for (const [key, img] of [["full", full], ["thumb", thumb]]) {
+    const { error } = await sb.storage.from(PHOTO_BUCKET).upload(paths[key], img.blob, { contentType: img.blob.type, cacheControl: "31536000", upsert: false });
+    if (error) {
+      setStatus($("#editStatus"), "Could not upload the photo. Check your connection and try again.");
+      return null;
+    }
+  }
+  setStatus($("#editStatus"), "");
+  const url = (path) => sb.storage.from(PHOTO_BUCKET).getPublicUrl(path).data.publicUrl;
+  return { ...keep, image: url(paths.full), thumb: url(paths.thumb), w: full.w, h: full.h };
+}
+
+/** Resize in the browser: a phone photo of 8 MB becomes a ~200 KB WebP. */
+async function encodeImage(bitmap, maxHeight) {
+  const scale = Math.min(1, maxHeight / bitmap.height);
+  const w = Math.max(1, Math.round(bitmap.width * scale));
+  const h = Math.max(1, Math.round(bitmap.height * scale));
+  const canvas = document.createElement("canvas");
+  canvas.width = w;
+  canvas.height = h;
+  canvas.getContext("2d").drawImage(bitmap, 0, 0, w, h);
+  const toBlob = (type, q) => new Promise((resolve) => canvas.toBlob(resolve, type, q));
+  let blob = await toBlob("image/webp", 0.86);
+  if (!blob || blob.type !== "image/webp") blob = await toBlob("image/jpeg", 0.88); // older Safari
+  return { blob, w, h, ext: blob.type === "image/webp" ? "webp" : "jpg", canvas };
+}
+
+async function onPhotoPicked(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return setStatus($("#editStatus"), "Choose a JPG, PNG or WebP photo.");
+  if (file.size > MAX_PHOTO_BYTES) return setStatus($("#editStatus"), "That photo is over 15 MB. Choose a smaller one.");
+  try {
+    const bitmap = await createImageBitmap(file);
+    const full = await encodeImage(bitmap, FULL_HEIGHT);
+    const thumb = await encodeImage(bitmap, THUMB_HEIGHT);
+    bitmap.close();
+    state.photo = { full, thumb };
+    state.photoReset = false;
+    $("#ePreview").src = thumb.canvas.toDataURL("image/jpeg", 0.8);
+    $("#ePhotoReset").hidden = false;
+    setStatus($("#editStatus"), "");
+    toast("New photo ready. Press Save to publish it.");
+  } catch {
+    setStatus($("#editStatus"), "That file could not be read as a photo.");
+  }
+}
+
+function onPhotoReset() {
+  const id = $("#editForm").dataset.id;
+  state.photo = null;
+  state.photoReset = true;
+  $("#ePhoto").value = "";
+  $("#ePreview").src = imgSrc(state.base.get(id).thumb);
+  $("#ePhotoReset").hidden = true;
+  toast("The original photo returns when you press Save.");
+}
+
+/** Removes the fabric from the public website (kept in the admin so it can be restored). */
+async function toggleDeleted() {
+  const id = $("#editForm").dataset.id;
+  const p = state.catalog.get(id);
+  const restoring = isGone(p);
+  const label = p.name || p.article;
+  if (!restoring && !confirm(`Delete "${label}"? It disappears from the website straight away. You can bring it back later from "Show deleted".`)) return;
+  const btn = $("#editDelete");
+  setBusy(btn, true);
+  const { error } = await sb.from("product_edits").upsert(editRow(id, { ...p, status: restoring ? "available" : "hidden" }), { onConflict: "product_id" });
+  setBusy(btn, false);
+  if (error) return setStatus($("#editStatus"), "Could not update this fabric. Please try again.");
+  state.edits.delete(id);
+  await loadCatalog();
+  renderPrices();
+  if (state.selected) renderQuotes();
+  $("#editDialog").close();
+  toast(restoring ? `${label} is back on the website.` : `${label} deleted.`);
 }
 
 // ---------------------------------------------------------------- toast
