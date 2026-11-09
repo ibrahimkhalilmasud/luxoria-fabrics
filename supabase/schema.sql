@@ -158,5 +158,3 @@ create policy "admins delete fabric edits" on public.product_edits
 -- Prices are kept in Malaysian ringgit.
 alter table public.prices alter column currency set default 'MYR';
 update public.prices set currency = 'MYR' where currency <> 'MYR';
-
--- Photo + delete (2026-11): also run supabase/migrations/2026-11-photo-and-delete.sql on existing projects.

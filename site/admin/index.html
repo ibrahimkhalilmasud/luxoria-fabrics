@@ -6,7 +6,7 @@
   <title>Admin — Luxoria</title>
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="theme-color" content="#0b0b0c">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.supabase.co; connect-src 'self' https://*.supabase.co wss://*.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
   <meta name="referrer" content="no-referrer">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0b0c'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23c9a96e'%3EL%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="../assets/css/fonts.css">
@@ -99,7 +99,6 @@
       <select id="pCollection" aria-label="Collection"></select>
       <input class="adm-search" type="search" id="pSearch" placeholder="Search name, article, design, quality…" aria-label="Search fabrics">
       <label class="adm-check"><input type="checkbox" id="pMissing"> Only without price</label>
-      <label class="adm-check"><input type="checkbox" id="pDeleted"> Show deleted</label>
       <span class="adm-bar__gap"></span>
       <input class="adm-bulk" type="number" id="pBulk" min="0" step="0.01" placeholder="RM" aria-label="Price in ringgit for all shown">
       <button class="btn btn--line" id="pBulkApply">Set for all shown</button>
@@ -120,18 +119,6 @@
         <img id="editThumb" src="data:," alt="" width="40" height="80">
         <div><p class="eyebrow">Edit fabric</p><h2 id="editTitle"></h2></div>
       </header>
-      <div class="adm-photo">
-        <img id="ePreview" src="data:," alt="Current photo" width="90" height="160">
-        <div class="adm-photo__ctl">
-          <p class="eyebrow">Photo</p>
-          <input type="file" id="ePhoto" accept="image/jpeg,image/png,image/webp" hidden>
-          <div class="adm-photo__btns">
-            <button class="btn btn--line" type="button" id="ePhotoPick">Change photo</button>
-            <button class="btn btn--line" type="button" id="ePhotoReset" hidden>Use original photo</button>
-          </div>
-          <small id="ePhotoNote">JPG, PNG or WebP up to 15 MB. It is resized automatically and goes live when you press Save.</small>
-        </div>
-      </div>
       <div class="adm-edit__grid">
         <label class="field"><span>Article / serial number</span><input id="eArticle" maxlength="60" required></label>
         <label class="field"><span>Name <small>(optional)</small></span><input id="eName" maxlength="80"></label>
@@ -148,7 +135,6 @@
       </div>
       <p class="form-status" id="editStatus" role="alert" hidden></p>
       <footer class="adm-edit__foot">
-        <button class="btn btn--line adm-danger" type="button" id="editDelete">Delete fabric</button>
         <button class="btn btn--line" type="button" id="editRestore" hidden>Restore original</button>
         <span class="adm-bar__gap"></span>
         <button class="btn btn--line" type="button" id="editCancel">Cancel</button>

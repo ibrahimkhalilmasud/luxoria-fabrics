@@ -15,10 +15,7 @@ export const EDIT_FIELDS = {
   featured: "featured",
   notes: "notes",
 };
-// Photo + delete flag live beside the text fields (see supabase/migrations).
-const EXTRA_COLUMNS = ["image_url", "thumb_url", "image_w", "image_h", "deleted"];
-export const EDIT_COLUMNS = ["product_id", ...Object.keys(EDIT_FIELDS), ...EXTRA_COLUMNS].join(",");
-export const isCustomPhoto = (url) => /^https:\/\//.test(url || "");
+export const EDIT_COLUMNS = ["product_id", ...Object.keys(EDIT_FIELDS)].join(",");
 export const STATUSES = ["available", "reserved", "sold", "hidden"];
 
 const toNumber = (v) => (v === null || v === undefined || v === "" ? null : Number(v));
@@ -30,12 +27,6 @@ export function applyEdit(product, row) {
   for (const [col, field] of Object.entries(EDIT_FIELDS)) out[field] = row[col];
   out.quantity = toNumber(row.quantity);
   out.width = toNumber(row.width);
-  out.deleted = !!row.deleted;
-  if (isCustomPhoto(row.image_url) && isCustomPhoto(row.thumb_url)) {
-    out.image = row.image_url;
-    out.thumb = row.thumb_url;
-    if (row.image_w && row.image_h) { out.w = row.image_w; out.h = row.image_h; }
-  }
   out.edited = true;
   return out;
 }
@@ -48,12 +39,6 @@ export function toEditRow(id, p) {
   row.width = p.width ?? null;
   row.status = p.status || "available";
   row.featured = !!p.featured;
-  row.deleted = !!p.deleted;
-  const custom = isCustomPhoto(p.image) && isCustomPhoto(p.thumb); // the published photo is never copied here
-  row.image_url = custom ? p.image : null;
-  row.thumb_url = custom ? p.thumb : null;
-  row.image_w = custom ? p.w : null;
-  row.image_h = custom ? p.h : null;
   return row;
 }
 
